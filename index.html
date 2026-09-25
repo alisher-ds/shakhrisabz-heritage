@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shakhrisabz Heritage Archive — Silk Road Cultural Documentation & Digital Preservation</title>
-  <meta name="description" content="Open-access digital cultural heritage archive of Shakhrisabz (UNESCO World Heritage Site), Uzbekistan. Documented by 20 youth stewards under a Wikimedia Foundation grant.">
+  <title>Shakhrisabz Cultural Heritage Archive — Video & Photographic Exhibition</title>
+  <meta name="description" content="Visual documentary and high-resolution photographic archive of Shakhrisabz (UNESCO World Heritage), Uzbekistan. Field-documented by Alisher Tuychiev under a Wikimedia Foundation grant.">
   <style>
     :root {
-      --bg: #ffffff;
-      --bg-subtle: #f8fafc;
-      --text: #0f172a;
-      --text-secondary: #475569;
+      --bg: #0b1120;
+      --surface: #131d33;
+      --surface-card: #182440;
+      --surface-hover: #1f3054;
+      --text: #f8fafc;
+      --text-secondary: #94a3b8;
       --text-muted: #64748b;
-      --border: #e2e8f0;
-      --border-dark: #cbd5e1;
-      --accent: #0f2b48;
-      --gold: #b48324;
-      --gold-subtle: rgba(180, 131, 36, 0.08);
+      --border: #1e293b;
+      --border-light: #334155;
+      --gold: #d4a34b;
+      --gold-light: #e8c47d;
       --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     }
 
@@ -34,48 +35,53 @@
       background-color: var(--bg);
       color: var(--text);
       font-family: var(--font-sans);
-      line-height: 1.65;
-      font-size: 16px;
+      line-height: 1.6;
+      font-size: 15px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    /* Minimalist Navigation Bar */
+    /* Top Navigation */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
-      padding: 16px 32px;
+      padding: 14px 32px;
     }
 
     .nav-inner {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .nav-identity {
+    .nav-brand {
       display: flex;
-      flex-direction: column;
+      align-items: baseline;
+      gap: 12px;
     }
 
-    .nav-name {
+    .nav-title {
       font-size: 1.05rem;
       font-weight: 700;
+      color: #ffffff;
       letter-spacing: -0.3px;
-      color: var(--accent);
       text-decoration: none;
     }
 
-    .nav-tagline {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      font-weight: 500;
+    .nav-badge {
+      font-size: 0.72rem;
+      color: var(--gold);
+      background: rgba(212, 163, 75, 0.12);
+      border: 1px solid rgba(212, 163, 75, 0.25);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
@@ -83,12 +89,12 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 20px;
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 20px;
       list-style: none;
     }
 
@@ -101,331 +107,296 @@
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--gold-light);
     }
 
-    /* Language Switcher */
+    /* Language Toggle */
     .lang-toggle {
       display: flex;
       align-items: center;
-      gap: 4px;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
+      gap: 3px;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
       border-radius: 20px;
-      padding: 3px 6px;
+      padding: 3px 5px;
     }
 
     .lang-btn {
       border: none;
       background: transparent;
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--text-muted);
-      padding: 3px 10px;
+      padding: 3px 9px;
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.15s;
     }
 
     .lang-btn.active {
-      background: var(--accent);
-      color: #ffffff;
+      background: var(--gold);
+      color: #0b1120;
     }
 
-    /* Main Container */
+    /* Page Container */
     .page-wrapper {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 32px;
     }
 
-    /* Hero Section */
-    .hero {
-      padding: 64px 0 44px;
-      border-bottom: 1px solid var(--border);
+    /* Hero Header */
+    .header-hero {
+      padding: 56px 0 36px;
+      text-align: center;
     }
 
-    .hero-label {
-      font-size: 0.78rem;
+    .header-tag {
+      display: inline-block;
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 16px;
-      display: block;
+      margin-bottom: 12px;
     }
 
-    .hero-title {
-      font-size: 2.75rem;
+    .header-title {
+      font-size: 2.6rem;
       font-weight: 800;
       letter-spacing: -1px;
-      line-height: 1.18;
-      color: var(--text);
-      max-width: 980px;
-      margin-bottom: 22px;
+      color: #ffffff;
+      line-height: 1.2;
+      max-width: 900px;
+      margin: 0 auto 14px;
     }
 
-    .hero-intro {
-      font-size: 1.2rem;
+    .header-desc {
+      font-size: 1.1rem;
       color: var(--text-secondary);
-      line-height: 1.65;
-      max-width: 880px;
-      margin-bottom: 32px;
+      max-width: 760px;
+      margin: 0 auto 24px;
       font-weight: 400;
     }
 
-    .hero-meta-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      padding: 20px 0 0;
-      font-size: 0.86rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .meta-item span {
+    .header-meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 20px;
+      border-radius: 24px;
     }
 
-    .meta-item strong {
-      color: var(--text);
+    .header-meta span strong {
+      color: #ffffff;
       font-weight: 600;
-      font-size: 0.92rem;
     }
 
     /* Section Styling */
-    section {
-      padding: 64px 0;
-      border-bottom: 1px solid var(--border);
+    .showcase-section {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--border);
     }
 
-    .section-num {
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-      display: block;
+    .section-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
     }
 
-    .section-head {
-      font-size: 1.85rem;
+    .section-title {
+      font-size: 1.6rem;
       font-weight: 700;
+      color: #ffffff;
       letter-spacing: -0.5px;
-      color: var(--text);
-      margin-bottom: 14px;
     }
 
-    .section-subhead {
-      font-size: 1.05rem;
+    .section-subtitle {
+      font-size: 0.92rem;
       color: var(--text-secondary);
-      max-width: 820px;
-      line-height: 1.6;
-      margin-bottom: 32px;
+      margin-top: 4px;
     }
 
-    /* Narrative Paragraphs */
-    .narrative-block {
-      background: var(--bg-subtle);
-      border-left: 3px solid var(--accent);
-      padding: 24px 28px;
-      margin: 28px 0;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .narrative-block p {
-      font-size: 1rem;
-      color: #334155;
-      line-height: 1.7;
-    }
-
-    /* Video Player */
-    .film-container {
+    /* Cinematic Video Player */
+    .video-wrapper {
       background: #000000;
-      border-radius: 6px;
+      border-radius: 12px;
       overflow: hidden;
-      margin: 24px 0 14px;
-      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      position: relative;
     }
 
     video {
       width: 100%;
-      max-height: 580px;
+      max-height: 640px;
       display: block;
       outline: none;
+      background: #000000;
     }
 
-    .film-caption {
+    .video-meta {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      padding: 8px 4px 0;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      font-size: 0.84rem;
+      color: var(--text-secondary);
     }
 
-    /* Photography Exhibition Grid */
-    .gallery-masonry {
+    .video-meta strong {
+      color: #ffffff;
+    }
+
+    .video-meta-badge {
+      background: rgba(212, 163, 75, 0.15);
+      color: var(--gold);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+
+    /* Filter Buttons */
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      background: var(--surface-hover);
+      color: #ffffff;
+      border-color: var(--gold);
+    }
+
+    .filter-btn.active {
+      background: var(--gold);
+      color: #0b1120;
+      border-color: var(--gold);
+    }
+
+    /* Photo Grid */
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 36px 28px;
-      margin-top: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 12px;
     }
 
-    .photo-item {
+    .photo-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
       cursor: pointer;
       display: flex;
       flex-direction: column;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .photo-frame {
+    .photo-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    }
+
+    .photo-media {
       position: relative;
-      background: #f1f5f9;
-      border-radius: 4px;
-      overflow: hidden;
       aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #000000;
     }
 
-    .photo-frame img {
+    .photo-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.35s ease;
+      transition: transform 0.4s ease;
     }
 
-    .photo-item:hover .photo-frame img {
-      transform: scale(1.025);
+    .photo-card:hover .photo-media img {
+      transform: scale(1.05);
     }
 
-    .photo-details {
-      margin-top: 12px;
-    }
-
-    .photo-title {
-      font-size: 0.98rem;
+    .photo-overlay {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(11, 17, 32, 0.75);
+      backdrop-filter: blur(6px);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.7rem;
       font-weight: 600;
-      color: var(--text);
-      line-height: 1.35;
-    }
-
-    .photo-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-      line-height: 1.5;
-    }
-
-    .photo-credit {
-      font-size: 0.74rem;
-      color: #94a3b8;
-      margin-top: 5px;
+      color: var(--gold-light);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    /* Methodology 3-Phase Grid */
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
-    }
-
-    .method-card {
-      border: 1px solid var(--border);
-      background: #ffffff;
-      border-radius: 6px;
-      padding: 28px 24px;
+    .photo-body {
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
       justify-content: space-between;
     }
 
-    .method-step {
-      font-size: 0.8rem;
+    .photo-title {
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
+      color: #ffffff;
+      line-height: 1.35;
+      margin-bottom: 6px;
     }
 
-    .method-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--accent);
+    .photo-caption {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
       margin-bottom: 12px;
     }
 
-    .method-desc {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Open Records & Repository Links */
-    .repo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .repo-card {
-      border: 1px solid var(--border);
-      background: var(--bg-subtle);
-      border-radius: 6px;
-      padding: 20px;
-      text-decoration: none;
-      color: var(--text);
-      transition: all 0.15s ease;
+    .photo-footer {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-    }
-
-    .repo-card:hover {
-      border-color: var(--accent);
-      background: #ffffff;
-      box-shadow: 0 4px 12px rgba(15, 43, 72, 0.06);
-    }
-
-    .repo-label {
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
       font-size: 0.74rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-
-    .repo-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .repo-desc {
-      font-size: 0.84rem;
       color: var(--text-muted);
-      line-height: 1.45;
     }
 
-    /* Modal / Lightbox */
+    .photo-footer strong {
+      color: var(--gold);
+    }
+
+    /* Modal Lightbox */
     .modal {
       display: none;
       position: fixed;
@@ -434,43 +405,47 @@
       width: 100vw;
       height: 100vh;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.94);
+      background: rgba(5, 9, 18, 0.96);
+      backdrop-filter: blur(10px);
       align-items: center;
       justify-content: center;
       padding: 24px;
     }
 
-    .modal-content {
-      max-width: 90vw;
-      max-height: 90vh;
+    .modal-container {
+      max-width: 92vw;
+      max-height: 92vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
     }
 
-    .modal-content img {
+    .modal-container img {
       max-width: 100%;
       max-height: 78vh;
-      border-radius: 2px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      border-radius: 6px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      object-fit: contain;
     }
 
-    .modal-caption {
-      margin-top: 14px;
+    .modal-info {
+      margin-top: 16px;
       text-align: center;
-      max-width: 700px;
+      max-width: 780px;
     }
 
     .modal-title {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .modal-desc {
-      font-size: 0.88rem;
-      color: #94a3b8;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
     }
 
     .modal-close {
@@ -482,45 +457,69 @@
       cursor: pointer;
       line-height: 1;
       opacity: 0.8;
-      transition: opacity 0.15s;
+      transition: opacity 0.15s, transform 0.15s;
     }
 
     .modal-close:hover {
       opacity: 1;
+      transform: scale(1.1);
     }
 
-    /* Attribution & Footer */
-    .attribution-box {
-      margin-top: 36px;
-      padding: 24px;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      border-radius: 6px;
+    /* Footer & Drive Download Bar */
+    .archive-bar {
+      margin: 40px 0 20px;
+      padding: 24px 28px;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 16px;
-      font-size: 0.88rem;
     }
 
-    .attribution-left strong {
-      color: var(--accent);
+    .archive-bar-info strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .archive-bar-info span {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+
+    .drive-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #0b1120;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .drive-download-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
     }
 
     footer {
-      padding: 40px 0;
+      padding: 32px 0 48px;
+      text-align: center;
       font-size: 0.82rem;
       color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
       border-top: 1px solid var(--border);
-      margin-top: 40px;
     }
 
     footer a {
-      color: var(--accent);
+      color: var(--gold);
       text-decoration: none;
     }
 
@@ -529,31 +528,34 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2rem; }
-      .hero-intro { font-size: 1.05rem; }
-      .gallery-masonry { grid-template-columns: 1fr; gap: 28px; }
+    @media (max-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .header-title { font-size: 1.9rem; }
+      .header-desc { font-size: 1rem; }
       .nav-links { display: none; }
-      nav { padding: 14px 20px; }
-      .page-wrapper { padding: 0 20px; }
+      nav { padding: 12px 18px; }
+      .page-wrapper { padding: 0 18px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Minimalist Nav -->
+  <!-- Navigation -->
   <nav>
     <div class="nav-inner">
-      <div class="nav-identity">
-        <a href="#" class="nav-name" data-en="Shakhrisabz Heritage Archive" data-zh="沙赫里萨布兹文化遗产档案">Shakhrisabz Heritage Archive</a>
-        <span class="nav-tagline" data-en="Silk Road Youth Documentation Initiative" data-zh="丝路青年数字化保护计划">Silk Road Youth Documentation Initiative</span>
+      <div class="nav-brand">
+        <a href="#" class="nav-title">Shakhrisabz Heritage</a>
+        <span class="nav-badge">UNESCO Archive</span>
       </div>
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="#documentary" data-en="Documentary" data-zh="实地纪录片">Documentary</a></li>
-          <li><a href="#exhibition" data-en="Exhibition" data-zh="摄影特展">Exhibition</a></li>
-          <li><a href="#expedition" data-en="Fieldwork" data-zh="考察方法">Fieldwork</a></li>
-          <li><a href="#repository" data-en="Archive Access" data-zh="公开档案">Archive Access</a></li>
+          <li><a href="#video" data-en="Film" data-zh="纪录片">Film</a></li>
+          <li><a href="#gallery" data-en="Photography" data-zh="摄影展">Photography</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1K3RvsLEyfbvJ43XBmaADTeci2cPU1I_-?usp=sharing" target="_blank" data-en="Raw Drive ↗" data-zh="原始网盘 ↗">Raw Drive ↗</a></li>
         </ul>
         <div class="lang-toggle">
           <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -565,300 +567,328 @@
 
   <div class="page-wrapper">
 
-    <!-- Hero -->
-    <header class="hero">
-      <span class="hero-label" data-en="UNESCO World Heritage City • Open Knowledge Initiative" data-zh="联合国教科文组织世界文化遗产 • 开放知识计划">UNESCO World Heritage City • Open Knowledge Initiative</span>
-      <h1 class="hero-title" data-en="Documenting 2,700 Years of Silk Road Heritage: The Shakhrisabz Digital Expedition" data-zh="记录两千七百年丝路记忆：沙赫里萨布兹文化遗产实地考察档案">Documenting 2,700 Years of Silk Road Heritage: The Shakhrisabz Digital Expedition</h1>
-      <p class="hero-intro" data-en="An open-access cultural heritage archive documenting ancient Timurid monuments, sacred epigraphy, vernacular architecture, and living craft traditions in Kashkadarya, Uzbekistan. Field-documented by 20 youth stewards under a Wikimedia Foundation grant to bridge digital preservation gaps along Central Asia's historic Silk Roads." data-zh="一项面向全球开放的丝路文化遗产数字保护计划，系统记录乌兹别克斯坦世界文化遗产名城沙赫里萨布兹的帖木儿王朝建筑遗存、石刻古阿拉伯铭文、传统拱顶集市及活态民间非遗手工艺。在维基媒体基金会资助下由20位青年创作者实地考察完成，旨在填补中亚古代文化遗产的数字化空缺。">An open-access cultural heritage archive documenting ancient Timurid monuments, sacred epigraphy, vernacular architecture, and living craft traditions in Kashkadarya, Uzbekistan. Field-documented by 20 youth stewards under a Wikimedia Foundation grant to bridge digital preservation gaps along Central Asia's historic Silk Roads.</p>
-
-      <div class="hero-meta-bar">
-        <div class="meta-item">
-          <span data-en="Heritage Landmark" data-zh="遗产遗址">Heritage Landmark</span>
-          <strong>Historic Centre of Shakhrisabz (UNESCO #885)</strong>
-        </div>
-        <div class="meta-item">
-          <span data-en="Grant & Support" data-zh="资助支持">Grant & Support</span>
-          <strong>Wikimedia Foundation ($2,000 USD Grant)</strong>
-        </div>
-        <div class="meta-item">
-          <span data-en="Documentation Scope" data-zh="数字化规模">Documentation Scope</span>
-          <strong>500+ Assets & 4K Footage on Wikimedia Commons</strong>
-        </div>
-        <div class="meta-item">
-          <span data-en="Field Coordination" data-zh="项目统筹向导">Field Coordination</span>
-          <strong>Alisher Tuychiev (Kashkadarya Regional Lead)</strong>
-        </div>
+    <!-- Hero Header -->
+    <header class="header-hero">
+      <span class="header-tag" data-en="Silk Road Youth Documentation Expedition" data-zh="丝路青年实地考察与数字化建档项目">Silk Road Youth Documentation Expedition</span>
+      <h1 class="header-title" data-en="Shakhrisabz Cultural Heritage: Visual Film & Photographic Exhibition" data-zh="沙赫里萨布兹文化遗产：实地纪录片与高清摄影特展">Shakhrisabz Cultural Heritage: Visual Film & Photographic Exhibition</h1>
+      <p class="header-desc" data-en="Comprehensive visual documentation of 2,700 years of Silk Road monuments, sacred epigraphy, vernacular bazaars, and living crafts in Kashkadarya, Uzbekistan." data-zh="乌兹别克斯坦卡什卡达里亚两千七百年古都沙赫里萨布兹建筑遗存、石刻金石铭文、传统市集与非遗手工艺的高清实地影像档案。">Comprehensive visual documentation of 2,700 years of Silk Road monuments, sacred epigraphy, vernacular bazaars, and living crafts in Kashkadarya, Uzbekistan.</p>
+      
+      <div class="header-meta">
+        <span><strong data-en="Location:" data-zh="地点：">Location:</strong> Shakhrisabz, Uzbekistan</span>
+        <span><strong data-en="Grantee & Coordinator:" data-zh="项目负责人：">Grantee & Coordinator:</strong> Alisher Tuychiev</span>
+        <span><strong data-en="Support:" data-zh="资助方：">Support:</strong> Wikimedia Foundation ($2,000 Grant)</span>
+        <span><strong data-en="Format:" data-zh="画质规格：">Format:</strong> 4K Video • High-Res RAW Photos</span>
       </div>
     </header>
 
-    <!-- 01. Documentary Film & Field Narrative -->
-    <section id="documentary">
-      <span class="section-num">01. Documentary Film & Field Narrative</span>
-      <h2 class="section-head" data-en="The Shakhrisabz Field Expedition" data-zh="沙赫里萨布兹实地考察纪录">The Shakhrisabz Field Expedition</h2>
-      <p class="section-subhead" data-en="Documentary footage capturing the multi-stage youth expedition from regional training at IT Park to exhaustive on-site monument surveys across the historic city." data-zh="完整记录青年考察队从卡尔希IT创新中心专业建档集训，到深入沙赫里萨布兹古迹全景开展高精数字化拍摄的实地历程。">Documentary footage capturing the multi-stage youth expedition from regional training at IT Park to exhaustive on-site monument surveys across the historic city.</p>
-
-      <!-- Curator Narrative -->
-      <div class="narrative-block">
-        <p data-en="&ldquo;Although born in G'uzor, many of my relatives live in Shakhrisabz, and my grandfather guided me through these monumental landmarks since childhood. When our team applied for the Wikimedia grant, we had options to document heavily visited cities like Tashkent or Samarkand. I passionately chose Shakhrisabz because despite being an inscribed UNESCO World Heritage city, research showed that fewer than 6% of our historic settlements had adequate online representation. As Organization Manager and local on-the-ground guide, I led 20 peers through the city to ensure our Silk Road heritage is preserved openly for future generations.&rdquo;" data-zh="“我虽生于古佐尔，但亲人常住沙赫里萨布兹，自幼在祖父带领下熟悉这些历史古迹。在申请维基基金会项目时，我们本可选择繁华的塔什干或撒马尔罕，但我坚持选定沙赫里萨布兹：这里虽贵为联合国教科文组织世界文化遗产，但全区近千个古老村镇中仅不到6%拥有数字记录。作为项目组织统筹人兼在地向导，我带领20名青年伙伴深入古迹一线，让沉睡的丝路记忆向全球开放共享。”">“Although born in G'uzor, many of my relatives live in Shakhrisabz, and my grandfather guided me through these monumental landmarks since childhood. When our team applied for the Wikimedia grant, we had options to document heavily visited cities like Tashkent or Samarkand. I passionately chose Shakhrisabz because despite being an inscribed UNESCO World Heritage city, research showed that fewer than 6% of our historic settlements had adequate online representation. As Organization Manager and local on-the-ground guide, I led 20 peers through the city to ensure our Silk Road heritage is preserved openly for future generations.”</p>
+    <!-- 01. Cinematic Video Section -->
+    <section id="video" class="showcase-section">
+      <div class="section-header-bar">
+        <div>
+          <h2 class="section-title" data-en="Expeditionary Documentary Film" data-zh="实地考察现场纪录片">Expeditionary Documentary Film</h2>
+          <p class="section-subtitle" data-en="Documenting the training cohort at Karshi IT Park and field surveying throughout historic Shakhrisabz." data-zh="记录青年考察队于卡尔希IT创新中心专业建档集训，及深入沙赫里萨布兹古迹的实拍纪实。">Documenting the training cohort at Karshi IT Park and field surveying throughout historic Shakhrisabz.</p>
+        </div>
+        <div class="video-meta-badge" data-en="4K Archival Footage • 0:49" data-zh="4K档案原片 • 0:49">4K Archival Footage • 0:49</div>
       </div>
 
-      <!-- Documentary Video -->
-      <div class="film-container">
+      <div class="video-wrapper">
         <video controls preload="metadata" poster="assets/Jamoaviy oqsaroyda.jpg">
           <source src="assets/documentary.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
-      </div>
-      <div class="film-caption">
-        <span data-en="Documentary Film: Training at IT Park, expedition bus trip, and on-site monument archiving in Shakhrisabz." data-zh="现场纪录片：卡尔希IT创新中心集训、穿行古绿洲考察车队及沙赫里萨布兹实地拍摄全景。">Documentary Film: Training at IT Park, expedition bus trip, and on-site monument archiving in Shakhrisabz.</span>
-        <span>Duration: 0:49 • Produced under Alisher Tuychiev's Coordination</span>
+        <div class="video-meta">
+          <div>
+            <strong data-en="Produced & Filmed by:" data-zh="统筹摄制：">Produced & Filmed by:</strong> Alisher Tuychiev & Youth Delegation
+          </div>
+          <div>
+            <span data-en="Archived on Wikimedia Commons & UNESCO IYF Dossier" data-zh="已归档于维基共享资源与联合国教科文组织青年论坛申报档案">Archived on Wikimedia Commons & UNESCO IYF Dossier</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- 02. Curated Photographic Exhibition -->
-    <section id="exhibition">
-      <span class="section-num">02. Curated Photographic Exhibition</span>
-      <h2 class="section-head" data-en="Architectural Epigraphy, Living Bazaars & Landscapes" data-zh="建筑金石铭文、传统市集与自然生态">Architectural Epigraphy, Living Bazaars & Landscapes</h2>
-      <p class="section-subhead" data-en="Curated high-resolution photographs documenting surviving 14th–16th century Timurid structures, sacred epigraphy, woodcraft, and alpine river systems. Click any photograph to inspect in full-screen detail." data-zh="精选高清数字摄影档案，系统记录14至16世纪帖木儿王朝建筑遗迹、伊斯兰古石刻金石书法、木雕营造非遗与高山生态。点击任意照片查看大图与专业解析。">Curated high-resolution photographs documenting surviving 14th–16th century Timurid structures, sacred epigraphy, woodcraft, and alpine river systems. Click any photograph to inspect in full-screen detail.</p>
-
-      <div class="gallery-masonry">
-
-        <!-- 01: Dorut tilovat -->
-        <div class="photo-item" onclick="openModal('assets/Dorut tilovati majmuasidagi qabrlar.png', 'Dorut-Tilovat Memorial Crypt & Sarcophagi', 'Morning sunlight streaming through an arched wooden lattice window across relief-carved marble sarcophagi of the Sufi masters in the Dorut-Tilovat complex (14th century).', '多鲁特-提洛瓦特纪念陵寝石棺群', '自然阳光透过木雕透光格窗倾泻于刻满苏鲁斯体阿拉伯铭文的帖木儿时期大理石棺之上，背景为古朴的六边形青瓷护壁。')">
-          <div class="photo-frame">
-            <img src="assets/Dorut tilovati majmuasidagi qabrlar.png" alt="Dorut tilovati" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Dorut-Tilovat: Sarcophagi of the Sufi Masters" data-zh="多鲁特-提洛瓦特：苏菲宗师大理石棺">Dorut-Tilovat: Sarcophagi of the Sufi Masters</div>
-            <div class="photo-desc" data-en="Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays." data-zh="镌刻古代苏鲁斯阿拉伯书法的纯白大理石棺，在晨曦透窗间静穆陈列。">Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 02: Oqsaroy yon tarafi -->
-        <div class="photo-item" onclick="openModal('assets/Oqsaroy yon tarafi.png', 'Ak-Saray Palace Tower Pylon', 'The colossal 14th-century pylon tower of Amir Timur\'s grand palace rising into the clear autumn sky, adorned with intricate geometric Kufic majolica.', '阿克萨莱宫巨塔遗迹', '耸入秋空的14世纪帖木儿帝国夏宫巨塔，砖筑立面上嵌有巨大的几何库法体釉面彩陶长铭。')">
-          <div class="photo-frame">
-            <img src="assets/Oqsaroy yon tarafi.png" alt="Oqsaroy" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Ak-Saray Palace Tower & Kufic Majolica" data-zh="阿克萨莱宫侧塔遗址与库法体彩陶">Ak-Saray Palace Tower & Kufic Majolica</div>
-            <div class="photo-desc" data-en="600-year-old Timurid baked brick and lapis glaze standing among evergreen pines." data-zh="经历六百年风雨的帖木儿青蓝彩釉砖体与周遭翠柏相得益彰。">600-year-old Timurid baked brick and lapis glaze standing among evergreen pines.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 03: Kok Gumbaz / Masjid bitiklari -->
-        <div class="photo-item" onclick="openModal('assets/Masjid bitiklari.png', 'Kok Gumbaz: Epigraphic Drum & Turquoise Dome', 'Commissioned in 1435 by astronomer-king Mirzo Ulugbek. The drum displays monumental glazed calligraphy: Al-Mulk Lillah (Sovereignty belongs to God).', '阔克穹顶清真寺：神圣书法铭文鼓座', '由著名天文学家兼统治者兀鲁伯于公元1435年修建，巨大圆鼓上饰有经典的班奈体青瓷铭文：“王权属于真主”。')">
-          <div class="photo-frame">
-            <img src="assets/Masjid bitiklari.png" alt="Masjid bitiklari" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Kok Gumbaz Mosque: Sacred Calligraphic Drum" data-zh="阔克穹顶清真寺：神圣书法圆鼓">Kok Gumbaz Mosque: Sacred Calligraphic Drum</div>
-            <div class="photo-desc" data-en="Monumental turquoise dome and Banna\'i script calligraphy, erected in 1435 CE." data-zh="公元1435年落成的青绿色穹顶与班奈体伊斯兰建筑书法典范。">Monumental turquoise dome and Banna'i script calligraphy, erected in 1435 CE.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 04: Wood Carving (yib yozilgan naxshlar) -->
-        <div class="photo-item" onclick="openModal('assets/yib yozilgan naxshlar.png', 'Hand-Carved Walnut Column & Muqarnas', 'Detailed macro photograph showing deep traditional Islimiy floral scrollwork carved into aged elm timber with painted polychrome ceiling beams.', '传统胡桃木雕立柱与钟乳式柱头', '微距呈现中亚传统深雕木工艺，清晰展现伊斯利米卷草纹、钟乳体柱头与梁木彩绘。')">
-          <div class="photo-frame">
-            <img src="assets/yib yozilgan naxshlar.png" alt="Wood carving" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Carved Walnut Pillar & Polychrome Vassa" data-zh="传统手工雕刻立柱与彩绘藻井">Carved Walnut Pillar & Polychrome Vassa</div>
-            <div class="photo-desc" data-en="Centuries-old Uzbek woodcarving preserving delicate floral patterns." data-zh="流传数百年的乌兹别克传统木雕艺术，完好保存典雅的花草卷草纹饰。">Centuries-old Uzbek woodcarving preserving delicate floral patterns.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 05: Shaxrisabz Eski masjidi -->
-        <div class="photo-item" onclick="openModal('assets/Shaxrisabz Eski masjidi.png', 'Historic Quarter Mosque & Vernacular Courtyard', 'A preserved neighborhood mosque in old Shakhrisabz featuring vernacular timber colonnades, open iwans, and tranquil courtyards serving local religious life.', '老城传统社区清真寺与庭院', '沙赫里萨布兹古城区保存完好的特色社区清真寺，兼具传统木柱廊、开敞伊旺式殿堂与静谧庭院。')">
-          <div class="photo-frame">
-            <img src="assets/Shaxrisabz Eski masjidi.png" alt="Old Mosque" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Historic Quarter Mosque & Colonnaded Iwan" data-zh="老城传统社区清真寺与木构伊旺">Historic Quarter Mosque & Colonnaded Iwan</div>
-            <div class="photo-desc" data-en="Vernacular architectural harmony integrating timber craftsmanship with community space." data-zh="将传统木构营造与社区公共空间紧密结合的原生态历史风貌。">Vernacular architectural harmony integrating timber craftsmanship with community space.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 06: Chorsu Bazaar -->
-        <div class="photo-item" onclick="openModal('assets/Shahrisabz Chorsu majmuasi.png', 'Chorsu Bazaar Arcade Dome (16th Century)', 'The crossroad dome bazaar of Shakhrisabz featuring pointed brick vaults and carved cedar doors, framed naturally by autumn foliage.', '恰尔苏十字拱顶商市（16世纪）', '十字路口古商栈的尖拱砖筑门廊与传统精雕木门，秋季黄叶掩映成趣。')">
-          <div class="photo-frame">
-            <img src="assets/Shahrisabz Chorsu majmuasi.png" alt="Chorsu" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Chorsu Bazaar: 16th-Century Trade Vault" data-zh="恰尔苏集市：16世纪丝路贸易枢纽">Chorsu Bazaar: 16th-Century Trade Vault</div>
-            <div class="photo-desc" data-en="Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz." data-zh="沙赫里萨布兹古代交通要冲处的特色圆顶商业建筑遗存。">Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 07: Folk Textiles / Bazaar -->
-        <div class="photo-item" onclick="openModal('assets/Milliylik aks etgan bozorlari.png', 'Shakhrisabz Folk Textiles: Iroqi Cross-Stitch', 'Traditional market display of handmade Iroqi skullcaps, embroidered accessories, Suzani wall hangings, and natural-dyed silk ikat.', '传统民间工艺巴扎：伊拉克十字绣与丝绸', '生动展现手工伊拉克式花帽、十字绣织锦袋、苏扎尼刺绣以及艾德莱斯丝绸等传统女红技艺。')">
-          <div class="photo-frame">
-            <img src="assets/Milliylik aks etgan bozorlari.png" alt="Bazaar craft" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Living Bazaar Traditions & Iroqi Embroidery" data-zh="活态集市传统与沙赫里萨布兹刺绣">Living Bazaar Traditions & Iroqi Embroidery</div>
-            <div class="photo-desc" data-en="Intangible cultural heritage preserved by local craftswomen across Silk Road stalls." data-zh="丝路古集市摊位上由当地手工艺妇女传承至今的非物质文化遗产。">Intangible cultural heritage preserved by local craftswomen across Silk Road stalls.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 08: Shaxrisabzdagi Tarixiy Tosh -->
-        <div class="photo-item" onclick="openModal('assets/Shaxrisabzdagi Tarixiy Tosh.png', 'Timurid Epigraphic Stone Monument', 'Centuries-old carved stone monument bearing classical Arabic epigraphy and ornamental arabesques, standing as archaeological testament to Timurid lapidary arts.', '帖木儿时期石刻铭文古迹', '雕琢有古典阿拉伯铭文与华美几何回纹的古代石碑，见证古代丝路石雕石刻技艺的高超水准。')">
-          <div class="photo-frame">
-            <img src="assets/Shaxrisabzdagi Tarixiy Tosh.png" alt="Historic Stone" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Ancient Epigraphic Stele & Ornamental Stone" data-zh="古代石刻题铭石碑与石雕艺术">Ancient Epigraphic Stele & Ornamental Stone</div>
-            <div class="photo-desc" data-en="Archaeological stone artifacts testifying to early Silk Road epigraphy." data-zh="记录早期丝绸之路金石学与石刻书法艺术的珍贵实物见证。">Archaeological stone artifacts testifying to early Silk Road epigraphy.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 09: Miraki Oqsuv canal -->
-        <div class="photo-item" onclick="openModal('assets/Mirakidagi Oqsuv kanal.png', 'Oqsuv Alpine Stream, Miraki', 'Rushing glacial waters flowing over mountain boulders, feeding the Shakhrisabz oasis amidst autumn poplar woodlands.', '米拉奇奥克苏高山急流', '帕米尔-阿赖山系融雪汇成的急流穿行于河卵石间，千百年来滋润着沙赫里萨布兹绿洲。')">
-          <div class="photo-frame">
-            <img src="assets/Mirakidagi Oqsuv kanal.png" alt="Oqsuv stream" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Oqsuv Alpine Stream & Riverine Oasis" data-zh="奥克苏山涧急流与绿洲水系">Oqsuv Alpine Stream & Riverine Oasis</div>
-            <div class="photo-desc" data-en="The lifeline mountain river sustaining rural heritage near Hisorak reservoir." data-zh="维系希索拉克水库附近乡村农业与人文生态的高山水源。">The lifeline mountain river sustaining rural heritage near Hisorak reservoir.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 10: Miraki Autumn Woodland -->
-        <div class="photo-item" onclick="openModal('assets/Miraki tabiati kuzda.png', 'Autumn Mountain Landscape in Miraki', 'Vibrant golden poplar trees and mountain groves surrounding rural settlements in the Shakhrisabz highlands, capturing the seasonal Silk Road environment.', '米拉奇秋日金黄山林风貌', '沙赫里萨布兹高地山麓间金黄绚烂的杨树林与村落，展现古老丝路绿洲的自然生态环境。')">
-          <div class="photo-frame">
-            <img src="assets/Miraki tabiati kuzda.png" alt="Miraki Autumn" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Miraki Highlands & Autumn Poplar Groves" data-zh="米拉奇高地与金秋白杨林">Miraki Highlands & Autumn Poplar Groves</div>
-            <div class="photo-desc" data-en="The environmental landscape framing cultural memory in Southern Uzbekistan." data-zh="构成乌兹别克斯坦南部文化历史记忆的壮丽山川生态背景。">The environmental landscape framing cultural memory in Southern Uzbekistan.</div>
-            <div class="photo-credit">Photographed by Alisher Tuychiev • CC BY-SA 4.0</div>
-          </div>
-        </div>
-
-        <!-- 11: Team at Ak-Saray -->
-        <div class="photo-item" onclick="openModal('assets/Jamoaviy oqsaroyda.jpg', 'Youth Delegation at Amir Temur Monument', 'The 20 competitively selected delegates standing on the granite steps of the Amir Temur monument with Ak-Saray Palace ruins in the backdrop.', '青年代表团于帖木儿青铜像前合影', '20位选拔出的青年代表齐聚帖木儿纪念像台阶前，身后矗立着雄伟的阿克萨莱宫古迹。')">
-          <div class="photo-frame">
-            <img src="assets/Jamoaviy oqsaroyda.jpg" alt="Team at Ak-Saray" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="The 20 Youth Stewards at Amir Temur's Citadel" data-zh="青年守护者齐聚帖木儿故城前">The 20 Youth Stewards at Amir Temur's Citadel</div>
-            <div class="photo-desc" data-en="Field documentation cohort at the Historic Centre of Shakhrisabz." data-zh="实地考察团队于沙赫里萨布兹历史中心开展系统性建档。">Field documentation cohort at the Historic Centre of Shakhrisabz.</div>
-            <div class="photo-credit">Expedition Archive • Coordinated by Alisher Tuychiev</div>
-          </div>
-        </div>
-
-        <!-- 12: Team in Miraki Highlands -->
-        <div class="photo-item" onclick="openModal('assets/Jamoaviy Mirakida.jpg', 'Youth Cohort in Miraki River Valley', 'The documentation crew taking field measurements and conducting environmental photographic surveys along the mountain waters of Miraki.', '考察队于米拉奇河谷开展生态与地理调研', '青年考察团队深入米拉奇山区河谷，实地测绘与记录绿洲水源地人文生态环境。')">
-          <div class="photo-frame">
-            <img src="assets/Jamoaviy Mirakida.jpg" alt="Team in Miraki" loading="lazy">
-          </div>
-          <div class="photo-details">
-            <div class="photo-title" data-en="Environmental & Landscape Survey in Miraki" data-zh="米拉奇流域生态与文化景观勘查">Environmental & Landscape Survey in Miraki</div>
-            <div class="photo-desc" data-en="Extending heritage documentation beyond city walls to surrounding water lifelines." data-zh="将文化遗产记录视野从城垣古迹延伸至孕育绿洲的高山水源流域。">Extending heritage documentation beyond city walls to surrounding water lifelines.</div>
-            <div class="photo-credit">Expedition Archive • Coordinated by Alisher Tuychiev</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 03. Fieldwork Methodology & Operations -->
-    <section id="expedition">
-      <span class="section-num">03. Fieldwork Methodology & Operations</span>
-      <h2 class="section-head" data-en="A Three-Phase Digital Archiving Methodology" data-zh="三阶段数字化档案采集与建档方法">A Three-Phase Digital Archiving Methodology</h2>
-      <p class="section-subhead" data-en="How our 20-member youth cohort executed a professional heritage documentation project under the Wikimedia Foundation's grant framework." data-zh="20人青年科考团队在维基媒体基金会资助框架下，系统实施的专业文化遗产数字化采集全流程。">How our 20-member youth cohort executed a professional heritage documentation project under the Wikimedia Foundation's grant framework.</p>
-
-      <div class="method-grid">
-        
-        <div class="method-card">
-          <div>
-            <div class="method-step">Phase 01 • 阶段一</div>
-            <div class="method-title" data-en="Archival Training & Standards" data-zh="标准培训与技术校验">Archival Training & Standards</div>
-            <p class="method-desc" data-en="Conducted a rigorous 2-day technical workshop at Karshi State University and Karshi IT Park. Delegates were trained in RAW capture, geometric perspective correction, EXIF metadata preservation, and Creative Commons open-licensing requirements." data-zh="在卡尔希国立大学与IT创新中心组织开展为期两天的技术集训。培训选拔代表掌握RAW原生画质曝光、透视畸变校准、EXIF地理元数据内嵌及知识共享许可协议标准。">Conducted a rigorous 2-day technical workshop at Karshi State University and Karshi IT Park. Delegates were trained in RAW capture, geometric perspective correction, EXIF metadata preservation, and Creative Commons open-licensing requirements.</p>
-          </div>
-        </div>
-
-        <div class="method-card">
-          <div>
-            <div class="method-step">Phase 02 • 阶段二</div>
-            <div class="method-title" data-en="On-Site Expeditionary Survey" data-zh="实地全景系统考察">On-Site Expeditionary Survey</div>
-            <p class="method-desc" data-en="Navigated 20 researchers across Shakhrisabz's UNESCO core and Miraki alpine river basins. Documented fragile majolica glazed tiles, sacred epigraphic drum inscriptions, traditional woodcarvings, and local craft bazaar economies." data-zh="协调带领20名调研员深入沙赫里萨布兹世界遗产核心区与米拉奇高山流域。全面测绘抢救性记录易损帖木儿彩陶、神圣金石书法石刻、古建筑木雕及民间手工艺作坊。">Navigated 20 researchers across Shakhrisabz's UNESCO core and Miraki alpine river basins. Documented fragile majolica glazed tiles, sacred epigraphic drum inscriptions, traditional woodcarvings, and local craft bazaar economies.</p>
-          </div>
-        </div>
-
-        <div class="method-card">
-          <div>
-            <div class="method-step">Phase 03 • 阶段三</div>
-            <div class="method-title" data-en="Open Repository Ingestion" data-zh="全球开放知识库建档">Open Repository Ingestion</div>
-            <p class="method-desc" data-en="Curated and uploaded over 500 high-resolution photographic assets with trilingual metadata (English, Uzbek, Russian) to Wikimedia Commons under CC BY-SA 4.0, directly bridging Shakhrisabz's digital presence gap on global knowledge platforms." data-zh="筛选清洗500余份超高清影像资产，附带详尽英、乌、俄三语金石释读与建筑分类元数据，全部以CC BY-SA 4.0协议并入维基共享资源，彻底扭转家乡遗产数字空白。">Curated and uploaded over 500 high-resolution photographic assets with trilingual metadata (English, Uzbek, Russian) to Wikimedia Commons under CC BY-SA 4.0, directly bridging Shakhrisabz's digital presence gap on global knowledge platforms.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 04. Open Archive Access & Verified Records -->
-    <section id="repository" style="border-bottom: none;">
-      <span class="section-num">04. Open Archive Access & Verification</span>
-      <h2 class="section-head" data-en="Open Repositories & Expedition Records" data-zh="开放数据档案与官方核验记录">Open Repositories & Expedition Records</h2>
-      <p class="section-subhead" data-en="Access the full collection of primary expedition assets, raw photography, video footage, and source documentation for the 2026 International Youth Forum selection committee." data-zh="供2026国际青年论坛组委会与全球学者查阅原版实地考察影像、高清原图档案、纪录片视频及开源项目代码。">Access the full collection of primary expedition assets, raw photography, video footage, and source documentation for the 2026 International Youth Forum selection committee.</p>
-
-      <div class="repo-grid">
-        
-        <a href="https://drive.google.com/drive/folders/1K3RvsLEyfbvJ43XBmaADTeci2cPU1I_-?usp=sharing" target="_blank" class="repo-card">
-          <div>
-            <div class="repo-label" data-en="Raw Digital Archive" data-zh="云端原始数字归档">Raw Digital Archive</div>
-            <div class="repo-name">Google Drive Repository ↗</div>
-            <div class="repo-desc" data-en="Complete archive of full-resolution original expedition photographs and documentary video assets." data-zh="完整收录实地考察超高清原图、无损影像及现场纪录片视频资源。">Complete archive of full-resolution original expedition photographs and documentary video assets.</div>
-          </div>
-        </a>
-
-        <a href="https://github.com/alisher-ds/shakhrisabz-heritage" target="_blank" class="repo-card">
-          <div>
-            <div class="repo-label" data-en="Open Source Code" data-zh="开源代码仓">Open Source Code</div>
-            <div class="repo-name">GitHub Repository @alisher-ds ↗</div>
-            <div class="repo-desc" data-en="Public repository housing the bilingual archive interface, metadata, and asset pipeline." data-zh="托管双语展示档案界面、结构化元数据与静态部署管线的开源仓库。">Public repository housing the bilingual archive interface, metadata, and asset pipeline.</div>
-          </div>
-        </a>
-
-        <a href="https://alisher-ds.github.io/shakhrisabz-heritage/" target="_blank" class="repo-card">
-          <div>
-            <div class="repo-label" data-en="Live Production" data-zh="全球在线节点">Live Production</div>
-            <div class="repo-name">GitHub Pages Web App ↗</div>
-            <div class="repo-desc" data-en="Globally accessible, CDN-free lightweight bilingual static deployment for international evaluation." data-zh="轻量无外部依赖、全球高速加载的双语实地遗产档案网络呈现平台。">Globally accessible, CDN-free lightweight bilingual static deployment for international evaluation.</div>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- Project Attribution & Verification Box -->
-      <div class="attribution-box">
-        <div class="attribution-left">
-          <strong data-en="Project Attribution:" data-zh="项目归属与统筹：">Project Attribution:</strong>
-          <span data-en="Organized and Curated by Alisher Tuychiev (Kashkadarya Regional Program Lead, Wikimedia Foundation Grantee)." data-zh="由阿利舍尔·图伊奇耶夫（Alisher Tuychiev，维基媒体基金会资助项目负责人）统筹组织与主持策展。">Organized and Curated by Alisher Tuychiev (Kashkadarya Regional Program Lead, Wikimedia Foundation Grantee).</span>
-        </div>
+    <section id="gallery" class="showcase-section">
+      <div class="section-header-bar">
         <div>
-          <span data-en="Direct Verification Contact:" data-zh="官方联络邮箱：">Direct Verification Contact:</span>
-          <strong><a href="mailto:alishertuuchiyev@gmail.com" style="color: var(--accent); text-decoration: underline;">alishertuuchiyev@gmail.com</a></strong>
+          <h2 class="section-title" data-en="Curated Photographic Exhibition" data-zh="实地特展影像选集">Curated Photographic Exhibition</h2>
+          <p class="section-subtitle" data-en="Click any photo to view in high resolution with architectural and cultural epigraphy notes." data-zh="点击任意照片可全屏查看超清细节及古建筑与金石题铭解说。">Click any photo to view in high resolution with architectural and cultural epigraphy notes.</p>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+          <button class="filter-btn" onclick="filterGallery('monument')">Monuments</button>
+          <button class="filter-btn" onclick="filterGallery('craft')">Crafts & Bazaars</button>
+          <button class="filter-btn" onclick="filterGallery('landscape')">Landscape</button>
+          <button class="filter-btn" onclick="filterGallery('team')">Expedition Team</button>
         </div>
       </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- 01: Ak-Saray Palace Tower -->
+        <div class="photo-card" data-cat="monument" onclick="openModal('assets/Oqsaroy yon tarafi.png', 'Ak-Saray Palace Tower Pylon & Kufic Majolica', 'The colossal 14th-century pylon tower of Amir Timur\'s grand palace rising into the clear autumn sky, adorned with geometric Kufic script baked in lapis lazuli glaze.', '阿克萨莱宫巨塔遗址与库法体青蓝彩陶', '耸入秋空的14世纪帖木儿帝国夏宫巨塔，砖筑立面上嵌有精美几何库法体青蓝彩陶长铭。')">
+          <div class="photo-media">
+            <img src="assets/Oqsaroy yon tarafi.png" alt="Ak-Saray Palace" loading="lazy">
+            <span class="photo-overlay">14th Century</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Ak-Saray Palace: Monumental Tower" data-zh="阿克萨莱宫：巍峨巨塔遗迹">Ak-Saray Palace: Monumental Tower</h3>
+            <p class="photo-caption" data-en="600-year-old Timurid baked brick and lapis glaze standing among evergreen pines." data-zh="经历六百年风雨的帖木儿青蓝彩釉砖体与周遭翠柏相得益彰。">600-year-old Timurid baked brick and lapis glaze standing among evergreen pines.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02: Kok Gumbaz Calligraphic Drum -->
+        <div class="photo-card" data-cat="monument" onclick="openModal('assets/Masjid bitiklari.png', 'Kok Gumbaz Mosque: Sacred Calligraphic Drum', 'Commissioned in 1435 by astronomer-king Mirzo Ulugbek. The drum displays monumental glazed calligraphy: Al-Mulk Lillah (Sovereignty belongs to God).', '阔克穹顶清真寺：神圣书法金石圆鼓', '由著名天文学家兼统治者兀鲁伯于公元1435年修建，巨大圆鼓上饰有经典班奈体青瓷铭文：“王权属于真主”。')">
+          <div class="photo-media">
+            <img src="assets/Masjid bitiklari.png" alt="Kok Gumbaz Mosque" loading="lazy">
+            <span class="photo-overlay">1435 CE</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Kok Gumbaz Mosque: Epigraphic Drum" data-zh="阔克穹顶清真寺：书法圆鼓">Kok Gumbaz Mosque: Epigraphic Drum</h3>
+            <p class="photo-caption" data-en="Monumental turquoise dome and Banna'i script calligraphy overlooking the courtyard." data-zh="雄伟的青绿色穹顶与班奈体伊斯兰建筑书法典范。">Monumental turquoise dome and Banna'i script calligraphy overlooking the courtyard.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03: Dorut-Tilovat Sarcophagi -->
+        <div class="photo-card" data-cat="monument" onclick="openModal('assets/Dorut tilovati majmuasidagi qabrlar.png', 'Dorut-Tilovat Memorial Crypt & Sarcophagi', 'Morning sunlight streaming through an arched wooden lattice window across relief-carved marble sarcophagi of the Sufi masters in the Dorut-Tilovat complex (14th century).', '多鲁特-提洛瓦特纪念陵寝石棺群', '自然阳光透过木雕透光格窗倾泻于刻满苏鲁斯体阿拉伯铭文的帖木儿时期大理石棺之上，背景为古朴的六边形青瓷护壁。')">
+          <div class="photo-media">
+            <img src="assets/Dorut tilovati majmuasidagi qabrlar.png" alt="Dorut-Tilovat Sarcophagi" loading="lazy">
+            <span class="photo-overlay">Sufi Crypt</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Dorut-Tilovat: Sufi Sarcophagi" data-zh="多鲁特-提洛瓦特：苏菲宗师石棺">Dorut-Tilovat: Sufi Sarcophagi</h3>
+            <p class="photo-caption" data-en="Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays." data-zh="镌刻古代苏鲁斯阿拉伯书法的纯白大理石棺，在晨曦透窗间静穆陈列。">Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04: Wood Carving -->
+        <div class="photo-card" data-cat="craft" onclick="openModal('assets/yib yozilgan naxshlar.png', 'Hand-Carved Walnut Column & Muqarnas', 'Detailed macro photograph showing deep traditional Islimiy floral scrollwork carved into aged elm timber with painted polychrome ceiling beams.', '传统胡桃木雕立柱与钟乳式柱头', '微距呈现中亚传统深雕木工艺，清晰展现伊斯利米卷草纹、钟乳体柱头与梁木彩绘。')">
+          <div class="photo-media">
+            <img src="assets/yib yozilgan naxshlar.png" alt="Carved Walnut Pillar" loading="lazy">
+            <span class="photo-overlay">Woodcarving</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Carved Walnut Pillar & Polychrome Vassa" data-zh="传统手工雕刻立柱与彩绘藻井">Carved Walnut Pillar & Polychrome Vassa</h3>
+            <p class="photo-caption" data-en="Centuries-old Uzbek woodcarving preserving delicate floral patterns." data-zh="流传数百年的乌兹别克传统木雕艺术，完好保存典雅的花草卷草纹饰。">Centuries-old Uzbek woodcarving preserving delicate floral patterns.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05: Old Quarter Mosque -->
+        <div class="photo-card" data-cat="monument" onclick="openModal('assets/Shaxrisabz Eski masjidi.png', 'Historic Quarter Mosque & Vernacular Courtyard', 'A preserved neighborhood mosque in old Shakhrisabz featuring vernacular timber colonnades, open iwans, and tranquil courtyards serving local religious life.', '老城传统社区清真寺与庭院', '沙赫里萨布兹古城区保存完好的特色社区清真寺，兼具传统木柱廊、开敞伊旺式殿堂与静谧庭院。')">
+          <div class="photo-media">
+            <img src="assets/Shaxrisabz Eski masjidi.png" alt="Old Mosque" loading="lazy">
+            <span class="photo-overlay">Historic Old Town</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Historic Quarter Mosque & Iwan" data-zh="老城传统社区清真寺与木构伊旺">Historic Quarter Mosque & Iwan</h3>
+            <p class="photo-caption" data-en="Vernacular architectural harmony integrating timber craftsmanship with community space." data-zh="将传统木构营造与社区公共空间紧密结合的原生态历史风貌。">Vernacular architectural harmony integrating timber craftsmanship with community space.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06: Ancient Mosque -->
+        <div class="photo-card" data-cat="monument" onclick="openModal('assets/Qadimiy masjid.png', 'Ancient Shakhrisabz Sanctuary', 'Archaeological and architectural views of Shakhrisabz\'s earliest surviving brickwork and vaulted prayer niches.', '沙赫里萨布兹古圣殿砖拱遗构', '展示早期丝路砖筑营造与穹顶圣龛的原真历史形态。')">
+          <div class="photo-media">
+            <img src="assets/Qadimiy masjid.png" alt="Ancient Mosque" loading="lazy">
+            <span class="photo-overlay">Sanctuary</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Ancient Brickwork & Prayer Vaults" data-zh="古砖构圣龛与拱顶遗存">Ancient Brickwork & Prayer Vaults</h3>
+            <p class="photo-caption" data-en="Early Islamic structural masonry demonstrating vernacular construction methods." data-zh="生动展现早期丝绸之路中亚本土建筑砖砌结构与营造智慧。">Early Islamic structural masonry demonstrating vernacular construction methods.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07: Chorsu Bazaar -->
+        <div class="photo-card" data-cat="craft" onclick="openModal('assets/Shahrisabz Chorsu majmuasi.png', 'Chorsu Bazaar Arcade Dome (16th Century)', 'The crossroad dome bazaar of Shakhrisabz featuring pointed brick vaults and carved cedar doors, framed naturally by autumn foliage.', '恰尔苏十字拱顶商市（16世纪）', '十字路口古商栈的尖拱砖筑门廊与传统精雕木门，秋季黄叶掩映成趣。')">
+          <div class="photo-media">
+            <img src="assets/Shahrisabz Chorsu majmuasi.png" alt="Chorsu Bazaar" loading="lazy">
+            <span class="photo-overlay">16th Century</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Chorsu Bazaar: Crossroad Vault" data-zh="恰尔苏集市：16世纪贸易枢纽">Chorsu Bazaar: Crossroad Vault</h3>
+            <p class="photo-caption" data-en="Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz." data-zh="沙赫里萨布兹古代交通要冲处的特色圆顶商业建筑遗存。">Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08: Folk Textiles -->
+        <div class="photo-card" data-cat="craft" onclick="openModal('assets/Milliylik aks etgan bozorlari.png', 'Shakhrisabz Folk Textiles: Iroqi Cross-Stitch', 'Traditional market display of handmade Iroqi skullcaps, embroidered accessories, Suzani wall hangings, and natural-dyed silk ikat.', '传统民间工艺巴扎：伊拉克十字绣与丝绸', '生动展现手工伊拉克式花帽、十字绣织锦袋、苏扎尼刺绣以及艾德莱斯丝绸等传统女红技艺。')">
+          <div class="photo-media">
+            <img src="assets/Milliylik aks etgan bozorlari.png" alt="Folk Textiles" loading="lazy">
+            <span class="photo-overlay">Folk Craft</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Living Bazaar Traditions & Iroqi Embroidery" data-zh="活态集市传统与沙赫里萨布兹刺绣">Living Bazaar Traditions & Iroqi Embroidery</h3>
+            <p class="photo-caption" data-en="Intangible cultural heritage preserved by local craftswomen across Silk Road stalls." data-zh="丝路古集市摊位上由当地手工艺妇女传承至今的非物质文化遗产。">Intangible cultural heritage preserved by local craftswomen across Silk Road stalls.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 09: Tarixiy Tosh -->
+        <div class="photo-card" data-cat="monument" onclick="openModal('assets/Shaxrisabzdagi Tarixiy Tosh.png', 'Timurid Epigraphic Stone Monument', 'Centuries-old carved stone monument bearing classical Arabic epigraphy and ornamental arabesques, standing as archaeological testament to Timurid lapidary arts.', '帖木儿时期石刻铭文古迹', '雕琢有古典阿拉伯铭文与华美几何回纹的古代石碑，见证古代丝路石雕石刻技艺的高超水准。')">
+          <div class="photo-media">
+            <img src="assets/Shaxrisabzdagi Tarixiy Tosh.png" alt="Historic Stone" loading="lazy">
+            <span class="photo-overlay">Lapidary</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Ancient Epigraphic Stele & Ornamental Stone" data-zh="古代石刻题铭石碑与石雕艺术">Ancient Epigraphic Stele & Ornamental Stone</h3>
+            <p class="photo-caption" data-en="Archaeological stone artifacts testifying to early Silk Road epigraphy." data-zh="记录早期丝绸之路金石学与石刻书法艺术的珍贵实物见证。">Archaeological stone artifacts testifying to early Silk Road epigraphy.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10: Oqsuv Glacial Stream -->
+        <div class="photo-card" data-cat="landscape" onclick="openModal('assets/Mirakidagi Oqsuv kanal.png', 'Oqsuv Alpine Stream, Miraki', 'Rushing glacial waters flowing over mountain boulders, feeding the Shakhrisabz oasis amidst autumn poplar woodlands.', '米拉奇奥克苏高山急流', '帕米尔-阿赖山系融雪汇成的急流穿行于河卵石间，千百年来滋润着沙赫里萨布兹绿洲。')">
+          <div class="photo-media">
+            <img src="assets/Mirakidagi Oqsuv kanal.png" alt="Oqsuv Alpine Stream" loading="lazy">
+            <span class="photo-overlay">Alpine River</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Oqsuv Alpine Stream & Riverine Oasis" data-zh="奥克苏山涧急流与绿洲水系">Oqsuv Alpine Stream & Riverine Oasis</h3>
+            <p class="photo-caption" data-en="The lifeline mountain river sustaining rural heritage near Hisorak reservoir." data-zh="维系希索拉克水库附近乡村农业与人文生态的高山水源。">The lifeline mountain river sustaining rural heritage near Hisorak reservoir.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11: Miraki Autumn Woodland -->
+        <div class="photo-card" data-cat="landscape" onclick="openModal('assets/Miraki tabiati kuzda.png', 'Autumn Mountain Landscape in Miraki', 'Vibrant golden poplar trees and mountain groves surrounding rural settlements in the Shakhrisabz highlands, capturing the seasonal Silk Road environment.', '米拉奇秋日金黄山林风貌', '沙赫里萨布兹高地山麓间金黄绚烂的杨树林与村落，展现古老丝路绿洲的自然生态环境。')">
+          <div class="photo-media">
+            <img src="assets/Miraki tabiati kuzda.png" alt="Autumn in Miraki" loading="lazy">
+            <span class="photo-overlay">Highlands</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Miraki Highlands & Autumn Poplar Groves" data-zh="米拉奇高地与金秋白杨林">Miraki Highlands & Autumn Poplar Groves</h3>
+            <p class="photo-caption" data-en="The environmental landscape framing cultural memory in Southern Uzbekistan." data-zh="构成乌兹别克斯坦南部文化历史记忆的壮丽山川生态背景。">The environmental landscape framing cultural memory in Southern Uzbekistan. </p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12: Miraki Park Landscape -->
+        <div class="photo-card" data-cat="landscape" onclick="openModal('assets/Miraki- Yashil sayilgoh.png', 'Miraki Alpine Valley Grove', 'Pristine mountain foothills, crystal riverbeds, and golden autumn foliage framing ancient Silk Road mountain trails.', '米拉奇高山河谷幽境', '原生态山麓、清澈河床与金秋山色勾勒出古丝绸之路山地通道风貌。')">
+          <div class="photo-media">
+            <img src="assets/Miraki- Yashil sayilgoh.png" alt="Miraki Green Grove" loading="lazy">
+            <span class="photo-overlay">Mountain Trail</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Miraki Alpine Valley & Riverbed" data-zh="米拉奇高山峡谷与清澈河滩">Miraki Alpine Valley & Riverbed</h3>
+            <p class="photo-caption" data-en="The natural setting through which historic traders traveled between Kashkadarya and Samarkand." data-zh="连接卡什卡达里亚与撒马尔罕之间古商贾穿行的高山峡谷自然风貌。">The natural setting through which historic traders traveled between Kashkadarya and Samarkand.</p>
+            <div class="photo-footer">
+              <span>Photo: <strong>Alisher Tuychiev</strong></span>
+              <span>CC BY-SA 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13: Team at Amir Temur / Ak-Saray -->
+        <div class="photo-card" data-cat="team" onclick="openModal('assets/Jamoaviy oqsaroyda.jpg', 'Youth Delegation at Amir Temur Monument', 'The 20 competitively selected delegates standing on the granite steps of the Amir Temur monument with Ak-Saray Palace ruins in the backdrop.', '青年代表团于帖木儿青铜像前合影', '20位选拔出的青年代表齐聚帖木儿纪念像台阶前，身后矗立着雄伟的阿克萨莱宫古迹。')">
+          <div class="photo-media">
+            <img src="assets/Jamoaviy oqsaroyda.jpg" alt="Team at Ak-Saray" loading="lazy">
+            <span class="photo-overlay">Expedition Cohort</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="The 20 Youth Stewards at Amir Temur's Citadel" data-zh="青年守护者齐聚帖木儿故城前">The 20 Youth Stewards at Amir Temur's Citadel</h3>
+            <p class="photo-caption" data-en="Field documentation cohort at the Historic Centre of Shakhrisabz." data-zh="实地考察团队于沙赫里萨布兹历史中心开展系统性建档。">Field documentation cohort at the Historic Centre of Shakhrisabz.</p>
+            <div class="photo-footer">
+              <span>Coordinated by: <strong>Alisher Tuychiev</strong></span>
+              <span>Wikimedia Project</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14: Team in Miraki River Valley -->
+        <div class="photo-card" data-cat="team" onclick="openModal('assets/Jamoaviy Mirakida.jpg', 'Youth Cohort in Miraki River Valley', 'The documentation crew taking field measurements and conducting environmental photographic surveys along the mountain waters of Miraki.', '考察队于米拉奇河谷开展生态与地理调研', '青年考察团队深入米拉奇山区河谷，实地测绘与记录绿洲水源地人文生态环境。')">
+          <div class="photo-media">
+            <img src="assets/Jamoaviy Mirakida.jpg" alt="Team in Miraki" loading="lazy">
+            <span class="photo-overlay">Fieldwork</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Environmental Survey in Miraki Highlands" data-zh="米拉奇流域生态与文化景观勘查">Environmental Survey in Miraki Highlands</h3>
+            <p class="photo-caption" data-en="Extending heritage documentation beyond city walls to surrounding water lifelines." data-zh="将文化遗产记录视野从城垣古迹延伸至孕育绿洲的高山水源流域。">Extending heritage documentation beyond city walls to surrounding water lifelines.</p>
+            <div class="photo-footer">
+              <span>Coordinated by: <strong>Alisher Tuychiev</strong></span>
+              <span>Wikimedia Project</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15: Delegation Portrait -->
+        <div class="photo-card" data-cat="team" onclick="openModal('assets/Jamoaviy asosiy.jpg', 'Full Expedition Cohort & Program Leadership', 'Official gathering of the youth delegates, photographers, and peer mentors after concluding on-site archival documentation.', '考察结营全体青年代表与导师合影', '圆满完成沙赫里萨布兹全流程数字化拍摄建档后，全体考察团青年代表合影留念。')">
+          <div class="photo-media">
+            <img src="assets/Jamoaviy asosiy.jpg" alt="Expedition Delegation" loading="lazy">
+            <span class="photo-overlay">Delegation</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title" data-en="Official Expedition Delegation & Peer Cohort" data-zh="考察项目全体代表团合影">Official Expedition Delegation & Peer Cohort</h3>
+            <p class="photo-caption" data-en="Concluded 100% of photographic field milestones across the Silk Road corridor." data-zh="圆满完成丝路古城各项既定摄影建档目标任务。">Concluded 100% of photographic field milestones across the Silk Road corridor.</p>
+            <div class="photo-footer">
+              <span>Coordinated by: <strong>Alisher Tuychiev</strong></span>
+              <span>Wikimedia Project</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
+
+    <!-- Raw Drive Download Bar -->
+    <div class="archive-bar">
+      <div class="archive-bar-info">
+        <strong data-en="Looking for Raw High-Resolution Files & 4K Video?" data-zh="需要查阅超清原图与4K原片档案？">Looking for Raw High-Resolution Files & 4K Video?</strong>
+        <span data-en="Access the official Google Drive archive with all 500+ uncompressed camera assets and field recordings." data-zh="点击直达官方Google Drive云盘，查阅500余份无损相机原片与完整视频素材。">Access the official Google Drive archive with all 500+ uncompressed camera assets and field recordings.</span>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1K3RvsLEyfbvJ43XBmaADTeci2cPU1I_-?usp=sharing" target="_blank" class="drive-download-btn" data-en="Open Google Drive Repository ↗" data-zh="打开 Google Drive 原始云盘 ↗">
+        Open Google Drive Repository ↗
+      </a>
+    </div>
 
     <!-- Footer -->
     <footer>
       <div>
-        <strong>Shakhrisabz Cultural Heritage Archive</strong> • An Open Silk Road Preservation Initiative
+        <strong>Shakhrisabz Cultural Heritage Archive</strong> • Documented by Alisher Tuychiev
       </div>
-      <div>
-        <span>Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</span>
+      <div style="margin-top: 6px;">
+        <span>Supported by the Wikimedia Foundation • Licensed under Creative Commons (CC BY-SA 4.0)</span>
       </div>
     </footer>
 
@@ -867,16 +897,16 @@
   <!-- Modal Lightbox -->
   <div class="modal" id="modal" onclick="closeModal()">
     <span class="modal-close">&times;</span>
-    <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-container" onclick="event.stopPropagation()">
       <img id="mImg" src="" alt="Enlarged view">
-      <div class="modal-caption">
+      <div class="modal-info">
         <div class="modal-title" id="mTitle"></div>
         <div class="modal-desc" id="mDesc"></div>
       </div>
     </div>
   </div>
 
-  <!-- Script for Language Switcher & Modal -->
+  <!-- JavaScript for Language, Modal & Category Filter -->
   <script>
     let currentLang = 'en';
 
@@ -911,6 +941,21 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeModal();
     });
+
+    function filterGallery(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent.toLowerCase() === 'all'));
+      });
+
+      const cards = document.querySelectorAll('.photo-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
   </script>
 
 </body>
