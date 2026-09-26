@@ -20,11 +20,11 @@ export function initAiDocent() {
       }
     },
     {
-      keywords: ["aksaray", "oqsaroy", "palace", "1404", "clavijo", "arch", "qasr", "height", "白宫", "阿克萨赖"],
+      keywords: ["aksaray", "oqsaroy", "palace", "1404", "clavijo", "arch", "qasr", "height", "白宫", "阿克萨赖", "1975", "2025", "50"],
       response: {
-        en: "Ak-Saray Palace was commissioned by Amir Temur in 1380. Spanish envoy Ruy González de Clavijo recorded in 1404 that its monumental gateway soared over 70 meters high with a 22.5m arch span. Today, only the 38-meter twin pylons remain, which our AI Restoration model has reconstructed using historical blueprints and geometric tile data.",
-        zh: "阿克萨赖宫建于1380年。西班牙使节克拉维约于1404年记载其巍峨的拱门高逾70米，跨度达22.5米。如今仅存38米高的双塔遗址，我们的AI复原模型结合了历史文献和几何釉砖数据，精确再现了其昔日光辉。",
-        uz: "Oqsaroy qurilishi 1380-yilda Amir Temur tomonidan boshlangan. 1404-yilda Ispan elchisi Klavixo uning peshtoqi 70 metrdan baland, ravog'i 22.5 metr ekanligini yozgan. Bugungi kunda uning 38 metrli ikki ustuni saqlanib qolgan bo'lib, biz AI modeli orqali uning asl qiyofasini qayta tikladik."
+        en: "Ak-Saray Palace was commissioned by Amir Temur in 1380. Spanish envoy Ruy González de Clavijo recorded in 1404 that its monumental gateway soared over 70 meters high with a 22.5m arch span. Today, only the 38-meter twin pylons remain. Our 50-Year Transformation module compares 1975 archival surveys with our 2025 expedition, analyzing brick consolidation and UNESCO conservation ethics.",
+        zh: "阿克萨赖宫始建于1380年。西班牙使节克拉维约于1404年记载其巍峨的拱门高逾70米，跨度达22.5米。如今仅存38米高的双塔遗址。我们的50年变迁对比模块将1975年历史档案与2025年考察进行了科学对照，深入解析了砖砌加固工程与遗产保护伦理。",
+        uz: "Oqsaroy qurilishi 1380-yilda Amir Temur tomonidan boshlangan. 1404-yilda Ispan elchisi Klavixo uning peshtoqi 70 metrdan baland, ravog'i 22.5 metr ekanligini yozgan. Bugungi kunda uning 38 metrli ikki ustuni saqlangan bo'lib, bizning 50 yillik qiyosiy tahlilimiz 1975 va 2025-yillardagi o'zgarishlar hamda restavratsiya jarayonlarini ko'rsatib beradi."
       }
     },
     {
@@ -65,9 +65,9 @@ export function initAiDocent() {
 
     // Default response
     const defaults = {
-      en: "Thank you for exploring the Shakhrisabz Cultural Heritage Archive. Feel free to ask about our Wikimedia expedition, Ak-Saray's 1404 AI reconstruction, UNESCO World Heritage #885, or the Silk Road connection to Changsha & Nanjing!",
-      zh: "感谢您探索沙赫里萨布兹文化遗产档案。欢迎向我询问关于维基考察、阿克萨赖宫1404年AI复原、联合国教科文组织第885号遗产，或是连接长沙与南京的丝路历史纽带！",
-      uz: "Shahrisabz madaniy merosi arxiviga xush kelibsiz! Menga Vikimedia ekspeditsiyamiz, Oqsaroyning 1404-yildagi AI rekonstruksiyasi, YUNESKO #885 merosi yoki Changsha va Nanjingga bog'langan Ipak yo'li haqida savol berishingiz mumkin!"
+      en: "Thank you for exploring the Shakhrisabz Cultural Heritage Archive. Feel free to ask about our Wikimedia expedition, Ak-Saray's 50-year transformation (1975 vs 2025), UNESCO World Heritage #885, or the Silk Road connection to Changsha & Nanjing!",
+      zh: "感谢您探索沙赫里萨布兹文化遗产档案。欢迎向我询问关于维基考察、阿克萨赖宫50年变迁对比（1975与2025）、联合国教科文组织第885号遗产，或是连接长沙与南京的丝路历史纽带！",
+      uz: "Shahrisabz madaniy merosi arxiviga xush kelibsiz! Menga Vikimedia ekspeditsiyamiz, Oqsaroyning 50 yillik o'zgarishi (1975 vs 2025), YUNESKO #885 merosi yoki Changsha va Nanjingga bog'langan Ipak yo'li haqida savol berishingiz mumkin!"
     };
     return defaults[lang] || defaults.en;
   }
