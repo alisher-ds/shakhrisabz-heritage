@@ -1,0 +1,446 @@
+[
+  {
+    "id": 1,
+    "category": "monument",
+    "image": "assets/Oqsaroy yon tarafi.png",
+    "badge": {
+      "en": "14th Century",
+      "zh": "14世纪",
+      "uz": "14-asr"
+    },
+    "tag": {
+      "en": "Timurid Architecture",
+      "zh": "帖木儿建筑",
+      "uz": "Temuriylar Me'morchiligi"
+    },
+    "title": {
+      "en": "Ak-Saray Palace: Monumental Tower",
+      "zh": "阿克萨莱宫：巍峨巨塔遗迹",
+      "uz": "Oqsaroy: Ulkan Minora Xarobasi"
+    },
+    "caption": {
+      "en": "600-year-old Timurid baked brick and lapis glaze standing among evergreen pines.",
+      "zh": "经历六百年风雨的帖木儿青蓝彩釉砖体与周遭翠柏相得益彰。",
+      "uz": "600 yillik Temuriylar pishiq g'ishti va lojuvard koshinlar yashil qarag'aylar orasida yuksalib turibdi."
+    },
+    "modal": {
+      "title": {
+        "en": "Ak-Saray Palace: Monumental Tower",
+        "zh": "阿克萨莱宫：巍峨巨塔遗迹",
+        "uz": "Oqsaroy: Ulkan Minora Xarobasi"
+      },
+      "description": {
+        "en": "600-year-old Timurid baked brick and lapis glaze standing among evergreen pines.",
+        "zh": "经历六百年风雨的帖木儿青蓝彩釉砖体与周遭翠柏相得益彰。",
+        "uz": "600 yillik Temuriylar pishiq g'ishti va lojuvard koshinlar yashil qarag'aylar orasida yuksalib turibdi."
+      }
+    }
+  },
+  {
+    "id": 2,
+    "category": "monument",
+    "image": "assets/Masjid bitiklari.png",
+    "badge": {
+      "en": "1435 CE",
+      "zh": "1435年",
+      "uz": "1435-yil"
+    },
+    "tag": {
+      "en": "Epigraphy",
+      "zh": "铭文金石",
+      "uz": "Epigrafika"
+    },
+    "title": {
+      "en": "Kok Gumbaz Mosque: Epigraphic Drum",
+      "zh": "阔克穹顶清真寺：书法圆鼓",
+      "uz": "Ko'k Gumbaz Masjidi: Xattotlik Barabani"
+    },
+    "caption": {
+      "en": "Monumental turquoise dome and Banna'i script calligraphy overlooking the courtyard.",
+      "zh": "雄伟的青绿色穹顶与班奈体伊斯兰建筑书法典范。",
+      "uz": "Muazzam feruza gumbaz va binoyi xatidagi moviy koshinkor xattotlik."
+    },
+    "modal": {
+      "title": {
+        "en": "Kok Gumbaz Mosque: Epigraphic Drum",
+        "zh": "阔克穹顶清真寺：书法圆鼓",
+        "uz": "Ko'k Gumbaz Masjidi: Xattotlik Barabani"
+      },
+      "description": {
+        "en": "Monumental turquoise dome and Banna'i script calligraphy overlooking the courtyard.",
+        "zh": "雄伟的青绿色穹顶与班奈体伊斯兰建筑书法典范。",
+        "uz": "Muazzam feruza gumbaz va binoyi xatidagi moviy koshinkor xattotlik."
+      }
+    }
+  },
+  {
+    "id": 3,
+    "category": "monument",
+    "image": "assets/Dorut tilovati majmuasidagi qabrlar.png",
+    "badge": {
+      "en": "Sufi Crypt",
+      "zh": "苏菲陵寝",
+      "uz": "Tasavvuf Sag'anasi"
+    },
+    "tag": {
+      "en": "Marble Epigraphy",
+      "zh": "大理石铭文",
+      "uz": "Marmar Epigrafika"
+    },
+    "title": {
+      "en": "Dorut-Tilovat: Sufi Sarcophagi",
+      "zh": "多鲁特-提洛瓦特：苏菲宗师石棺",
+      "uz": "Dorut-Tilovat: Tasavvuf Sag'analari"
+    },
+    "caption": {
+      "en": "Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays.",
+      "zh": "镌刻古代苏鲁斯阿拉伯书法的纯白大理石棺，在晨曦透窗间静穆陈列。",
+      "uz": "Suls xatidagi arabiy bitiklar bilan naqshlangan oq marmar sag'analar."
+    },
+    "modal": {
+      "title": {
+        "en": "Dorut-Tilovat: Sufi Sarcophagi",
+        "zh": "多鲁特-提洛瓦特：苏菲宗师石棺",
+        "uz": "Dorut-Tilovat: Tasavvuf Sag'analari"
+      },
+      "description": {
+        "en": "Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays.",
+        "zh": "镌刻古代苏鲁斯阿拉伯书法的纯白大理石棺，在晨曦透窗间静穆陈列。",
+        "uz": "Suls xatidagi arabiy bitiklar bilan naqshlangan oq marmar sag'analar."
+      }
+    }
+  },
+  {
+    "id": 4,
+    "category": "craft",
+    "image": "assets/Oyib yozilgan naxshlar.png",
+    "badge": {
+      "en": "Woodcarving",
+      "zh": "传统木雕",
+      "uz": "Yog'och O'ymakorligi"
+    },
+    "tag": {
+      "en": "Intangible Heritage",
+      "zh": "非遗手工艺",
+      "uz": "Nomoddiy Meros"
+    },
+    "title": {
+      "en": "Carved Walnut Pillar & Polychrome Vassa",
+      "zh": "传统手工雕刻立柱与彩绘藻井",
+      "uz": "O'ymakor Yog'och Ustun va Bo'yalgan Vassa"
+    },
+    "caption": {
+      "en": "Centuries-old Uzbek woodcarving preserving delicate floral patterns.",
+      "zh": "流传数百年的乌兹别克传统木雕艺术，完好保存典雅的花草卷草纹饰。",
+      "uz": "Nozik islimiy naqshlarni asrlar osha saqlab kelayotgan o'zbek milliy yog'och o'ymakorligi."
+    },
+    "modal": {
+      "title": {
+        "en": "Carved Walnut Pillar & Polychrome Vassa",
+        "zh": "传统手工雕刻立柱与彩绘藻井",
+        "uz": "O'ymakor Yog'och Ustun va Bo'yalgan Vassa"
+      },
+      "description": {
+        "en": "Centuries-old Uzbek woodcarving preserving delicate floral patterns.",
+        "zh": "流传数百年的乌兹别克传统木雕艺术，完好保存典雅的花草卷草纹饰。",
+        "uz": "Nozik islimiy naqshlarni asrlar osha saqlab kelayotgan o'zbek milliy yog'och o'ymakorligi."
+      }
+    }
+  },
+  {
+    "id": 5,
+    "category": "monument",
+    "image": "assets/Shaxrisabz Eski masjidi.png",
+    "badge": {
+      "en": "Historic Quarter",
+      "zh": "老城历史街区",
+      "uz": "Tarixiy Guzar"
+    },
+    "tag": {
+      "en": "Vernacular Architecture",
+      "zh": "传统民间建筑",
+      "uz": "An'anaviy Me'morchilik"
+    },
+    "title": {
+      "en": "Historic Quarter Mosque & Iwan",
+      "zh": "老城传统社区清真寺与木构伊旺",
+      "uz": "Tarixiy Guzar Masjidi va Ayvon"
+    },
+    "caption": {
+      "en": "Vernacular architectural harmony integrating timber craftsmanship with community space.",
+      "zh": "将传统木构营造与社区公共空间紧密结合的原生态历史风貌。",
+      "uz": "Yog'ochsozlik mahorati va jamoat maskani uyg'unlashgan an'anaviy me'morchilik namunasi."
+    },
+    "modal": {
+      "title": {
+        "en": "Historic Quarter Mosque & Iwan",
+        "zh": "老城传统社区清真寺与木构伊旺",
+        "uz": "Tarixiy Guzar Masjidi va Ayvon"
+      },
+      "description": {
+        "en": "Vernacular architectural harmony integrating timber craftsmanship with community space.",
+        "zh": "将传统木构营造与社区公共空间紧密结合的原生态历史风貌。",
+        "uz": "Yog'ochsozlik mahorati va jamoat maskani uyg'unlashgan an'anaviy me'morchilik namunasi."
+      }
+    }
+  },
+  {
+    "id": 6,
+    "category": "monument",
+    "image": "assets/Qadimiy masjid.png",
+    "badge": {
+      "en": "Sanctuary",
+      "zh": "古圣殿",
+      "uz": "Namozgoh"
+    },
+    "tag": {
+      "en": "Archaeology",
+      "zh": "考古遗存",
+      "uz": "Arxeologiya"
+    },
+    "title": {
+      "en": "Ancient Brickwork & Prayer Vaults",
+      "zh": "古砖构圣龛与拱顶遗存",
+      "uz": "Qadimiy G'ishtin Ravoqlar va Mehrob"
+    },
+    "caption": {
+      "en": "Early Islamic structural masonry demonstrating vernacular construction methods.",
+      "zh": "生动展现早期丝绸之路中亚本土建筑砖砌结构与营造智慧。",
+      "uz": "Ilk islom me'morchiligining pishiq g'ishtli tuzilishi va qadimiy qurilish an'analari."
+    },
+    "modal": {
+      "title": {
+        "en": "Ancient Brickwork & Prayer Vaults",
+        "zh": "古砖构圣龛与拱顶遗存",
+        "uz": "Qadimiy G'ishtin Ravoqlar va Mehrob"
+      },
+      "description": {
+        "en": "Early Islamic structural masonry demonstrating vernacular construction methods.",
+        "zh": "生动展现早期丝绸之路中亚本土建筑砖砌结构与营造智慧。",
+        "uz": "Ilk islom me'morchiligining pishiq g'ishtli tuzilishi va qadimiy qurilish an'analari."
+      }
+    }
+  },
+  {
+    "id": 7,
+    "category": "craft",
+    "image": "assets/Shahrisabz Chorsu majmuasi.png",
+    "badge": {
+      "en": "16th Century",
+      "zh": "16世纪",
+      "uz": "16-asr"
+    },
+    "tag": {
+      "en": "Bazaar Architecture",
+      "zh": "集市商业建筑",
+      "uz": "Bozor Me'morchiligi"
+    },
+    "title": {
+      "en": "Chorsu Bazaar: Crossroad Vault",
+      "zh": "恰尔苏集市：16世纪贸易枢纽",
+      "uz": "Chorsu Bozori: Chorraha Ravoqi"
+    },
+    "caption": {
+      "en": "Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz.",
+      "zh": "沙赫里萨布兹古代交通要冲处的特色圆顶商业建筑遗存。",
+      "uz": "Shahrisabzning qadimiy savdo yo'llari kesishmasidagi gumbazli bozor majmuasi."
+    },
+    "modal": {
+      "title": {
+        "en": "Chorsu Bazaar: Crossroad Vault",
+        "zh": "恰尔苏集市：16世纪贸易枢纽",
+        "uz": "Chorsu Bozori: Chorraha Ravoqi"
+      },
+      "description": {
+        "en": "Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz.",
+        "zh": "沙赫里萨布兹古代交通要冲处的特色圆顶商业建筑遗存。",
+        "uz": "Shahrisabzning qadimiy savdo yo'llari kesishmasidagi gumbazli bozor majmuasi."
+      }
+    }
+  },
+  {
+    "id": 8,
+    "category": "craft",
+    "image": "assets/Milliylik aks etgan bozorlari.png",
+    "badge": {
+      "en": "Folk Craft",
+      "zh": "非遗工坊",
+      "uz": "Xalq Hunarmandchiligi"
+    },
+    "tag": {
+      "en": "Traditional Crafts",
+      "zh": "传统民间工艺",
+      "uz": "Amaliy San'at"
+    },
+    "title": {
+      "en": "Living Bazaar Traditions & Iroqi Embroidery",
+      "zh": "活态集市传统与沙赫里萨布兹刺绣",
+      "uz": "Bozor An'analari va Iroqi Do'ppido'zlik"
+    },
+    "caption": {
+      "en": "Intangible cultural heritage preserved by local craftswomen across Silk Road stalls.",
+      "zh": "丝路古集市摊位上由当地手工艺妇女传承至今的非物质文化遗产。",
+      "uz": "Ipak yo'li rastalarida mahalliy hunarmand ayollar tomonidan asrab kelinayotgan nomoddiy madaniy meros."
+    },
+    "modal": {
+      "title": {
+        "en": "Living Bazaar Traditions & Iroqi Embroidery",
+        "zh": "活态集市传统与沙赫里萨布兹刺绣",
+        "uz": "Bozor An'analari va Iroqi Do'ppido'zlik"
+      },
+      "description": {
+        "en": "Intangible cultural heritage preserved by local craftswomen across Silk Road stalls.",
+        "zh": "丝路古集市摊位上由当地手工艺妇女传承至今的非物质文化遗产。",
+        "uz": "Ipak yo'li rastalarida mahalliy hunarmand ayollar tomonidan asrab kelinayotgan nomoddiy madaniy meros."
+      }
+    }
+  },
+  {
+    "id": 9,
+    "category": "monument",
+    "image": "assets/Shaxrisabzdagi Tarixiy Tosh.png",
+    "badge": {
+      "en": "Lapidary",
+      "zh": "石刻金石",
+      "uz": "Tosh O'ymakorligi"
+    },
+    "tag": {
+      "en": "Stone Inscriptions",
+      "zh": "金石石刻",
+      "uz": "Tosh Bitiklari"
+    },
+    "title": {
+      "en": "Ancient Epigraphic Stele & Ornamental Stone",
+      "zh": "古代石刻题铭石碑与石雕艺术",
+      "uz": "Qadimiy Epigrafik Tosh Bitigi"
+    },
+    "caption": {
+      "en": "Archaeological stone artifacts testifying to early Silk Road epigraphy.",
+      "zh": "记录早期丝绸之路金石学与石刻书法艺术的珍贵实物见证。",
+      "uz": "Ipak yo'lining qadimiy xattotlik va tosh o'ymakorligi san'atini namoyon etuvchi arxeologik yodgorlik."
+    },
+    "modal": {
+      "title": {
+        "en": "Ancient Epigraphic Stele & Ornamental Stone",
+        "zh": "古代石刻题铭石碑与石雕艺术",
+        "uz": "Qadimiy Epigrafik Tosh Bitigi"
+      },
+      "description": {
+        "en": "Archaeological stone artifacts testifying to early Silk Road epigraphy.",
+        "zh": "记录早期丝绸之路金石学与石刻书法艺术的珍贵实物见证。",
+        "uz": "Ipak yo'lining qadimiy xattotlik va tosh o'ymakorligi san'atini namoyon etuvchi arxeologik yodgorlik."
+      }
+    }
+  },
+  {
+    "id": 10,
+    "category": "landscape",
+    "image": "assets/Mirakidagi Oqsuv kanal.png",
+    "badge": {
+      "en": "Alpine River",
+      "zh": "雪山河流",
+      "uz": "Tog' Daryosi"
+    },
+    "tag": {
+      "en": "Water Heritage",
+      "zh": "水利人文遗产",
+      "uz": "Suv Merosi"
+    },
+    "title": {
+      "en": "Oqsuv Alpine Stream & Riverine Oasis",
+      "zh": "奥克苏山涧急流与绿洲水系",
+      "uz": "Oqsuv Tog' Daryosi va Voha Tizimi"
+    },
+    "caption": {
+      "en": "The lifeline mountain river sustaining rural heritage near Hisorak reservoir.",
+      "zh": "维系希索拉克水库附近乡村农业与人文生态的高山水源。",
+      "uz": "Hisorak suv ombori yaqinidagi qishloq xo'jaligi va voha ekologiyasini ta'minlovchi hayotiy daryo."
+    },
+    "modal": {
+      "title": {
+        "en": "Oqsuv Alpine Stream & Riverine Oasis",
+        "zh": "奥克苏山涧急流与绿洲水系",
+        "uz": "Oqsuv Tog' Daryosi va Voha Tizimi"
+      },
+      "description": {
+        "en": "The lifeline mountain river sustaining rural heritage near Hisorak reservoir.",
+        "zh": "维系希索拉克水库附近乡村农业与人文生态的高山水源。",
+        "uz": "Hisorak suv ombori yaqinidagi qishloq xo'jaligi va voha ekologiyasini ta'minlovchi hayotiy daryo."
+      }
+    }
+  },
+  {
+    "id": 11,
+    "category": "landscape",
+    "image": "assets/Miraki tabiati kuzda.png",
+    "badge": {
+      "en": "Highlands",
+      "zh": "高地风貌",
+      "uz": "Tog' Etagi"
+    },
+    "tag": {
+      "en": "Natural Environment",
+      "zh": "自然生态",
+      "uz": "Tabiiy Muhit"
+    },
+    "title": {
+      "en": "Miraki Highlands & Autumn Poplar Groves",
+      "zh": "米拉奇高地与金秋白杨林",
+      "uz": "Miraki Tog'lari va Kuzgi Terakzorlar"
+    },
+    "caption": {
+      "en": "The environmental landscape framing cultural memory in Southern Uzbekistan.",
+      "zh": "构成乌兹别克斯坦南部文化历史记忆的壮丽山川生态背景。",
+      "uz": "O'zbekiston janubidagi madaniy xotirani o'rab turgan go'zal tog' tabiati."
+    },
+    "modal": {
+      "title": {
+        "en": "Miraki Highlands & Autumn Poplar Groves",
+        "zh": "米拉奇高地与金秋白杨林",
+        "uz": "Miraki Tog'lari va Kuzgi Terakzorlar"
+      },
+      "description": {
+        "en": "The environmental landscape framing cultural memory in Southern Uzbekistan.",
+        "zh": "构成乌兹别克斯坦南部文化历史记忆的壮丽山川生态背景。",
+        "uz": "O'zbekiston janubidagi madaniy xotirani o'rab turgan go'zal tog' tabiati."
+      }
+    }
+  },
+  {
+    "id": 12,
+    "category": "landscape",
+    "image": "assets/Miraki- Yashil sayilgoh.png",
+    "badge": {
+      "en": "Mountain Trail",
+      "zh": "山间古径",
+      "uz": "Tog' So'qmog'i"
+    },
+    "tag": {
+      "en": "Mountain Trails",
+      "zh": "高山廊道",
+      "uz": "Tog' Yo'llari"
+    },
+    "title": {
+      "en": "Miraki Alpine Valley & Riverbed",
+      "zh": "米拉奇高山峡谷与清澈河滩",
+      "uz": "Miraki Tog' Vodiysi va Daryo O'zani"
+    },
+    "caption": {
+      "en": "The natural setting through which historic traders traveled between Kashkadarya and Samarkand.",
+      "zh": "连接卡什卡达里亚与撒马尔罕之间古商贾穿行的高山峡谷自然风貌。",
+      "uz": "Qashqadaryo va Samarqand o'rtasida qadimiy savdogarlar o'tgan tog' darasi manzarasi."
+    },
+    "modal": {
+      "title": {
+        "en": "Miraki Alpine Valley & Riverbed",
+        "zh": "米拉奇高山峡谷与清澈河滩",
+        "uz": "Miraki Tog' Vodiysi va Daryo O'zani"
+      },
+      "description": {
+        "en": "The natural setting through which historic traders traveled between Kashkadarya and Samarkand.",
+        "zh": "连接卡什卡达里亚与撒马尔罕之间古商贾穿行的高山峡谷自然风貌。",
+        "uz": "Qashqadaryo va Samarqand o'rtasida qadimiy savdogarlar o'tgan tog' darasi manzarasi."
+      }
+    }
+  }
+]

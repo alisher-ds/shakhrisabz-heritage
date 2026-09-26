@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shakhrisabz Cultural Heritage Archive — Silk Road Youth Documentation Expedition</title>
-  <meta name="description" content="Visual documentary and high-resolution photographic archive of Shakhrisabz (UNESCO World Heritage), Uzbekistan. Co-organized and field-documented by a youth delegation with Alisher Tuychiev as local heritage guide under a Wikimedia Foundation grant.">
+  <title>Shakhrisabz Cultural Heritage Archive — Silk Road Youth Documentation & AI Restoration</title>
+  <meta name="description" content="Visual documentary, AI architectural reconstruction, and high-resolution photographic archive of Shakhrisabz (UNESCO World Heritage #885), Uzbekistan. Co-organized and field-documented by a youth delegation with Alisher Tuychiev as local heritage guide under a Wikimedia Foundation grant.">
+
+  <!-- Anti-FOUC Theme & Lang Script -->
   <script>
     (function() {
       try {
@@ -29,1071 +31,13 @@
       }
     })();
   </script>
-  <style>
-    :root {
-      --bg: #09090b;
-      --surface: #121215;
-      --surface-card: #18181c;
-      --surface-hover: #222228;
-      --text: #ffffff;
-      --text-secondary: #a1a1aa;
-      --text-muted: #71717a;
-      --border: #27272a;
-      --border-light: #3f3f46;
-      --nav-bg: rgba(9, 9, 11, 0.94);
-      --nav-title: #ffffff;
-      --nav-badge-color: #e4e4e7;
-      --nav-badge-bg: rgba(255, 255, 255, 0.08);
-      --nav-badge-border: rgba(255, 255, 255, 0.18);
-      --pill-bg: #121215;
-      --pill-border: #3f3f46;
-      --pill-active-bg: #ffffff;
-      --pill-active-color: #09090b;
-      --filter-active-bg: #ffffff;
-      --filter-active-color: #09090b;
-      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      --card-hover-border: rgba(255, 255, 255, 0.35);
-      --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
-      --hero-slider-border: #3f3f46;
-      --hero-slider-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
-      --video-badge-bg: rgba(255, 255, 255, 0.08);
-      --video-badge-border: rgba(255, 255, 255, 0.18);
-      --video-badge-color: #f4f4f5;
-      --video-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    }
 
-    [data-theme="light"] {
-      --bg: #fcfcfd;
-      --surface: #ffffff;
-      --surface-card: #ffffff;
-      --surface-hover: #f4f4f6;
-      --text: #09090b;
-      --text-secondary: #52525b;
-      --text-muted: #71717a;
-      --border: #e4e4e7;
-      --border-light: #d4d4d8;
-      --nav-bg: rgba(252, 252, 253, 0.94);
-      --nav-title: #09090b;
-      --nav-badge-color: #3f3f46;
-      --nav-badge-bg: rgba(0, 0, 0, 0.05);
-      --nav-badge-border: rgba(0, 0, 0, 0.12);
-      --pill-bg: #f4f4f6;
-      --pill-border: #d4d4d8;
-      --pill-active-bg: #09090b;
-      --pill-active-color: #ffffff;
-      --filter-active-bg: #09090b;
-      --filter-active-color: #ffffff;
-      --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-      --card-hover-border: #a1a1aa;
-      --card-hover-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
-      --hero-slider-border: #e4e4e7;
-      --hero-slider-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.14);
-      --video-badge-bg: rgba(0, 0, 0, 0.05);
-      --video-badge-border: rgba(0, 0, 0, 0.12);
-      --video-badge-color: #18181b;
-      --video-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      font-size: 15px;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* Seamless Theme Switching Transition */
-    body, nav, .hero-meta-bar, .photo-card, .filter-btn, .video-meta, footer, .lang-toggle, .theme-toggle, .video-wrapper, .hero-slider-container {
-      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    /* Top Floating Navigation Bar */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--nav-bg);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 32px;
-    }
-
-    .nav-inner {
-      max-width: 1320px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--nav-title);
-      letter-spacing: -0.3px;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .nav-badge {
-      font-size: 0.72rem;
-      color: var(--nav-badge-color);
-      background: var(--nav-badge-bg);
-      border: 1px solid var(--nav-badge-border);
-      padding: 3px 9px;
-      border-radius: 4px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      transition: all 0.2s ease;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.86rem;
-      font-weight: 500;
-      transition: color 0.15s;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    /* Controls: Theme & Language Switchers */
-    .nav-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .lang-toggle, .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 2px;
-      background: var(--pill-bg);
-      border: 1px solid var(--pill-border);
-      border-radius: 20px;
-      padding: 3px 4px;
-    }
-
-    .lang-btn, .theme-btn {
-      border: none;
-      background: transparent;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      padding: 3px 9px;
-      border-radius: 12px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.15s ease;
-      line-height: 1;
-    }
-
-    .theme-btn {
-      padding: 4px 7px;
-    }
-
-    .theme-btn svg {
-      display: block;
-      width: 14px;
-      height: 14px;
-    }
-
-    .lang-btn:hover, .theme-btn:hover {
-      color: var(--text);
-    }
-
-    .lang-btn.active, .theme-btn.active {
-      background: var(--pill-active-bg);
-      color: var(--pill-active-color);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Page Container */
-    .page-wrapper {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 24px 32px 60px;
-    }
-
-    /* ========================================================
-       HERO SLIDER (Full Width Hero Carousel)
-       ======================================================== */
-    .hero-slider-container {
-      position: relative;
-      width: 100%;
-      height: 600px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--hero-slider-border);
-      box-shadow: var(--hero-slider-shadow);
-      background: #000000;
-      margin-bottom: 28px;
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
-      display: flex;
-      align-items: flex-end;
-    }
-
-    .slide.active {
-      opacity: 1;
-      visibility: visible;
-      z-index: 2;
-    }
-
-    .slide-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.05);
-      transition: transform 6s ease-out;
-    }
-
-    .slide.active .slide-bg {
-      transform: scale(1);
-    }
-
-    /* Cinematic Dark Gradient Overlay */
-    .slide-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(9, 9, 11, 0.95) 0%,
-        rgba(9, 9, 11, 0.6) 40%,
-        rgba(9, 9, 11, 0.15) 75%,
-        rgba(9, 9, 11, 0.35) 100%
-      );
-    }
-
-    /* Slide Caption Content */
-    .slide-content {
-      position: relative;
-      z-index: 3;
-      padding: 48px 56px;
-      max-width: 860px;
-    }
-
-    .slide-badge {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #f4f4f5;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      backdrop-filter: blur(8px);
-      padding: 5px 12px;
-      border-radius: 6px;
-      margin-bottom: 14px;
-    }
-
-    .slide-title {
-      font-size: 2.35rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.8px;
-      line-height: 1.2;
-      margin-bottom: 12px;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    }
-
-    .slide-desc {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-      line-height: 1.55;
-      margin-bottom: 24px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-    }
-
-    .slide-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn-action-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #ffffff;
-      color: #09090b;
-      font-weight: 600;
-      font-size: 0.88rem;
-      padding: 11px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      border: 1px solid #ffffff;
-    }
-
-    .btn-action-primary:hover {
-      background: #e4e4e7;
-      border-color: #e4e4e7;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
-    }
-
-    .btn-action-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      font-weight: 500;
-      font-size: 0.88rem;
-      padding: 11px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-action-secondary:hover {
-      background: rgba(255, 255, 255, 0.18);
-      border-color: rgba(255, 255, 255, 0.45);
-      transform: translateY(-2px);
-    }
-
-    /* Accessible Slider Controls (< and >) */
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-      font-family: inherit;
-      line-height: 1;
-    }
-
-    .slider-arrow:hover {
-      background: #ffffff;
-      color: #09090b;
-      border-color: #ffffff;
-      transform: translateY(-50%) scale(1.08);
-    }
-
-    .slider-arrow.prev { left: 24px; }
-    .slider-arrow.next { right: 24px; }
-
-    /* Slider Controls (Dots + Play/Pause) */
-    .slider-controls {
-      position: absolute;
-      bottom: 24px;
-      right: 48px;
-      z-index: 10;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .slider-dots {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .slider-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.35);
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .slider-dot.active {
-      width: 24px;
-      border-radius: 4px;
-      background: #ffffff;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-    }
-
-    .slider-play-pause {
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      padding: 0;
-    }
-
-    .slider-play-pause:hover {
-      background: #ffffff;
-      color: #09090b;
-      border-color: #ffffff;
-    }
-
-    .slider-play-pause svg {
-      width: 12px;
-      height: 12px;
-    }
-
-    /* Accessibility Focus States */
-    :focus-visible {
-      outline: 2px solid var(--text);
-      outline-offset: 3px;
-    }
-
-    .slide-actions a:focus-visible,
-    .slider-arrow:focus-visible,
-    .slider-dot:focus-visible,
-    .slider-play-pause:focus-visible {
-      outline: 2px solid #ffffff;
-      outline-offset: 3px;
-    }
-
-    .photo-card:focus-visible {
-      outline: 2px solid var(--text);
-      outline-offset: 4px;
-      transform: translateY(-3px);
-    }
-
-    /* Prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .slide-bg {
-        transition: none !important;
-      }
-    }
-
-    /* Project Meta Bar */
-    .hero-meta-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 48px;
-      font-size: 0.86rem;
-      color: var(--text-secondary);
-    }
-
-    .hero-meta-bar span {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-right: 6px;
-    }
-
-    .hero-meta-bar strong {
-      color: var(--text);
-    }
-
-
-    /* ========================================================
-       SECTION STYLES
-       ======================================================== */
-    .showcase-section {
-      padding: 44px 0 60px;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-header-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .section-title {
-      font-size: 1.65rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-
-    .section-subtitle {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      margin-top: 4px;
-    }
-
-    /* Cinematic Video Player */
-    .video-wrapper {
-      background: #000000;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: var(--video-shadow);
-      position: relative;
-    }
-
-    video {
-      width: 100%;
-      max-height: 640px;
-      display: block;
-      outline: none;
-      background: #000000;
-    }
-
-    .video-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 14px 20px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      font-size: 0.84rem;
-      color: var(--text-secondary);
-    }
-
-    .video-meta strong {
-      color: var(--text);
-    }
-
-    .video-meta-badge {
-      background: var(--video-badge-bg);
-      border: 1px solid var(--video-badge-border);
-      color: var(--video-badge-color);
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-size: 0.76rem;
-      font-weight: 600;
-    }
-
-    /* Filter Tabs */
-    .filter-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      background: var(--surface-card);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-      font-weight: 500;
-      padding: 7px 15px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .filter-btn:hover {
-      background: var(--surface-hover);
-      color: var(--text);
-      border-color: var(--border-light);
-    }
-
-    .filter-btn.active {
-      background: var(--filter-active-bg);
-      color: var(--filter-active-color);
-      border-color: var(--filter-active-bg);
-      font-weight: 600;
-    }
-
-    /* Photo Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 12px;
-    }
-
-    .photo-card {
-      background: var(--surface-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .photo-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--card-hover-border);
-      box-shadow: var(--card-hover-shadow);
-    }
-
-    .photo-media {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: #000000;
-    }
-
-    .photo-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .photo-card:hover .photo-media img {
-      transform: scale(1.05);
-    }
-
-    .photo-overlay {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 4px 9px;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #f4f4f5;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .photo-body {
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-
-    .photo-title {
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 6px;
-    }
-
-    .photo-caption {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.48;
-      margin-bottom: 12px;
-    }
-
-    .photo-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--border);
-      padding-top: 10px;
-      font-size: 0.76rem;
-      color: var(--text-muted);
-    }
-
-    .photo-footer strong {
-      color: var(--text);
-    }
-
-    /* Modal Lightbox */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1000;
-      background: rgba(5, 8, 16, 0.96);
-      backdrop-filter: blur(10px);
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .modal-container {
-      max-width: 92vw;
-      max-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    .modal-container img {
-      max-width: 100%;
-      max-height: 78vh;
-      border-radius: 6px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
-      object-fit: contain;
-    }
-
-    .modal-info {
-      margin-top: 16px;
-      text-align: center;
-      max-width: 780px;
-    }
-
-    .modal-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 6px;
-    }
-
-    .modal-desc {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 24px;
-      right: 32px;
-      color: #ffffff;
-      background: transparent;
-      border: none;
-      font-size: 2.4rem;
-      cursor: pointer;
-      line-height: 1;
-      opacity: 0.85;
-      padding: 4px;
-      transition: opacity 0.15s, transform 0.15s;
-      font-family: inherit;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-close:hover {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-
-    footer {
-      padding: 36px 0 48px;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-    }
-
-    footer a {
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    footer a:hover {
-      color: var(--text-secondary);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-slider-container { height: 520px; }
-      .slide-content { padding: 36px; }
-      .slide-title { font-size: 2rem; }
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 12px 20px; }
-      .nav-links { display: none; }
-      .page-wrapper { padding: 16px 20px 48px; }
-      .hero-slider-container { height: 500px; border-radius: 12px; }
-      .slide-content { padding: 26px 22px 36px; max-width: 100%; }
-      .slide-title { font-size: 1.65rem; }
-      .slide-desc { font-size: 0.92rem; margin-bottom: 18px; }
-      .slider-arrow { width: 38px; height: 38px; font-size: 1.1rem; }
-      .slider-arrow.prev { left: 12px; }
-      .slider-arrow.next { right: 12px; }
-      .slider-dots { right: 20px; bottom: 18px; }
-      
-      .hero-meta-bar {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        padding: 14px 16px;
-        font-size: 0.82rem;
-      }
-
-      .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
-    }
-
-    @media (max-width: 480px) {
-      nav { padding: 10px 14px; }
-      .nav-title { font-size: 0.95rem; }
-      .nav-badge { display: none; }
-      .nav-controls { gap: 6px; }
-      .lang-btn { font-size: 0.72rem; padding: 3px 7px; }
-      .theme-btn { padding: 4px 6px; }
-      .theme-btn svg { width: 13px; height: 13px; }
-      .page-wrapper { padding: 10px 14px 36px; }
-
-      /* Mobile Hero Slider */
-      .hero-slider-container {
-        height: 480px;
-        border-radius: 12px;
-        margin-bottom: 16px;
-      }
-      .slide-content {
-        padding: 18px 14px 36px;
-        width: 100%;
-      }
-      .slide-badge {
-        font-size: 0.65rem;
-        padding: 3px 9px;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
-      }
-      .slide-title {
-        font-size: 1.35rem;
-        letter-spacing: -0.4px;
-        line-height: 1.25;
-        margin-bottom: 8px;
-      }
-      .slide-desc {
-        font-size: 0.84rem;
-        line-height: 1.45;
-        margin-bottom: 16px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      .slide-actions {
-        flex-direction: column;
-        gap: 8px;
-        width: 100%;
-      }
-      .btn-action-primary {
-        width: 100%;
-        justify-content: center;
-        padding: 11px 16px;
-        font-size: 0.84rem;
-      }
-      .btn-action-secondary {
-        display: none;
-      }
-      .slider-arrow {
-        display: none; /* Mobile users swipe with thumb */
-      }
-      .slider-controls {
-        left: 50%;
-        transform: translateX(-50%);
-        right: auto;
-        bottom: 12px;
-      }
-      .slider-dot {
-        width: 8px;
-        height: 8px;
-      }
-      .slider-dot.active {
-        width: 22px;
-      }
-
-      /* Mobile Meta Bar */
-      .hero-meta-bar {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 12px 14px;
-        font-size: 0.78rem;
-        margin-bottom: 30px;
-      }
-      .hero-meta-bar div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 6px;
-      }
-      .hero-meta-bar div:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-
-      /* Mobile Section Headers */
-      .showcase-section {
-        padding: 30px 0 40px;
-      }
-      .section-header-bar {
-        margin-bottom: 16px;
-        gap: 8px;
-      }
-      .section-title {
-        font-size: 1.3rem;
-      }
-      .section-subtitle {
-        font-size: 0.82rem;
-      }
-      .video-meta-badge {
-        font-size: 0.7rem;
-        padding: 3px 8px;
-      }
-      .video-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-        padding: 12px 14px;
-        font-size: 0.78rem;
-      }
-
-      /* Horizontal scrolling Filter Tabs */
-      .filter-tabs {
-        display: flex;
-        gap: 8px;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding: 2px 0 8px;
-        margin: 0 -14px;
-        padding-left: 14px;
-        padding-right: 14px;
-        width: calc(100% + 28px);
-      }
-      .filter-tabs::-webkit-scrollbar { display: none; }
-      .filter-btn {
-        flex-shrink: 0;
-        white-space: nowrap;
-        font-size: 0.76rem;
-        padding: 6px 12px;
-      }
-
-      /* Mobile Photo Cards */
-      .gallery-grid {
-        gap: 16px;
-      }
-      .photo-card {
-        border-radius: 10px;
-      }
-      .photo-body {
-        padding: 14px 14px;
-      }
-      .photo-title {
-        font-size: 0.96rem;
-      }
-      .photo-caption {
-        font-size: 0.82rem;
-        margin-bottom: 10px;
-      }
-      .photo-footer {
-        font-size: 0.72rem;
-      }
-
-      /* Mobile Modal Lightbox */
-      .modal {
-        padding: 10px;
-      }
-      .modal-close {
-        top: 12px;
-        right: 12px;
-        width: 36px;
-        height: 36px;
-        background: rgba(9, 14, 26, 0.88);
-        border: 1px solid var(--border-light);
-        border-radius: 50%;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1001;
-      }
-      .modal-container img {
-        max-height: 56vh;
-        max-width: 96vw;
-        border-radius: 6px;
-      }
-      .modal-info {
-        margin-top: 10px;
-        max-width: 94vw;
-        padding: 0 4px;
-      }
-      .modal-title {
-        font-size: 1.02rem;
-      }
-      .modal-desc {
-        font-size: 0.8rem;
-        line-height: 1.4;
-      }
-
-
-      footer {
-        padding: 24px 0 36px;
-        font-size: 0.76rem;
-      }
-    }
-  </style>
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/ai-restoration.css">
+  <link rel="stylesheet" href="css/silkroad-map.css">
+  <link rel="stylesheet" href="css/ai-docent.css">
 </head>
 <body>
 
@@ -1101,39 +45,32 @@
   <nav>
     <div class="nav-inner">
       <div class="nav-brand">
-        <a href="#" class="nav-title" data-en="Shakhrisabz Heritage" data-zh="沙赫里萨布兹文化遗产" data-uz="Shahrisabz Merosi">Shakhrisabz Heritage</a>
+        <a href="#" class="nav-title" data-en="Shakhrisabz Heritage" data-zh="沙赫里萨布兹遗产" data-uz="Shahrisabz Merosi">Shakhrisabz Heritage</a>
         <span class="nav-badge" data-en="UNESCO World Heritage #885" data-zh="联合国教科文组织世界遗产 #885" data-uz="YUNESKO Butunjahon Merosi #885">UNESCO World Heritage #885</span>
       </div>
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="#video" data-en="Documentary Film" data-zh="实地纪录片" data-uz="Hujjatli Film">Documentary Film</a></li>
-          <li><a href="#gallery" data-en="Curated Photos" data-zh="摄影特展" data-uz="Fotoko'rgazma">Curated Photos</a></li>
+          <li><a href="#restoration" data-en="AI Restoration" data-zh="AI数字复原" data-uz="AI Qayta Tiklash">AI Restoration</a></li>
+          <li><a href="#video" data-en="Documentary Film" data-zh="纪录片" data-uz="Hujjatli Film">Documentary Film</a></li>
+          <li><a href="#corridor" data-en="Silk Road Corridor" data-zh="丝路走廊" data-uz="Ipak Yo'li Yo'lagi">Silk Road Corridor</a></li>
+          <li><a href="#docent" data-en="AI Docent" data-zh="AI向导" data-uz="AI Yo'lboshchi">AI Docent</a></li>
+          <li><a href="#gallery" data-en="Archive" data-zh="档案" data-uz="Arxiv">Archive</a></li>
         </ul>
         <div class="nav-controls">
-          <div class="theme-toggle" role="group" aria-label="Theme mode switcher">
-            <button class="theme-btn active" id="themeDarkBtn" onclick="setTheme('dark')" aria-label="Dark Mode" title="Dark Mode">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
+          <!-- Theme Toggle -->
+          <div class="theme-toggle" role="group" aria-label="Theme switcher">
+            <button class="theme-btn active" id="themeDarkBtn" aria-label="Dark mode" title="Dark mode">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             </button>
-            <button class="theme-btn" id="themeLightBtn" onclick="setTheme('light')" aria-label="Light Mode" title="Light Mode">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
+            <button class="theme-btn" id="themeLightBtn" aria-label="Light mode" title="Light mode">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
             </button>
           </div>
-          <div class="lang-toggle" role="group" aria-label="Language switcher">
-            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-            <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
-            <button class="lang-btn" data-lang="uz" onclick="setLang('uz')">UZ</button>
+          <!-- Language Toggle -->
+          <div class="lang-toggle" role="group" aria-label="Language selector">
+            <button class="lang-btn active" id="langEnBtn" aria-label="English">EN</button>
+            <button class="lang-btn" id="langZhBtn" aria-label="Chinese">ZH</button>
+            <button class="lang-btn" id="langUzBtn" aria-label="Uzbek">UZ</button>
           </div>
         </div>
       </div>
@@ -1143,56 +80,56 @@
   <div class="page-wrapper">
 
     <!-- ========================================================
-         HERO SLIDER: 3 Jamoaviy suratlar avtomatik mayin almashadi
+         HERO SLIDER
          ======================================================== -->
     <div class="hero-slider-container" id="heroSlider" tabindex="0" role="region" aria-label="Expedition photo slideshow">
 
-      <!-- Slide 1: Amir Temur haykali va Oqsaroy oldidagi 20 nafar yoshlar -->
+      <!-- Slide 1 -->
       <div class="slide active">
-        <img src="assets/Jamoaviy oqsaroyda.jpg" alt="Amir Temur Citadel Cohort" data-alt-en="Amir Temur Citadel Cohort" data-alt-zh="帖木儿古城青年考察团队" data-alt-uz="Amir Temur qarorgohida yoshlar guruhi" class="slide-bg">
+        <img src="assets/Jamoaviy oqsaroyda.jpg" alt="Youth Delegation at Amir Temur's Citadel" data-alt-en="Youth Delegation at Amir Temur's Citadel" data-alt-zh="帖木儿大帝城堡前的青年代表团" data-alt-uz="Amir Temur qarorgohida yoshlar delegatsiyasi" class="slide-bg">
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <span class="slide-badge" data-en="Silk Road Youth Documentation Cohort" data-zh="丝路青年实地考察与建档团队" data-uz="Ipak Yo'li Yoshlar Hujjatlashtirish Ekspeditsiyasi">Silk Road Youth Documentation Cohort</span>
-          <h1 class="slide-title" data-en="20 Youth Stewards at Amir Temur's Citadel" data-zh="青年守护者齐聚帖木儿故城沙赫里萨布兹" data-uz="Amir Temur Qarorgohida 20 Nafar Yosh Tadqiqotchi">20 Youth Stewards at Amir Temur's Citadel</h1>
-          <p class="slide-desc" data-en="Systematically documenting 2,700 years of UNESCO World Heritage architectural memory across Shakhrisabz for open global access." data-zh="深入乌兹别克斯坦世界文化遗产名城沙赫里萨布兹，实地系统记录两千七百年古丝路建筑与历史记忆。" data-uz="Shahrisabzning 2,700 yillik YUNESKO merosi me'moriy xazinasini global ochiq kirish uchun tizimli hujjatlashtirish.">Systematically documenting 2,700 years of UNESCO World Heritage architectural memory across Shakhrisabz for open global access.</p>
+          <span class="slide-badge" data-en="Silk Road Youth Documentation Cohort" data-zh="丝路青年文献考察团" data-uz="Ipak Yo'li Yoshlar Hujjatlashtirish Ekspeditsiyasi">Silk Road Youth Documentation Cohort</span>
+          <h1 class="slide-title" data-en="20 Youth Stewards at Amir Temur's Citadel" data-zh="帖木儿城堡前的20位青年守护者" data-uz="Amir Temur Qarorgohida 20 Nafar Yosh Tadqiqotchi">20 Youth Stewards at Amir Temur's Citadel</h1>
+          <p class="slide-desc" data-en="Systematically documenting 2,700 years of UNESCO World Heritage architectural memory across Shakhrisabz for open global access." data-zh="系统记录沙赫里萨布兹2700年联合国教科文组织世界遗产建筑记忆，面向全球开放共享。" data-uz="Shahrisabzning 2,700 yillik YUNESKO merosi me'moriy xazinasini global ochiq kirish uchun tizimli hujjatlashtirish.">Systematically documenting 2,700 years of UNESCO World Heritage architectural memory across Shakhrisabz for open global access.</p>
           <div class="slide-actions">
-            <a href="#video" class="btn-action-primary" data-en="▶ Watch Documentary Film" data-zh="▶ 观看实地考察纪录片" data-uz="▶ Hujjatli Filmni Ko'rish">▶ Watch Documentary Film</a>
-            <a href="#gallery" class="btn-action-secondary" data-en="Explore Photo Exhibition" data-zh="浏览摄影特展" data-uz="Fotoko'rgazmani Ko'rish">Explore Photo Exhibition</a>
+            <a href="#restoration" class="btn-action-primary" data-en="Explore AI Restoration" data-zh="探索AI数字复原" data-uz="AI Qayta Tiklashni Ko'rish">Explore AI Restoration</a>
+            <a href="#video" class="btn-action-secondary" data-en="Watch Documentary Film" data-zh="观看纪录短片" data-uz="Hujjatli Filmni Ko'rish">Watch Documentary Film</a>
           </div>
         </div>
       </div>
 
-      <!-- Slide 2: Mirakida tog'lar va daryo bo'yidagi jamoa -->
+      <!-- Slide 2 -->
       <div class="slide">
-        <img src="assets/Jamoaviy Mirakida.jpg" alt="Environmental Survey in Miraki" data-alt-en="Environmental Survey in Miraki" data-alt-zh="米拉奇自然流域考察队" data-alt-uz="Mirakidagi tabiat tadqiqoti ekspeditsiyasi" class="slide-bg">
+        <img src="assets/Jamoaviy Mirakida.jpg" alt="Youth Stewards at Miraki Water Basin" data-alt-en="Youth Stewards at Miraki Water Basin" data-alt-zh="米拉基水系考察的青年守护者" data-alt-uz="Miraki suv havzasida yoshlar jamoasi" class="slide-bg">
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <span class="slide-badge" data-en="Alpine Watershed & Rural Heritage Survey" data-zh="高山流域生态与乡村人文景观考察" data-uz="Tog' Suv Havzalari va Qishloq Merosi Tadqiqoti">Alpine Watershed & Rural Heritage Survey</span>
-          <h2 class="slide-title" data-en="Surveying Miraki's Glacial Streams & Living Culture" data-zh="实地测绘米拉奇高山雪水流域与活态文明" data-uz="Mirakining Muzlik Suvlari va Jonli Madaniyatini O'rganish">Surveying Miraki's Glacial Streams & Living Culture</h2>
-          <p class="slide-desc" data-en="Extending heritage documentation beyond city ramparts to the mountain waters and rural settlements sustaining Central Asian oasis civilizations." data-zh="将文化遗产记录视野从城垣古迹延伸至孕育绿洲文明的高山水源水系与乡村聚落。" data-uz="Madaniy merosni shahar devorlaridan tashqariga — voha sivilizatsiyasini ta'minlovchi tog' suvlari va qishloq maskanlarigacha hujjatlashtirish.">Extending heritage documentation beyond city ramparts to the mountain waters and rural settlements sustaining Central Asian oasis civilizations.</p>
+          <span class="slide-badge" data-en="Ecological & Vernacular Heritage Survey" data-zh="生态与乡土文化遗产勘测" data-uz="Ekologik va An'anaviy Meros Tadqiqoti">Ecological & Vernacular Heritage Survey</span>
+          <h2 class="slide-title" data-en="Surveying Miraki's Glacial Streams & Living Culture" data-zh="考察米拉基冰川溪流与活态文化" data-uz="Mirakining Muzlik Suvlari va Jonli Madaniyatini O'rganish">Surveying Miraki's Glacial Streams & Living Culture</h2>
+          <p class="slide-desc" data-en="Extending heritage documentation beyond city ramparts to the mountain waters and rural settlements sustaining Central Asian oasis civilizations." data-zh="将遗产记录延伸至城墙之外，探索维系中亚绿洲文明的高山水源与传统聚落。" data-uz="Madaniy merosni shahar devorlaridan tashqariga — voha sivilizatsiyasini ta'minlovchi tog' suvlari va qishloq maskanlarigacha hujjatlashtirish.">Extending heritage documentation beyond city ramparts to the mountain waters and rural settlements sustaining Central Asian oasis civilizations.</p>
           <div class="slide-actions">
-            <a href="#gallery" class="btn-action-primary" data-en="Explore Photo Exhibition" data-zh="浏览摄影特展" data-uz="Fotoko'rgazmani Ko'rish">Explore Photo Exhibition</a>
-            <a href="#video" class="btn-action-secondary" data-en="Watch Film" data-zh="观看视频" data-uz="Filmni Ko'rish">Watch Film</a>
+            <a href="#gallery" class="btn-action-primary" data-en="Explore Photo Exhibition" data-zh="浏览摄影展览" data-uz="Fotoko'rgazmani Ko'rish">Explore Photo Exhibition</a>
+            <a href="#corridor" class="btn-action-secondary" data-en="View Silk Road Trail" data-zh="查看丝绸之路路线" data-uz="Ipak Yo'li Xaritasi">View Silk Road Trail</a>
           </div>
         </div>
       </div>
 
-      <!-- Slide 3: Kashkadarya oq arkalari oldidagi to'liq delegatsiya -->
+      <!-- Slide 3 -->
       <div class="slide">
-        <img src="assets/Jamoaviy asosiy.jpg" alt="Official Expedition Delegation" data-alt-en="Official Expedition Delegation" data-alt-zh="青年考察项目代表团" data-alt-uz="Rasmiy ekspeditsiya delegatsiyasi" class="slide-bg">
+        <img src="assets/Jamoaviy asosiy.jpg" alt="Official Expedition Delegation" data-alt-en="Official Expedition Delegation" data-alt-zh="正式考察代表团合影" data-alt-uz="Rasmiy ekspeditsiya delegatsiyasi" class="slide-bg">
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <span class="slide-badge" data-en="Wikimedia Foundation Regional Grant Project" data-zh="维基媒体基金会区域资助项目" data-uz="Vikimedia Jamg'armasi Mintaqaviy Grant Loyihasi">Wikimedia Foundation Regional Grant Project</span>
-          <h2 class="slide-title" data-en="Official Expedition Delegation & Youth Collaboration" data-zh="青年考察项目代表团与团队协作成果" data-uz="Rasmiy Ekspeditsiya Delegatsiyasi va Yoshlar Hamkorligi">Official Expedition Delegation & Youth Collaboration</h2>
-          <p class="slide-desc" data-en="A joint initiative uniting local youth stewards to systematically survey the Silk Road corridor, archiving over 500 high-resolution assets to Wikimedia Commons." data-zh="青年守护者齐心协力深入丝路古城进行系统测绘建档，向维基共享资源上传逾500份高清数字资产。" data-uz="Mahalliy yoshlarni birlashtirgan holda Ipak yo'li yo'lagi bo'ylab barcha dala tadqiqotlari birgalikda bajarilib, 500 dan ortiq fotosuratlar Vikimedia Commons'ga yuklandi.">A joint initiative uniting local youth stewards to systematically survey the Silk Road corridor, archiving over 500 high-resolution assets to Wikimedia Commons.</p>
+          <h2 class="slide-title" data-en="Official Expedition Delegation & Youth Collaboration" data-zh="正式考察代表团与青年协同合作" data-uz="Rasmiy Ekspeditsiya Delegatsiyasi va Yoshlar Hamkorligi">Official Expedition Delegation & Youth Collaboration</h2>
+          <p class="slide-desc" data-en="A joint initiative uniting local youth stewards to systematically survey the Silk Road corridor, archiving over 500 high-resolution assets to Wikimedia Commons." data-zh="联合本地青年遗产守护者系统勘测丝绸之路走廊，向维基共享资源上传了500多张高分辨率档案。" data-uz="Mahalliy yoshlarni birlashtirgan holda Ipak yo'li yo'lagi bo'ylab barcha dala tadqiqotlari birgalikda bajarilib, 500 dan ortiq fotosuratlar Vikimedia Commons'ga yuklandi.">A joint initiative uniting local youth stewards to systematically survey the Silk Road corridor, archiving over 500 high-resolution assets to Wikimedia Commons.</p>
           <div class="slide-actions">
-            <a href="#gallery" class="btn-action-primary" data-en="Explore Photo Exhibition" data-zh="浏览摄影特展" data-uz="Fotoko'rgazmani Ko'rish">Explore Photo Exhibition</a>
-            <a href="#video" class="btn-action-secondary" data-en="Watch Documentary" data-zh="播放纪录片" data-uz="Filmni Ko'rish">Watch Documentary</a>
+            <a href="#gallery" class="btn-action-primary" data-en="Explore Photo Exhibition" data-zh="浏览摄影展览" data-uz="Fotoko'rgazmani Ko'rish">Explore Photo Exhibition</a>
+            <a href="#docent" class="btn-action-secondary" data-en="Ask Silk Road AI" data-zh="咨询丝路AI向导" data-uz="AI Yo'lboshchidan So'rang">Ask Silk Road AI</a>
           </div>
         </div>
       </div>
 
-      <!-- Left / Right Navigation Arrows -->
+      <!-- Navigation Arrows -->
       <button type="button" class="slider-arrow prev" onclick="prevSlide()" aria-label="Previous slide">&#10094;</button>
       <button type="button" class="slider-arrow next" onclick="nextSlide()" aria-label="Next slide">&#10095;</button>
 
@@ -1213,21 +150,81 @@
 
     <!-- Meta Information Bar -->
     <div class="hero-meta-bar">
-      <div><span data-en="Landmark:" data-zh="遗产地：" data-uz="Meros Obyekti:">Landmark:</span> <strong>Historic Centre of Shakhrisabz (UNESCO #885)</strong></div>
-      <div><span data-en="Co-Organizer & Local Guide:" data-zh="联合统筹与当地向导：" data-uz="Hamkor Tashkilotchi va Mahalliy Gid:">Co-Organizer & Local Guide:</span> <strong>Alisher Tuychiev & Youth Delegation</strong></div>
-      <div><span data-en="Grant Sponsor:" data-zh="资助基金：" data-uz="Grant Homiy:">Grant Sponsor:</span> <strong>Wikimedia Foundation ($2,000 USD)</strong></div>
+      <div><span data-en="Landmark:" data-zh="遗产地:" data-uz="Meros Obyekti:">Landmark:</span> <strong>Historic Centre of Shakhrisabz (UNESCO #885)</strong></div>
+      <div><span data-en="Co-Organizer & Local Guide:" data-zh="联合组织者与青年向导:" data-uz="Hamkor Tashkilotchi va Mahalliy Gid:">Co-Organizer & Local Guide:</span> <strong>Alisher Tuychiev & Youth Delegation</strong></div>
+      <div><span data-en="Grant Sponsor:" data-zh="资助基金:" data-uz="Grant Homiy:">Grant Sponsor:</span> <strong>Wikimedia Foundation ($2,000 USD)</strong></div>
     </div>
 
     <!-- ========================================================
-         01. CINEMATIC VIDEO SECTION
+         01. AI ARCHITECTURAL RESTORATION (1404 vs 2026)
+         ======================================================== -->
+    <section id="restoration" class="restoration-section">
+      <div class="section-header-bar">
+        <div>
+          <span class="ai-badge-header" data-en="AI Heritage Restoration Lab" data-zh="AI遗产数字复原实验室" data-uz="AI Madaniy Merosni Qayta Tiklash Laboratoriyasi">AI Heritage Restoration Lab</span>
+          <h2 class="section-title" data-en="Ak-Saray Palace: 1404 CE vs 2026 CE" data-zh="阿克萨赖宫：公元1404年 vs 公元2026年" data-uz="Oqsaroy Qasri: 1404-yil vs 2026-yil">Ak-Saray Palace: 1404 CE vs 2026 CE</h2>
+          <p class="section-subtitle" data-en="Drag the slider below to interactively compare today's surviving 38m ruins with our AI photorealistic reconstruction of the 71m monumental portal documented by envoy Clavijo." data-zh="拖动下方滑块，交互式对比现存38米遗址双塔与AI基于克拉维约史料复原的71米雄伟门楼。" data-uz="Slayderni surib, bugungi 38 metrli poydevor xarobalarini Klavixo qayd etgan 71 metrli moviy koshinli qasrning AI rekonstruksiyasi bilan taqqoslang.">Drag the slider below to interactively compare today's surviving 38m ruins with our AI photorealistic reconstruction of the 71m monumental portal documented by envoy Clavijo.</p>
+        </div>
+      </div>
+
+      <!-- Before / After Slider -->
+      <div class="comparison-wrapper" id="comparisonContainer">
+        <!-- Background: Today's Ruins (2026) -->
+        <img src="assets/Oqsaroy yon tarafi.png" alt="Ak-Saray Ruins 2026" class="comparison-image">
+        <span class="comparison-tag ruins" data-en="2026 CE — Surviving Ruins (38m)" data-zh="公元2026年 — 现存遗址（38米）" data-uz="2026-yil — Arxeologik Xaroba (38m)">2026 CE — Surviving Ruins (38m)</span>
+
+        <!-- Foreground Cliped: 1404 AI Reconstruction -->
+        <div class="comparison-overlay-clip" id="comparisonClip">
+          <img src="assets/aksaray_1404_ai_reconstruction.jpg" alt="Ak-Saray 1404 AI Reconstruction" class="comparison-image">
+          <span class="comparison-tag reconstructed" data-en="1404 CE — AI Reconstruction (71m Portal)" data-zh="公元1404年 — AI数字复原（71米门楼）" data-uz="1404-yil — AI Rekonstruksiya (71m Ravoq)">1404 CE — AI Reconstruction (71m Portal)</span>
+        </div>
+
+        <!-- Draggable Handle -->
+        <div class="comparison-slider-handle" id="comparisonHandle" role="slider" tabindex="0" aria-label="Comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <div class="slider-handle-button">&#8596;</div>
+        </div>
+      </div>
+
+      <!-- Architectural Telemetry Cards -->
+      <div class="telemetry-grid">
+        <div class="telemetry-card">
+          <div class="telemetry-label" data-en="Original Monumental Height" data-zh="原始建筑高度" data-uz="Asl Me'moriy Balandlik">Original Monumental Height</div>
+          <div class="telemetry-value">71.0 m</div>
+          <div class="telemetry-sub" data-en="Tallest portal in Central Asian history" data-zh="中亚历史上最高门楼" data-uz="Markaziy Osiyodagi eng baland peshtoq">Tallest portal in Central Asian history</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-label" data-en="Vault Arch Span" data-zh="拱券跨度" data-uz="Ravoq Kengligi">Vault Arch Span</div>
+          <div class="telemetry-value">22.5 m</div>
+          <div class="telemetry-sub" data-en="Pointed Timurid catenary vault" data-zh="帖木儿尖券拱顶" data-uz="Qirrali Temuriy ravoq tuzilishi">Pointed Timurid catenary vault</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-label" data-en="Tile Glazing Craft" data-zh="釉砖镶嵌工艺" data-uz="Koshinlash San'ati">Tile Glazing Craft</div>
+          <div class="telemetry-value">Haft-Rangi</div>
+          <div class="telemetry-sub" data-en="Cobalt blue, turquoise & gold leaf" data-zh="钴蓝、绿松石与金箔嵌色" data-uz="Kobalt ko'k, feruza va zarhal qoplama">Cobalt blue, turquoise & gold leaf</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-label" data-en="Surviving Monumental Pylon" data-zh="现存遗址立柱" data-uz="Saqlanib Qolgan Pylon">Surviving Monumental Pylon</div>
+          <div class="telemetry-value">38.0 m</div>
+          <div class="telemetry-sub" data-en="Protected on UNESCO List #885" data-zh="联合国教科文组织第885号重点保护" data-uz="YUNESKO #885 ro'yxatida muhofazada">Protected on UNESCO List #885</div>
+        </div>
+      </div>
+
+      <div class="ai-methodology-box">
+        <strong data-en="AI Reconstruction Methodology:" data-zh="AI复原科学方法论：" data-uz="AI Rekonstruksiya Metodologiyasi:">AI Reconstruction Methodology:</strong>
+        <span data-en=" Synthesized by integrating Galina Pugachenkova's archaeological foundation survey measurements, 15th-century Spanish diplomat Ruy González de Clavijo's architectural journals, and generative diffusion models trained on surviving Timurid geometric girih tilework from Bibi-Khanym." data-zh=" 结合考古学家普加琴科娃的地基测绘数据、15世纪西班牙使节克拉维约的建筑见闻录，以及以比比哈努姆清真寺现存几何釉砖纹理为基础的生成式扩散模型综合复原。" data-uz=" Arxeolog Galina Pugachenkovaning poydevor o'lchovlari, 15-asr ispan elchisi Klavixoning me'moriy kundaliklari va Bibixonim majmuasining saqlanib qolgan girih naqshlari asosida sun'iy intellekt orqali modellashtirilgan."> Synthesized by integrating Galina Pugachenkova's archaeological foundation survey measurements, 15th-century Spanish diplomat Ruy González de Clavijo's architectural journals, and generative diffusion models trained on surviving Timurid geometric girih tilework from Bibi-Khanym.</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         02. CINEMATIC VIDEO SECTION
          ======================================================== -->
     <section id="video" class="showcase-section">
       <div class="section-header-bar">
         <div>
-          <h2 class="section-title" data-en="Expeditionary Documentary Film" data-zh="实地考察现场纪录片" data-uz="Ekspeditsiya Hujjatli Filmi">Expeditionary Documentary Film</h2>
-          <p class="section-subtitle" data-en="Documenting the training cohort at Karshi State University and field surveying throughout historic Shakhrisabz." data-zh="记录青年考察队于卡尔希国立大学专业建档集训，及深入沙赫里萨布兹古迹的实拍纪实。" data-uz="Qarshi davlat universitetidagi o'quv mashg'ulotlari hamda tarixiy Shahrisabz bo'ylab dala tadqiqotlari jarayoni.">Documenting the training cohort at Karshi State University and field surveying throughout historic Shakhrisabz.</p>
+          <h2 class="section-title" data-en="Expeditionary Documentary Film" data-zh="考察纪录短片" data-uz="Ekspeditsiya Hujjatli Filmi">Expeditionary Documentary Film</h2>
+          <p class="section-subtitle" data-en="Documenting the training cohort at Karshi State University and field surveying throughout historic Shakhrisabz." data-zh="记录卡尔希国立大学青年团队的培训过程及沙赫里萨布兹全域的实地田野调研。" data-uz="Qarshi davlat universitetidagi o'quv mashg'ulotlari hamda tarixiy Shahrisabz bo'ylab dala tadqiqotlari jarayoni.">Documenting the training cohort at Karshi State University and field surveying throughout historic Shakhrisabz.</p>
         </div>
-        <div class="video-meta-badge" data-en="4K Archival Footage • 0:49" data-zh="4K档案原片 • 0:49" data-uz="4K Arxiv Kadrlari • 0:49">4K Archival Footage • 0:49</div>
+        <div class="video-meta-badge" data-en="4K Archival Footage · 0:49" data-zh="4K档案胶卷 · 0:49" data-uz="4K Arxiv Kadrlari · 0:49">4K Archival Footage · 0:49</div>
       </div>
 
       <div class="video-wrapper">
@@ -1237,250 +234,185 @@
         </video>
         <div class="video-meta">
           <div>
-            <strong data-en="Organized & Filmed by:" data-zh="联合组织与摄制：" data-uz="Hamkorlikda Tashkil Qilingan va Tasvirga Olingan:">Organized & Filmed by:</strong> Alisher Tuychiev (Heritage Guide) & Youth Delegation
+            <strong data-en="Organized & Filmed by:" data-zh="组织与摄像：" data-uz="Hamkorlikda Tashkil Qilingan va Tasvirga Olingan:">Organized & Filmed by:</strong> Alisher Tuychiev (Heritage Guide) & Youth Delegation
           </div>
           <div>
-            <span data-en="Archived on Wikimedia Commons & UNESCO IYF Dossier" data-zh="已归档于维基共享资源与联合国教科文组织青年论坛申报档案" data-uz="Vikimedia Commons va YUNESKO IYF hujjatlar to'plamiga kiritilgan">Archived on Wikimedia Commons & UNESCO IYF Dossier</span>
+            <span data-en="Archived on Wikimedia Commons & UNESCO IYF Dossier" data-zh="归档于维基共享资源与联合国教科文组织IYF专卷" data-uz="Vikimedia Commons va YUNESKO IYF hujjatlar to'plamiga kiritilgan">Archived on Wikimedia Commons & UNESCO IYF Dossier</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         02. CURATED PHOTOGRAPHIC EXHIBITION
+         03. SILK ROAD GEOCULTURAL CORRIDOR (Interactive Map)
+         ======================================================== -->
+    <section id="corridor" class="map-section">
+      <div class="section-header-bar">
+        <div>
+          <span class="ai-badge-header" data-en="Silk Road Geocultural Network" data-zh="丝绸之路地理文化走廊" data-uz="Buyuk Ipak Yo'li Geografik Madaniy Yo'lagi">Silk Road Geocultural Network</span>
+          <h2 class="section-title" data-en="Central Asian Oasis to China's Creative Hubs" data-zh="中亚绿洲与中国创意名城的对话" data-uz="Markaziy Osiyo Vohasidan Xitoyning Ijodiy Markazlarigacha">Central Asian Oasis to China's Creative Hubs</h2>
+          <p class="section-subtitle" data-en="Click any node along the 6,000 km caravan artery connecting Shakhrisabz's Timurid heritage with 2026 IYF host cities Nanjing and Changsha." data-zh="点击横跨6000公里商道的沿线枢纽，探索沙赫里萨布兹与2026青年论坛主办地南京、长沙的千年文明互鉴。" data-uz="Shahrisabz merosini 2026-yilgi forum mezbon shaharlari (Nanjing va Changsha) bilan bog'lovchi 6,000 km lik Ipak yo'li shaharlarini bosing.">Click any node along the 6,000 km caravan artery connecting Shakhrisabz's Timurid heritage with 2026 IYF host cities Nanjing and Changsha.</p>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div class="map-svg-wrapper">
+          <svg class="silkroad-svg" viewBox="0 0 1000 400">
+            <defs>
+              <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="50%" stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#d4af37"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Background Silk Road Map Route Path -->
+            <path class="silkroad-trail" d="M 120,240 Q 220,190 320,200 T 520,180 T 720,220 T 880,260 T 920,310" stroke="url(#routeGradient)"></path>
+
+            <!-- Shakhrisabz Node -->
+            <g class="silkroad-city-node active" data-city="shakhrisabz" transform="translate(120, 240)">
+              <circle class="node-pulse" r="6" fill="#38bdf8"></circle>
+              <circle r="8" fill="#38bdf8" stroke="#ffffff" stroke-width="2"></circle>
+              <text x="0" y="-16" text-anchor="middle" fill="currentColor" font-size="12" font-weight="700">Shakhrisabz (#885)</text>
+            </g>
+
+            <!-- Samarkand Node -->
+            <g class="silkroad-city-node" data-city="samarkand" transform="translate(220, 190)">
+              <circle r="7" fill="#0284c7" stroke="#ffffff" stroke-width="2"></circle>
+              <text x="0" y="-14" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">Samarkand</text>
+            </g>
+
+            <!-- Dunhuang Node -->
+            <g class="silkroad-city-node" data-city="dunhuang" transform="translate(520, 180)">
+              <circle r="7" fill="#0284c7" stroke="#ffffff" stroke-width="2"></circle>
+              <text x="0" y="-14" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">Dunhuang</text>
+            </g>
+
+            <!-- Xi'an Node -->
+            <g class="silkroad-city-node" data-city="xian" transform="translate(720, 220)">
+              <circle r="7" fill="#0284c7" stroke="#ffffff" stroke-width="2"></circle>
+              <text x="0" y="-14" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">Xi'an (Chang'an)</text>
+            </g>
+
+            <!-- Nanjing Node -->
+            <g class="silkroad-city-node" data-city="nanjing" transform="translate(880, 260)">
+              <circle r="8" fill="#d4af37" stroke="#ffffff" stroke-width="2"></circle>
+              <text x="0" y="-14" text-anchor="middle" fill="currentColor" font-size="11" font-weight="700">Nanjing (IYF)</text>
+            </g>
+
+            <!-- Changsha Node -->
+            <g class="silkroad-city-node" data-city="changsha" transform="translate(920, 310)">
+              <circle r="8" fill="#d4af37" stroke="#ffffff" stroke-width="2"></circle>
+              <text x="0" y="22" text-anchor="middle" fill="currentColor" font-size="11" font-weight="700">Changsha (IYF)</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Details Card -->
+        <div class="map-details-card">
+          <div class="map-details-city">
+            <span class="map-details-tag" id="mapCityRole">Timurid Architectural Cradle</span>
+            <h3 id="mapCityTitle">Shakhrisabz</h3>
+          </div>
+          <div class="map-details-text" id="mapCityDesc">
+            Birthplace of Amir Temur (UNESCO #885). Source of legendary craftsmen who transported Central Asian cobalt blue glazing and girih geometry across Eurasia.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         04. SILK ROAD AI DOCENT
+         ======================================================== -->
+    <section id="docent" class="docent-section">
+      <div class="section-header-bar">
+        <div>
+          <span class="ai-badge-header" data-en="Conversational AI Engine" data-zh="对话式AI知识引擎" data-uz="Interaktiv AI Suhbat Dvigateli">Conversational AI Engine</span>
+          <h2 class="section-title" data-en="Silk Road AI Heritage Assistant" data-zh="丝路遗产AI智能导览助理" data-uz="Ipak Yo'li AI Meros Maslahatchisi">Silk Road AI Heritage Assistant</h2>
+          <p class="section-subtitle" data-en="Ask interactive questions in English, Chinese, or Uzbek about our expedition, Ak-Saray's 1404 restoration, or UNESCO #885 history." data-zh="支持以英语、中文或乌兹别克语就实地考察、阿克萨赖宫AI复原或联合国教科文组织885号遗产史实进行交互问答。" data-uz="Ekspeditsiyamiz, Oqsaroyning 1404-yildagi AI rekonstruksiyasi yoki YUNESKO tarixi haqida istalgan tilda savol bering.">Ask interactive questions in English, Chinese, or Uzbek about our expedition, Ak-Saray's 1404 restoration, or UNESCO #885 history.</p>
+        </div>
+      </div>
+
+      <div class="docent-container">
+        <!-- Intro & Quick Chips -->
+        <div class="docent-intro-panel">
+          <div>
+            <div class="docent-avatar-wrap">
+              <div class="docent-avatar">🏛️</div>
+              <div class="docent-title-group">
+                <h3 data-en="Silk Road Docent" data-zh="丝路数字导师" data-uz="Ipak Yo'li Maslahatchisi">Silk Road Docent</h3>
+                <p data-en="AI Knowledge Assistant" data-zh="AI遗产专席顾问" data-uz="AI Meros Mutaxassisi">AI Knowledge Assistant</p>
+              </div>
+            </div>
+            <p class="docent-bio" data-en="Trained on primary Timurid chronicles, archaeological field reports from Karshi State University, and UNESCO World Heritage conservation dossiers." data-zh="基于帖木儿一手文献、卡尔希国立大学考古考察田野报告以及联合国教科文组织世界遗产档案数据深度训练。" data-uz="Temuriylar davri qo'lyozmalari, Qarshi davlat universiteti dala hisobotlari va YUNESKO Butunjahon merosi hujjatlari asosida faoliyat yuritadi.">Trained on primary Timurid chronicles, archaeological field reports from Karshi State University, and UNESCO World Heritage conservation dossiers.</p>
+          </div>
+
+          <div>
+            <div class="quick-chips-title" data-en="Frequently Inquired Topics" data-zh="快捷咨询热点" data-uz="Tez-tez So'raladigan Savollar">Frequently Inquired Topics</div>
+            <div class="quick-chips">
+              <button class="chip-btn" data-en="What is the significance of UNESCO World Heritage #885?" data-zh="联合国教科文组织世界遗产#885的核心意义是什么？" data-uz="YUNESKO Butunjahon Merosi #885 ning ahamiyati nimada?">What is the significance of UNESCO World Heritage #885?</button>
+              <button class="chip-btn" data-en="Tell me about Ak-Saray Palace in 1404 CE." data-zh="请向我介绍公元1404年的阿克萨赖宫。" data-uz="1404-yildagi Oqsaroy qasri haqida aytib bering.">Tell me about Ak-Saray Palace in 1404 CE.</button>
+              <button class="chip-btn" data-en="How did the Wikimedia Foundation grant support this expedition?" data-zh="维基媒体基金会资助是如何支持本次考察的？" data-uz="Vikimedia Jamg'armasi granti ekspeditsiyani qanday qo'llab-quvvatladi?">How did the Wikimedia Foundation grant support this expedition?</button>
+              <button class="chip-btn" data-en="How does Shakhrisabz connect to Changsha and Nanjing along the Silk Road?" data-zh="沙赫里萨布兹在丝绸之路上与长沙、南京有何历史纽带？" data-uz="Shahrisabz Ipak yo'lida Changsha va Nanjing bilan qanday bog'langan?">How does Shakhrisabz connect to Changsha and Nanjing along the Silk Road?</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Console -->
+        <div class="docent-chat-panel">
+          <div class="chat-history" id="chatHistory">
+            <div class="chat-bubble bot" data-en="Welcome to the Shakhrisabz Cultural Heritage Archive! I am your Silk Road AI Docent. Ask me anything about our expedition, Ak-Saray's 1404 reconstruction, or Timurid architecture." data-zh="欢迎来到沙赫里萨布兹文化遗产档案！我是您的丝路AI导览导师。欢迎随时向我询问关于考察、阿克萨赖宫1404年数字复原或帖木儿建筑美学的任何问题。" data-uz="Shahrisabz madaniy merosi arxiviga xush kelibsiz! Men sizning Ipak yo'li AI maslahatchisiman. Ekspeditsiyamiz, Oqsaroyning 1404-yildagi tiklanishi yoki me'morchiligimiz haqida istagan savolingizni bering.">Welcome to the Shakhrisabz Cultural Heritage Archive! I am your Silk Road AI Docent. Ask me anything about our expedition, Ak-Saray's 1404 reconstruction, or Timurid architecture.</div>
+          </div>
+          <div class="chat-input-bar">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask about Shakhrisabz, Ak-Saray, or the Silk Road..." data-en="Ask about Shakhrisabz, Ak-Saray, or the Silk Road..." data-zh="请输入关于沙赫里萨布兹、阿克萨赖或丝绸之路的问题..." data-uz="Shahrisabz, Oqsaroy yoki Ipak yo'li haqida savol bering...">
+            <button class="chat-send-btn" id="chatSendBtn" data-en="Send" data-zh="发送" data-uz="Yuborish">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         05. CURATED PHOTOGRAPHIC EXHIBITION (Data-Driven JSON)
          ======================================================== -->
     <section id="gallery" class="showcase-section">
       <div class="section-header-bar">
         <div>
-          <h2 class="section-title" data-en="Curated Photographic Exhibition" data-zh="实地特展影像选集" data-uz="Tanlangan Fotosuratlar Ko'rgazmasi">Curated Photographic Exhibition</h2>
-          <p class="section-subtitle" data-en="Click any photo to view in full resolution with architectural and cultural epigraphy notes." data-zh="点击任意照片可全屏查看超清细节及古建筑与金石题铭解说。" data-uz="Me'moriy va epigrafik izohlar bilan yuqori sifatda ko'rish uchun istalgan surat ustiga bosing.">Click any photo to view in full resolution with architectural and cultural epigraphy notes.</p>
+          <h2 class="section-title" data-en="Curated Photographic Exhibition" data-zh="策展摄影档案展" data-uz="Tanlangan Fotosuratlar Ko'rgazmasi">Curated Photographic Exhibition</h2>
+          <p class="section-subtitle" data-en="Click any photo to view in full resolution with architectural and cultural epigraphy notes." data-zh="点击任意照片以全高分辨率查看详细的建筑与碑铭注释。" data-uz="Me'moriy va epigrafik izohlar bilan yuqori sifatda ko'rish uchun istalgan surat ustiga bosing.">Click any photo to view in full resolution with architectural and cultural epigraphy notes.</p>
         </div>
-        
+
         <!-- Filter Tabs -->
         <div class="filter-tabs" role="tablist" aria-label="Photo categories">
-          <button type="button" class="filter-btn active" data-cat="all" onclick="filterGallery('all')" data-en="All" data-zh="全部特展" data-uz="Barchasi">All</button>
-          <button type="button" class="filter-btn" data-cat="monument" onclick="filterGallery('monument')" data-en="Monuments & Epigraphy" data-zh="古建筑与题铭" data-uz="Obidalar va Bitiklar">Monuments & Epigraphy</button>
-          <button type="button" class="filter-btn" data-cat="craft" onclick="filterGallery('craft')" data-en="Crafts & Bazaars" data-zh="传统手工艺与集市" data-uz="Hunarmandchilik va Bozorlar">Crafts & Bazaars</button>
-          <button type="button" class="filter-btn" data-cat="landscape" onclick="filterGallery('landscape')" data-en="Highland Landscapes" data-zh="高山自然风光" data-uz="Tog' Manzaralari">Highland Landscapes</button>
+          <button class="filter-btn active" data-filter="all" data-en="All Assets (12)" data-zh="全部展品 (12)" data-uz="Barchasi (12)">All Assets (12)</button>
+          <button class="filter-btn" data-filter="monument" data-en="Monuments & Mosques" data-zh="纪念建筑与清真寺" data-uz="Obidalar va Masjidlar">Monuments & Mosques</button>
+          <button class="filter-btn" data-filter="craft" data-en="Crafts & Epigraphy" data-zh="非遗手工艺与铭文" data-uz="Hunar va Tosh Bitiklar">Crafts & Epigraphy</button>
+          <button class="filter-btn" data-filter="landscape" data-en="Water & Landscapes" data-zh="水系遗产与地理风貌" data-uz="Suv Merosi va Tabiat">Water & Landscapes</button>
         </div>
       </div>
 
-      <!-- Gallery Grid -->
+      <!-- Dynamically Rendered Grid from JSON -->
       <div class="gallery-grid" id="galleryGrid">
-
-        <!-- 01: Ak-Saray Palace Tower -->
-        <article class="photo-card" data-cat="monument" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Oqsaroy yon tarafi.png', 'Ak-Saray Palace Tower Pylon & Kufic Majolica', 'The colossal 14th-century pylon tower of Amir Timur\'s grand palace rising into the clear autumn sky, adorned with geometric Kufic script baked in lapis lazuli glaze.', '阿克萨莱宫巨塔遗址与库法体青蓝彩陶', '耸入秋空的14世纪帖木儿帝国夏宫巨塔，砖筑立面上嵌有精美几何库法体青蓝彩陶长铭。', 'Oqsaroy Ulkan Minorasi va Kufiy Naqshlari', 'Amir Temurning 14-asrda barpo etilgan hashamatli saroyi minorasi. Moviy sirkor g\'ishtlar ustiga bitilgan handasiy kufiy bitiklar bilan bezatilgan.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Oqsaroy yon tarafi.png" alt="Ak-Saray Palace" data-alt-en="Ak-Saray Palace" data-alt-zh="阿克萨莱宫" data-alt-uz="Oqsaroy saroyi" loading="lazy">
-            <span class="photo-overlay" data-en="14th Century" data-zh="14世纪" data-uz="14-asr">14th Century</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Ak-Saray Palace: Monumental Tower" data-zh="阿克萨莱宫：巍峨巨塔遗迹" data-uz="Oqsaroy: Ulkan Minora Xarobasi">Ak-Saray Palace: Monumental Tower</h3>
-            <p class="photo-caption" data-en="600-year-old Timurid baked brick and lapis glaze standing among evergreen pines." data-zh="经历六百年风雨的帖木儿青蓝彩釉砖体与周遭翠柏相得益彰。" data-uz="600 yillik Temuriylar pishiq g'ishti va lojuvard koshinlar yashil qarag'aylar orasida yuksalib turibdi.">600-year-old Timurid baked brick and lapis glaze standing among evergreen pines.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Timurid Architecture" data-zh="帖木儿建筑" data-uz="Temuriylar Me'morchiligi">Timurid Architecture</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 02: Kok Gumbaz Calligraphic Drum -->
-        <article class="photo-card" data-cat="monument" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Masjid bitiklari.png', 'Kok Gumbaz Mosque: Sacred Calligraphic Drum', 'Commissioned in 1435 by astronomer-king Mirzo Ulugbek. The drum displays monumental glazed calligraphy: Al-Mulk Lillah (Sovereignty belongs to God).', '阔克穹顶清真寺：神圣书法金石圆鼓', '由著名天文学家兼统治者兀鲁伯于公元1435年修建，巨大圆鼓上饰有经典班奈体青瓷铭文：“王权属于真主”。', 'Ko\'k Gumbaz Masjidi: Muqaddas Xattotlik Barabani', '1435-yilda Mirzo Ulug\'bek tomonidan barpo etilgan. Baraban qismida moviy koshinkor xattotlik: \'Al-Mulk Lillah\' (Muluk Allohnikidir) kalimasi bitilgan.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Masjid bitiklari.png" alt="Kok Gumbaz Mosque" data-alt-en="Kok Gumbaz Mosque" data-alt-zh="阔克穹顶清真寺" data-alt-uz="Ko'k Gumbaz masjidi" loading="lazy">
-            <span class="photo-overlay" data-en="1435 CE" data-zh="1435年" data-uz="1435-yil">1435 CE</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Kok Gumbaz Mosque: Epigraphic Drum" data-zh="阔克穹顶清真寺：书法圆鼓" data-uz="Ko'k Gumbaz Masjidi: Xattotlik Barabani">Kok Gumbaz Mosque: Epigraphic Drum</h3>
-            <p class="photo-caption" data-en="Monumental turquoise dome and Banna'i script calligraphy overlooking the courtyard." data-zh="雄伟的青绿色穹顶与班奈体伊斯兰建筑书法典范。" data-uz="Muazzam feruza gumbaz va binoyi xatidagi moviy koshinkor xattotlik.">Monumental turquoise dome and Banna'i script calligraphy overlooking the courtyard.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Epigraphy" data-zh="铭文金石" data-uz="Epigrafika">Epigraphy</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 03: Dorut-Tilovat Sarcophagi -->
-        <article class="photo-card" data-cat="monument" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Dorut tilovati majmuasidagi qabrlar.png', 'Dorut-Tilovat Memorial Crypt & Sarcophagi', 'Morning sunlight streaming through an arched wooden lattice window across relief-carved marble sarcophagi of the Sufi masters in the Dorut-Tilovat complex (14th century).', '多鲁特-提洛瓦特纪念陵寝石棺群', '自然阳光透过木雕透光格窗倾泻于刻满苏鲁斯体阿拉伯铭文的帖木儿时期大理石棺之上，背景为古朴的六边形青瓷护壁。', 'Dorut-Tilovat Majmuasi: Tasavvuf Mashoyixlari Sag\'analari', 'Yog\'och panjara orqali tushayotgan ertalabki quyosh nurlari Dorut-Tilovat majmuasidagi (14-asr) o\'yma naqshli marmar sag\'analarni yoritmoqda.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Dorut tilovati majmuasidagi qabrlar.png" alt="Dorut-Tilovat Sarcophagi" data-alt-en="Dorut-Tilovat Sarcophagi" data-alt-zh="多鲁特-提洛瓦特石棺" data-alt-uz="Dorut-Tilovat sag'analari" loading="lazy">
-            <span class="photo-overlay" data-en="Sufi Crypt" data-zh="苏菲陵寝" data-uz="Tasavvuf Sag'anasi">Sufi Crypt</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Dorut-Tilovat: Sufi Sarcophagi" data-zh="多鲁特-提洛瓦特：苏菲宗师石棺" data-uz="Dorut-Tilovat: Tasavvuf Sag'analari">Dorut-Tilovat: Sufi Sarcophagi</h3>
-            <p class="photo-caption" data-en="Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays." data-zh="镌刻古代苏鲁斯阿拉伯书法的纯白大理石棺，在晨曦透窗间静穆陈列。" data-uz="Suls xatidagi arabiy bitiklar bilan naqshlangan oq marmar sag'analar.">Marble tombs inscribed with classical Thuluth calligraphy, illuminated by natural rays.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Marble Epigraphy" data-zh="大理石铭文" data-uz="Marmar Epigrafika">Marble Epigraphy</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 04: Wood Carving (Fixed filename: Oyib yozilgan naxshlar.png) -->
-        <article class="photo-card" data-cat="craft" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Oyib yozilgan naxshlar.png', 'Hand-Carved Walnut Column & Muqarnas', 'Detailed macro photograph showing deep traditional Islimiy floral scrollwork carved into aged elm timber with painted polychrome ceiling beams.', '传统胡桃木雕立柱与钟乳式柱头', '微距呈现中亚传统深雕木工艺，清晰展现伊斯利米卷草纹、钟乳体柱头与梁木彩绘。', 'O\'yma Naqshli Yog\'och Ustun va Muqarnas', 'Ko\'p asrlik an\'anaviy islimiy naqshlar o\'yilgan qadimiy yog\'och ustun va rang-barang bo\'yalgan vassa ship nurlari.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Oyib yozilgan naxshlar.png" alt="Carved Walnut Pillar" data-alt-en="Carved Walnut Pillar" data-alt-zh="手工木雕立柱" data-alt-uz="O'yma yog'och ustun" loading="lazy">
-            <span class="photo-overlay" data-en="Woodcarving" data-zh="传统木雕" data-uz="Yog'och O'ymakorligi">Woodcarving</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Carved Walnut Pillar & Polychrome Vassa" data-zh="传统手工雕刻立柱与彩绘藻井" data-uz="O'ymakor Yog'och Ustun va Bo'yalgan Vassa">Carved Walnut Pillar & Polychrome Vassa</h3>
-            <p class="photo-caption" data-en="Centuries-old Uzbek woodcarving preserving delicate floral patterns." data-zh="流传数百年的乌兹别克传统木雕艺术，完好保存典雅的花草卷草纹饰。" data-uz="Nozik islimiy naqshlarni asrlar osha saqlab kelayotgan o'zbek milliy yog'och o'ymakorligi.">Centuries-old Uzbek woodcarving preserving delicate floral patterns.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Intangible Heritage" data-zh="非遗手工艺" data-uz="Nomoddiy Meros">Intangible Heritage</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 05: Old Quarter Mosque -->
-        <article class="photo-card" data-cat="monument" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Shaxrisabz Eski masjidi.png', 'Historic Quarter Mosque & Vernacular Courtyard', 'A preserved neighborhood mosque in old Shakhrisabz featuring vernacular timber colonnades, open iwans, and tranquil courtyards serving local religious life.', '老城传统社区清真寺与庭院', '沙赫里萨布兹古城区保存完好的特色社区清真寺，兼具传统木柱廊、开敞伊旺式殿堂与静谧庭院。', 'Tarixiy Guzar Masjidi va Milliy Ayvon', 'Eski Shahrisabzning an\'anaviy mahalliy masjidi: yog\'och ustunli ayvonlar va tinch ichki hovli uyg\'unligi.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Shaxrisabz Eski masjidi.png" alt="Old Mosque" data-alt-en="Old Mosque" data-alt-zh="老城清真寺" data-alt-uz="Eski shahar masjidi" loading="lazy">
-            <span class="photo-overlay" data-en="Historic Quarter" data-zh="老城历史街区" data-uz="Tarixiy Guzar">Historic Quarter</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Historic Quarter Mosque & Iwan" data-zh="老城传统社区清真寺与木构伊旺" data-uz="Tarixiy Guzar Masjidi va Ayvon">Historic Quarter Mosque & Iwan</h3>
-            <p class="photo-caption" data-en="Vernacular architectural harmony integrating timber craftsmanship with community space." data-zh="将传统木构营造与社区公共空间紧密结合的原生态历史风貌。" data-uz="Yog'ochsozlik mahorati va jamoat maskani uyg'unlashgan an'anaviy me'morchilik namunasi.">Vernacular architectural harmony integrating timber craftsmanship with community space.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Vernacular Architecture" data-zh="传统民间建筑" data-uz="An'anaviy Me'morchilik">Vernacular Architecture</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 06: Ancient Mosque -->
-        <article class="photo-card" data-cat="monument" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Qadimiy masjid.png', 'Ancient Shakhrisabz Sanctuary', 'Archaeological and architectural views of Shakhrisabz\'s earliest surviving brickwork and vaulted prayer niches.', '沙赫里萨布兹古圣殿砖拱遗构', '展示早期丝路砖筑营造与穹顶圣龛的原真历史形态。', 'Qadimiy Gumbazli Masjid va Mehrob', 'Shahrisabzning saqlanib qolgan eng qadimiy g\'ishtin me\'morchiligi va gumbazli namozgoh xonalari ko\'rinishi.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Qadimiy masjid.png" alt="Ancient Mosque" data-alt-en="Ancient Mosque" data-alt-zh="古代清真寺遗构" data-alt-uz="Qadimiy masjid" loading="lazy">
-            <span class="photo-overlay" data-en="Sanctuary" data-zh="古圣殿" data-uz="Namozgoh">Sanctuary</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Ancient Brickwork & Prayer Vaults" data-zh="古砖构圣龛与拱顶遗存" data-uz="Qadimiy G'ishtin Ravoqlar va Mehrob">Ancient Brickwork & Prayer Vaults</h3>
-            <p class="photo-caption" data-en="Early Islamic structural masonry demonstrating vernacular construction methods." data-zh="生动展现早期丝绸之路中亚本土建筑砖砌结构与营造智慧。" data-uz="Ilk islom me'morchiligining pishiq g'ishtli tuzilishi va qadimiy qurilish an'analari.">Early Islamic structural masonry demonstrating vernacular construction methods.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Archaeology" data-zh="考古遗存" data-uz="Arxeologiya">Archaeology</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 07: Chorsu Bazaar -->
-        <article class="photo-card" data-cat="craft" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Shahrisabz Chorsu majmuasi.png', 'Chorsu Bazaar Arcade Dome (16th Century)', 'The crossroad dome bazaar of Shakhrisabz featuring pointed brick vaults and carved cedar doors, framed naturally by autumn foliage.', '恰尔苏十字拱顶商市（16世纪）', '十字路口古商栈的尖拱砖筑门廊与传统精雕木门，秋季黄叶掩映成趣。', 'Shahrisabz Chorsu Savdo Toqi (16-asr)', 'Qadimiy chorrahada joylashgan gumbazli bozor: qirrali g\'ishtin ravoqlar va o\'yma naqshli eshiklar.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Shahrisabz Chorsu majmuasi.png" alt="Chorsu Bazaar" data-alt-en="Chorsu Bazaar" data-alt-zh="恰尔苏集市" data-alt-uz="Chorsu savdo toqi" loading="lazy">
-            <span class="photo-overlay" data-en="16th Century" data-zh="16世纪" data-uz="16-asr">16th Century</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Chorsu Bazaar: Crossroad Vault" data-zh="恰尔苏集市：16世纪贸易枢纽" data-uz="Chorsu Bozori: Chorraha Ravoqi">Chorsu Bazaar: Crossroad Vault</h3>
-            <p class="photo-caption" data-en="Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz." data-zh="沙赫里萨布兹古代交通要冲处的特色圆顶商业建筑遗存。" data-uz="Shahrisabzning qadimiy savdo yo'llari kesishmasidagi gumbazli bozor majmuasi.">Vernacular domed commercial arcade at the ancient crossroads of Shakhrisabz.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Bazaar Architecture" data-zh="集市商业建筑" data-uz="Bozor Me'morchiligi">Bazaar Architecture</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 08: Folk Textiles -->
-        <article class="photo-card" data-cat="craft" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Milliylik aks etgan bozorlari.png', 'Shakhrisabz Folk Textiles: Iroqi Cross-Stitch', 'Traditional market display of handmade Iroqi skullcaps, embroidered accessories, Suzani wall hangings, and natural-dyed silk ikat.', '传统民间工艺巴扎：伊拉克十字绣与丝绸', '生动展现手工伊拉克式花帽、十字绣织锦袋、苏扎尼刺绣以及艾德莱斯丝绸等传统女红技艺。', 'Shahrisabz Iroqi Do\'ppido\'zligi va So\'zanalar', 'Qo\'lda tikilgan mashhur Iroqi do\'ppilar, kashtado\'zlik buyumlari, so\'zanalar va ipak matolar namoyishi.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Milliylik aks etgan bozorlari.png" alt="Folk Textiles" data-alt-en="Folk Textiles" data-alt-zh="民俗手工艺" data-alt-uz="Milliy kashtachilik" loading="lazy">
-            <span class="photo-overlay" data-en="Folk Craft" data-zh="非遗工坊" data-uz="Xalq Hunarmandchiligi">Folk Craft</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Living Bazaar Traditions & Iroqi Embroidery" data-zh="活态集市传统与沙赫里萨布兹刺绣" data-uz="Bozor An'analari va Iroqi Do'ppido'zlik">Living Bazaar Traditions & Iroqi Embroidery</h3>
-            <p class="photo-caption" data-en="Intangible cultural heritage preserved by local craftswomen across Silk Road stalls." data-zh="丝路古集市摊位上由当地手工艺妇女传承至今的非物质文化遗产。" data-uz="Ipak yo'li rastalarida mahalliy hunarmand ayollar tomonidan asrab kelinayotgan nomoddiy madaniy meros.">Intangible cultural heritage preserved by local craftswomen across Silk Road stalls.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Traditional Crafts" data-zh="传统民间工艺" data-uz="Amaliy San'at">Traditional Crafts</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 09: Tarixiy Tosh -->
-        <article class="photo-card" data-cat="monument" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Shaxrisabzdagi Tarixiy Tosh.png', 'Timurid Epigraphic Stone Monument', 'Centuries-old carved stone monument bearing classical Arabic epigraphy and ornamental arabesques, standing as archaeological testament to Timurid lapidary arts.', '帖木儿时期石刻铭文古迹', '雕琢有古典阿拉伯铭文与华美几何回纹的古代石碑，见证古代丝路石雕石刻技艺的高超水准。', 'Temuriylar Davri Tosh Bitigi va Naqshinkor Yodgorlik', 'Klassik arab xattotligi va nafis islimiy o\'ymakorlik bitilgan ko\'p asrlik tosh monument.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Shaxrisabzdagi Tarixiy Tosh.png" alt="Historic Stone" data-alt-en="Historic Stone" data-alt-zh="古代石碑" data-alt-uz="Tarixiy tosh yodgorlik" loading="lazy">
-            <span class="photo-overlay" data-en="Lapidary" data-zh="石刻金石" data-uz="Tosh O'ymakorligi">Lapidary</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Ancient Epigraphic Stele & Ornamental Stone" data-zh="古代石刻题铭石碑与石雕艺术" data-uz="Qadimiy Epigrafik Tosh Bitigi">Ancient Epigraphic Stele & Ornamental Stone</h3>
-            <p class="photo-caption" data-en="Archaeological stone artifacts testifying to early Silk Road epigraphy." data-zh="记录早期丝绸之路金石学与石刻书法艺术的珍贵实物见证。" data-uz="Ipak yo'lining qadimiy xattotlik va tosh o'ymakorligi san'atini namoyon etuvchi arxeologik yodgorlik.">Archaeological stone artifacts testifying to early Silk Road epigraphy.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Stone Inscriptions" data-zh="金石石刻" data-uz="Tosh Bitiklari">Stone Inscriptions</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 10: Oqsuv Glacial Stream -->
-        <article class="photo-card" data-cat="landscape" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Mirakidagi Oqsuv kanal.png', 'Oqsuv Alpine Stream, Miraki', 'Rushing glacial waters flowing over mountain boulders, feeding the Shakhrisabz oasis amidst autumn poplar woodlands.', '米拉奇奥克苏高山急流', '帕米尔-阿赖山系融雪汇成的急流穿行于河卵石间，千百年来滋润着沙赫里萨布兹绿洲。', 'Mirakidagi Oqsuv Tog\' Daryosi', 'Shahrisabz vohasini suv bilan ta\'minlovchi, toshlar orasidan shiddat bilan oqayotgan muzlik suvlari va kuzgi to\'qayzorlar.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Mirakidagi Oqsuv kanal.png" alt="Oqsuv Alpine Stream" data-alt-en="Oqsuv Alpine Stream" data-alt-zh="奥克苏高山急流" data-alt-uz="Oqsuv daryosi" loading="lazy">
-            <span class="photo-overlay" data-en="Alpine River" data-zh="雪山河流" data-uz="Tog' Daryosi">Alpine River</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Oqsuv Alpine Stream & Riverine Oasis" data-zh="奥克苏山涧急流与绿洲水系" data-uz="Oqsuv Tog' Daryosi va Voha Tizimi">Oqsuv Alpine Stream & Riverine Oasis</h3>
-            <p class="photo-caption" data-en="The lifeline mountain river sustaining rural heritage near Hisorak reservoir." data-zh="维系希索拉克水库附近乡村农业与人文生态的高山水源。" data-uz="Hisorak suv ombori yaqinidagi qishloq xo'jaligi va voha ekologiyasini ta'minlovchi hayotiy daryo.">The lifeline mountain river sustaining rural heritage near Hisorak reservoir.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Water Heritage" data-zh="水利人文遗产" data-uz="Suv Merosi">Water Heritage</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 11: Miraki Autumn Woodland -->
-        <article class="photo-card" data-cat="landscape" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Miraki tabiati kuzda.png', 'Autumn Mountain Landscape in Miraki', 'Vibrant golden poplar trees and mountain groves surrounding rural settlements in the Shakhrisabz highlands, capturing the seasonal Silk Road environment.', '米拉奇秋日金黄山林风貌', '沙赫里萨布兹高地山麓间金黄绚烂的杨树林与村落，展现古老丝路绿洲的自然生态环境。', 'Mirakining Oltin Kuz Manzarasi', 'Shahrisabz tog\' oldi hududlaridagi sarg\'aygan terakzorlar va qadimiy qishloq maskanlarining fusunkor tabiati.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Miraki tabiati kuzda.png" alt="Autumn in Miraki" data-alt-en="Autumn in Miraki" data-alt-zh="米拉奇秋色" data-alt-uz="Mirakida oltin kuz" loading="lazy">
-            <span class="photo-overlay" data-en="Highlands" data-zh="高地风貌" data-uz="Tog' Etagi">Highlands</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Miraki Highlands & Autumn Poplar Groves" data-zh="米拉奇高地与金秋白杨林" data-uz="Miraki Tog'lari va Kuzgi Terakzorlar">Miraki Highlands & Autumn Poplar Groves</h3>
-            <p class="photo-caption" data-en="The environmental landscape framing cultural memory in Southern Uzbekistan." data-zh="构成乌兹别克斯坦南部文化历史记忆的壮丽山川生态背景。" data-uz="O'zbekiston janubidagi madaniy xotirani o'rab turgan go'zal tog' tabiati.">The environmental landscape framing cultural memory in Southern Uzbekistan.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Natural Environment" data-zh="自然生态" data-uz="Tabiiy Muhit">Natural Environment</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 12: Miraki Park Landscape -->
-        <article class="photo-card" data-cat="landscape" tabindex="0" role="button" aria-haspopup="dialog" onclick="openModal('assets/Miraki- Yashil sayilgoh.png', 'Miraki Alpine Valley Grove', 'Pristine mountain foothills, crystal riverbeds, and golden autumn foliage framing ancient Silk Road mountain trails.', '米拉奇高山河谷幽境', '原生态山麓、清澈河床与金秋山色勾勒出古丝绸之路山地通道风貌。', 'Miraki Tog\' Vodiysi va Daryo Bo\'yi', 'Tiniq daryo o\'zani, purviqor tog\' etaklari va Ipak yo\'lining tog\' so\'qmoqlari bo\'ylab cho\'zilgan kuzgi sayilgoh.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <div class="photo-media">
-            <img src="assets/Miraki- Yashil sayilgoh.png" alt="Miraki Green Grove" data-alt-en="Miraki Green Grove" data-alt-zh="米拉奇山谷清境" data-alt-uz="Miraki sayilgohi" loading="lazy">
-            <span class="photo-overlay" data-en="Mountain Trail" data-zh="山间古径" data-uz="Tog' So'qmog'i">Mountain Trail</span>
-          </div>
-          <div class="photo-body">
-            <h3 class="photo-title" data-en="Miraki Alpine Valley & Riverbed" data-zh="米拉奇高山峡谷与清澈河滩" data-uz="Miraki Tog' Vodiysi va Daryo O'zani">Miraki Alpine Valley & Riverbed</h3>
-            <p class="photo-caption" data-en="The natural setting through which historic traders traveled between Kashkadarya and Samarkand." data-zh="连接卡什卡达里亚与撒马尔罕之间古商贾穿行的高山峡谷自然风貌。" data-uz="Qashqadaryo va Samarqand o'rtasida qadimiy savdogarlar o'tgan tog' darasi manzarasi.">The natural setting through which historic traders traveled between Kashkadarya and Samarkand.</p>
-            <div class="photo-footer">
-              <span><span data-en="Photo:" data-zh="摄影：" data-uz="Surat:">Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-              <span data-en="Mountain Trails" data-zh="高山廊道" data-uz="Tog' Yo'llari">Mountain Trails</span>
-            </div>
-          </div>
-        </article>
-
+        <!-- Injected dynamically by js/gallery.js -->
       </div>
     </section>
-
 
     <!-- Footer -->
     <footer>
       <div>
-        <strong data-en="Shakhrisabz Cultural Heritage Archive" data-zh="沙赫里萨布兹文化遗产数字档案" data-uz="Shahrisabz Madaniy Merosi Arxivi">Shakhrisabz Cultural Heritage Archive</strong> • <span data-en="Co-organized by Alisher Tuychiev (Heritage Guide) & Youth Delegation" data-zh="由阿利舍尔·图伊奇耶夫（向导）与青年考察团队联合筹办" data-uz="Alisher Tuychiev (Mahalliy gid) va Yoshlar delegatsiyasi hamkorligida tashkillashtirilgan">Co-organized by Alisher Tuychiev (Heritage Guide) & Youth Delegation</span>
+        <strong data-en="Shakhrisabz Cultural Heritage Archive" data-zh="沙赫里萨布兹文化遗产档案" data-uz="Shahrisabz Madaniy Merosi Arxivi">Shakhrisabz Cultural Heritage Archive</strong> · <span data-en="Co-organized by Alisher Tuychiev (Heritage Guide) & Youth Delegation" data-zh="由Alisher Tuychiev（青年遗产向导）与考察青年团队联合开展" data-uz="Alisher Tuychiev (Mahalliy gid) va Yoshlar delegatsiyasi hamkorligida tashkillashtirilgan">Co-organized by Alisher Tuychiev (Heritage Guide) & Youth Delegation</span>
       </div>
       <div style="margin-top: 6px;">
-        <span data-en="Supported by the Wikimedia Foundation • Openly Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" data-zh="由维基媒体基金会资助 • 依据知识共享署名-相同方式共享4.0国际许可协议（CC BY-SA 4.0）开放授权" data-uz="Vikimedia Jamg'armasi ko'magida yaratildi • Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ochiq litsenziyasi asosida taqdim etiladi">Supported by the Wikimedia Foundation • Openly Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</span>
+        <span data-en="Supported by the Wikimedia Foundation · Openly Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" data-zh="由维基媒体基金会资助支持 · 采用知识共享 署名-相同方式共享 4.0 国际许可（CC BY-SA 4.0）公开授权" data-uz="Vikimedia Jamg'armasi ko'magida yaratildi · Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ochiq litsenziyasi asosida taqdim etiladi">Supported by the Wikimedia Foundation · Openly Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</span>
       </div>
     </footer>
 
   </div>
 
   <!-- Modal Lightbox (Accessible Dialog) -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" onclick="closeModal()">
-    <button type="button" class="modal-close" id="modalCloseBtn" onclick="closeModal()" aria-label="Close dialog">&times;</button>
-    <div class="modal-container" onclick="event.stopPropagation()">
-      <img id="mImg" src="" alt="Enlarged exhibition photograph">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal-close" id="modalCloseBtn" onclick="closeModal()" aria-label="Close dialog">&times;</button>
+    <div class="modal-container">
+      <img id="mImg" src="" alt="Enlarged view">
       <div class="modal-info">
         <h3 class="modal-title" id="mTitle"></h3>
         <p class="modal-desc" id="mDesc"></p>
@@ -1488,353 +420,7 @@
     </div>
   </div>
 
-  <!-- JavaScript for Theme, Trilingual Engine, Modal Dialog & Hero Slider -->
-  <script>
-    /* ========================================================
-       01. THEME ENGINE (Light & Dark Mode)
-       ======================================================== */
-    function setTheme(mode) {
-      document.documentElement.setAttribute('data-theme', mode);
-      try {
-        localStorage.setItem('shakhrisabz_theme', mode);
-      } catch (e) {}
-      updateThemeButtons(mode);
-    }
-
-    function updateThemeButtons(mode) {
-      const darkBtn = document.getElementById('themeDarkBtn');
-      const lightBtn = document.getElementById('themeLightBtn');
-      if (darkBtn) darkBtn.classList.toggle('active', mode === 'dark');
-      if (lightBtn) lightBtn.classList.toggle('active', mode === 'light');
-    }
-
-    // Initialize theme button state on load
-    (function initThemeButtons() {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      updateThemeButtons(currentTheme);
-    })();
-
-    // Listen for OS system theme changes if user hasn't explicitly set preference
-    if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-        try {
-          if (!localStorage.getItem('shakhrisabz_theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
-          }
-        } catch (err) {}
-      });
-    }
-
-    /* ========================================================
-       02. TRILINGUAL LOCALIZATION ENGINE (EN, ZH, UZ)
-       ======================================================== */
-    let currentLang = 'en';
-    let currentModalData = null;
-
-    function setLang(lang) {
-      if (!['en', 'zh', 'uz'].includes(lang)) lang = 'en';
-      currentLang = lang;
-      document.documentElement.lang = lang;
-
-      try {
-        localStorage.setItem('shakhrisabz_lang', lang);
-      } catch (e) {}
-
-      // Update switcher active states
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-
-      // Update all translated text elements
-      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
-      });
-
-      // Update image alt attributes for screen readers
-      document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
-        img.setAttribute('alt', img.getAttribute('data-alt-' + lang));
-      });
-
-      // If modal lightbox is open, re-render its text dynamically
-      if (currentModalData) {
-        renderModalText();
-      }
-    }
-
-    // Restore saved language preference on load
-    (function initLang() {
-      try {
-        const savedLang = localStorage.getItem('shakhrisabz_lang');
-        if (savedLang && (savedLang === 'en' || savedLang === 'zh' || savedLang === 'uz')) {
-          setLang(savedLang);
-        } else {
-          setLang('en');
-        }
-      } catch (e) {
-        setLang('en');
-      }
-    })();
-
-    /* ========================================================
-       03. ACCESSIBLE MODAL LIGHTBOX (WCAG Compliant)
-       ======================================================== */
-    let lastFocusedElement = null;
-
-    function renderModalText() {
-      if (!currentModalData) return;
-      const title = document.getElementById('mTitle');
-      const desc = document.getElementById('mDesc');
-      const img = document.getElementById('mImg');
-
-      let t = currentModalData.tEn;
-      let d = currentModalData.dEn;
-      if (currentLang === 'zh') {
-        t = currentModalData.tZh || currentModalData.tEn;
-        d = currentModalData.dZh || currentModalData.dEn;
-      } else if (currentLang === 'uz') {
-        t = currentModalData.tUz || currentModalData.tEn;
-        d = currentModalData.dUz || currentModalData.dEn;
-      }
-
-      if (title) title.textContent = t;
-      if (desc) desc.textContent = d;
-      if (img) img.alt = t;
-    }
-
-    function openModal(src, tEn, dEn, tZh, dZh, tUz, dUz) {
-      lastFocusedElement = document.activeElement;
-      currentModalData = { tEn, dEn, tZh, dZh, tUz, dUz };
-
-      const modal = document.getElementById('modal');
-      const img = document.getElementById('mImg');
-      if (img) img.src = src;
-
-      renderModalText();
-
-      // Lock body scroll
-      document.body.style.overflow = 'hidden';
-
-      // Show modal
-      modal.style.display = 'flex';
-
-      // Set focus to close button
-      const closeBtn = document.getElementById('modalCloseBtn');
-      if (closeBtn) closeBtn.focus();
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('modal');
-      modal.style.display = 'none';
-      currentModalData = null;
-
-      // Unlock body scroll
-      document.body.style.overflow = '';
-
-      // Restore keyboard focus
-      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-        lastFocusedElement.focus();
-      }
-    }
-
-    // Modal Keyboard Navigation & Focus Trap
-    document.addEventListener('keydown', function(e) {
-      const modal = document.getElementById('modal');
-      if (modal.style.display !== 'flex') return;
-
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeModal();
-        return;
-      }
-
-      // Trap focus inside modal
-      if (e.key === 'Tab') {
-        const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        if (focusableElements.length === 0) return;
-        const firstEl = focusableElements[0];
-        const lastEl = focusableElements[focusableElements.length - 1];
-
-        if (e.shiftKey) {
-          if (document.activeElement === firstEl) {
-            e.preventDefault();
-            lastEl.focus();
-          }
-        } else {
-          if (document.activeElement === lastEl) {
-            e.preventDefault();
-            firstEl.focus();
-          }
-        }
-      }
-    });
-
-    /* ========================================================
-       04. ACCESSIBLE GALLERY FILTER
-       ======================================================== */
-    function filterGallery(category) {
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-cat') === category);
-      });
-
-      const cards = document.querySelectorAll('.photo-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-cat') === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    /* ========================================================
-       05. HERO SLIDER ENGINE (6.0s Interval, Controls & WCAG)
-       ======================================================== */
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    let slideTimer = null;
-    let isPausedByUser = false;
-    let prefersReducedMotion = false;
-
-    // Check system prefers-reduced-motion preference
-    if (window.matchMedia) {
-      prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', function(e) {
-        prefersReducedMotion = e.matches;
-        if (prefersReducedMotion) {
-          pauseSlideShow();
-        } else if (!isPausedByUser) {
-          resumeSlideShow();
-        }
-      });
-    }
-
-    function showSlide(index) {
-      if (slides.length === 0) return;
-      if (index >= slides.length) currentSlide = 0;
-      else if (index < 0) currentSlide = slides.length - 1;
-      else currentSlide = index;
-
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === currentSlide);
-      });
-
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentSlide);
-      });
-    }
-
-    function nextSlide() {
-      showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-      showSlide(currentSlide - 1);
-    }
-
-    function goToSlide(index) {
-      showSlide(index);
-      if (!isPausedByUser && !prefersReducedMotion) {
-        resetSlideTimer();
-      }
-    }
-
-    function startSlideTimer() {
-      if (isPausedByUser || prefersReducedMotion) return;
-      clearInterval(slideTimer);
-      slideTimer = setInterval(nextSlide, 6000); // 6.0 seconds for optimal editorial reading
-    }
-
-    function resetSlideTimer() {
-      clearInterval(slideTimer);
-      startSlideTimer();
-    }
-
-    function pauseSlideShow() {
-      clearInterval(slideTimer);
-      slideTimer = null;
-      updatePlayPauseButton(true);
-    }
-
-    function resumeSlideShow() {
-      updatePlayPauseButton(false);
-      startSlideTimer();
-    }
-
-    function toggleSlidePlay() {
-      if (slideTimer) {
-        isPausedByUser = true;
-        pauseSlideShow();
-      } else {
-        isPausedByUser = false;
-        resumeSlideShow();
-      }
-    }
-
-    function updatePlayPauseButton(paused) {
-      const btn = document.getElementById('sliderPlayPauseBtn');
-      if (!btn) return;
-      const pauseIcon = btn.querySelector('.icon-pause');
-      const playIcon = btn.querySelector('.icon-play');
-      if (pauseIcon && playIcon) {
-        pauseIcon.style.display = paused ? 'none' : 'block';
-        playIcon.style.display = paused ? 'block' : 'none';
-      }
-      btn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
-      btn.setAttribute('title', paused ? 'Play slideshow' : 'Pause slideshow');
-    }
-
-    // Hover pause behavior (only when not explicitly paused by user)
-    const heroSlider = document.getElementById('heroSlider');
-    if (heroSlider) {
-      heroSlider.addEventListener('mouseenter', () => {
-        if (!isPausedByUser && !prefersReducedMotion) clearInterval(slideTimer);
-      });
-      heroSlider.addEventListener('mouseleave', () => {
-        if (!isPausedByUser && !prefersReducedMotion) startSlideTimer();
-      });
-
-      // Keyboard arrow navigation on slider container
-      heroSlider.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          prevSlide();
-          if (!isPausedByUser && !prefersReducedMotion) resetSlideTimer();
-        } else if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          nextSlide();
-          if (!isPausedByUser && !prefersReducedMotion) resetSlideTimer();
-        }
-      });
-
-      // Touch swipe for mobile devices
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      heroSlider.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-
-      heroSlider.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        const threshold = 40;
-        if (touchEndX < touchStartX - threshold) {
-          nextSlide();
-          if (!isPausedByUser && !prefersReducedMotion) resetSlideTimer();
-        } else if (touchEndX > touchStartX + threshold) {
-          prevSlide();
-          if (!isPausedByUser && !prefersReducedMotion) resetSlideTimer();
-        }
-      }, { passive: true });
-    }
-
-    // Initialize slideshow
-    if (prefersReducedMotion) {
-      pauseSlideShow();
-    } else {
-      startSlideTimer();
-    }
-  </script>
-
+  <!-- Main ES6 Module Application Entry -->
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
