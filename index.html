@@ -36,6 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/shakhrisabz_crest.png">
 
   <!-- Leaflet.js Interactive Geospatial Cartography (Esri Canvas World Dark Gray) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -57,14 +58,10 @@
   <nav class="floating-pill-nav">
     <div class="nav-inner">
       <div class="nav-brand">
-        <!-- Monumental Timurid Arch & Geometric Rosette Crest -->
-        <div class="brand-crest-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 21V10c0-4.4 3.6-8 8-8s8 3.6 8 8v11"/>
-            <path d="M8 21v-8a4 4 0 0 1 8 0v8"/>
-            <path d="M12 2v4M2 21h20M12 13v-2"/>
-          </svg>
-        </div>
+        <!-- Monumental Amir Temur & Ak-Saray Official Emblem Crest -->
+        <a href="#" class="brand-crest-icon" aria-label="Shakhrisabz Cultural Heritage Archive">
+          <img src="assets/shakhrisabz_crest.png" alt="Shakhrisabz Emblem" class="brand-crest-img">
+        </a>
         <div class="brand-text-group">
           <a href="#" class="nav-title" data-en="Shakhrisabz Archive" data-zh="沙赫里萨布兹档案" data-uz="Shahrisabz Arxivi">Shakhrisabz Archive</a>
           <span class="nav-subtitle" data-en="Silk Road Heritage Expedition" data-zh="丝绸之路遗产考察" data-uz="Ipak Yo'li Meros Ekspeditsiyasi">Silk Road Heritage Expedition</span>
@@ -630,6 +627,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
+        <img src="assets/shakhrisabz_logo.png" alt="Shakhrisabz Cultural Heritage Archive Logo" class="footer-emblem-logo">
         <h4 data-en="Shakhrisabz Cultural Heritage Archive" data-zh="沙赫里萨布兹文化遗产档案" data-uz="Shahrisabz Madaniy Merosi Arxivi">Shakhrisabz Cultural Heritage Archive</h4>
         <p data-en="An open-access digital heritage initiative dedicated to preserving the architectural and cultural memory of UNESCO World Heritage Site #885. Funded through a regional grant from the Wikimedia Foundation, co-organized by youth stewards from Karshi State University and Alisher Tuychiyev." data-zh="致力于保护联合国教科文组织第885号世界遗产历史与建筑记忆的开放数字人文学术平台。获得维基媒体基金会区域资助支持，由卡尔希国立大学青年团队与Alisher Tuychiyev共同实地文献考察。" data-uz="YUNESKO Butunjahon merosi obyekti #885 ning me'moriy va madaniy xotirasini saqlashga bag'ishlangan ochiq raqamli meros platformasi. Vikimedia Jamg'armasi granti ko'magida Qarshi davlat universiteti yoshlar jamoasi va Alisher Tuychiyev tomonidan yaratilgan.">An open-access digital heritage initiative dedicated to preserving the architectural and cultural memory of UNESCO World Heritage Site #885. Funded through a regional grant from the Wikimedia Foundation, co-organized by youth stewards from Karshi State University and Alisher Tuychiyev.</p>
       </div>
@@ -641,18 +639,13 @@
     </div>
   </footer>
 
-  <!-- Floating Concierge Button (Positioned in Bottom-Left Corner with 3D Avatar) -->
+  <!-- Floating Concierge Button (Positioned in Bottom-Left Corner with 3D Avatar & Compact Label) -->
   <button class="floating-docent-btn" id="floatingDocentBtn" aria-label="Open AI Heritage Docent">
     <div class="docent-btn-icon-box" aria-hidden="true">
-      <img src="assets/ai_docent_3d.png" alt="Silk Road AI Docent 3D" class="docent-3d-avatar-img">
+      <img src="assets/ai_docent_3d.png" alt="Silk Road AI Docent" class="docent-3d-avatar-img">
+      <span class="pulse-beacon-corner" aria-hidden="true"></span>
     </div>
-    <div class="docent-btn-text-wrap">
-      <div class="docent-status-indicator">
-        <span class="pulse-beacon"></span>
-        <span class="status-text" data-en="LIVE CONCIERGE" data-zh="智能导览在线" data-uz="ONLAYN MASLAHATCHI">LIVE CONCIERGE</span>
-      </div>
-      <span class="floating-btn-label" data-en="AI Heritage Docent" data-zh="丝路AI导师" data-uz="AI Maslahatchi">AI Heritage Docent</span>
-    </div>
+    <span class="floating-btn-label" data-en="AI Docent" data-zh="AI导师" data-uz="AI Maslahatchi">AI Maslahatchi</span>
   </button>
 
   <!-- Slide-In Curatorial Drawer & Backdrop -->

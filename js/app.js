@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Initialize Mobile Navigation Drawer
   initMobileMenu();
+
+  // 7. Initialize Living Motion & Scroll Reveal Engine
+  initScrollAnimations();
 });
 
 /* Mobile Navigation Drawer Controller */
@@ -235,4 +238,108 @@ function initHeroSlider() {
   }
 
   startAutoplay();
+}
+
+/* ========================================================
+   LIVING MOTION & SCROLL REVEAL ENGINE
+   IntersectionObserver with Staggered Cascades & Counter
+   ======================================================== */
+function initScrollAnimations() {
+  // If user prefers reduced motion, reveal everything immediately
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale-up').forEach(el => {
+      el.classList.add('is-revealed');
+    });
+    return;
+  }
+
+  // Auto-apply reveal classes to key sections and modular cards
+  const elementsToReveal = [
+    { selector: '.hero-stat-strip', classToAdd: 'reveal-on-scroll stagger-children' },
+    { selector: '.section-header-bar', classToAdd: 'reveal-on-scroll' },
+    { selector: '.transform-split-card', classToAdd: 'reveal-scale-up' },
+    { selector: '.documentary-showcase-grid', classToAdd: 'reveal-on-scroll stagger-children' },
+    { selector: '.silkroad-interactive-card', classToAdd: 'reveal-scale-up' },
+    { selector: '.docent-spotlight-card', classToAdd: 'reveal-scale-up' },
+    { selector: '.gallery-grid', classToAdd: 'reveal-on-scroll stagger-children' },
+    { selector: 'footer .footer-inner', classToAdd: 'reveal-on-scroll' }
+  ];
+
+  elementsToReveal.forEach(({ selector, classToAdd }) => {
+    document.querySelectorAll(selector).forEach(el => {
+      classToAdd.split(' ').forEach(cls => el.classList.add(cls));
+    });
+  });
+
+  // Intersection Observer for scroll triggers
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.1
+  };
+
+  let hasAnimatedStats = false;
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+
+        // Check if stats ticker is revealed and trigger counting numbers
+        if (!hasAnimatedStats && (entry.target.classList.contains('hero-stat-strip') || entry.target.closest('.hero-stat-strip'))) {
+          hasAnimatedStats = true;
+          animateStatCounters();
+        }
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Target all reveal elements
+  document.querySelectorAll('.reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale-up').forEach(el => {
+    revealObserver.observe(el);
+  });
+}
+
+/* Dynamic Rolling Numbers Counter Animation for Expedition Stats */
+function animateStatCounters() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  if (!statNumbers.length) return;
+
+  const targets = [
+    { target: 500, suffix: '+', prefix: '' },
+    { target: 20, suffix: '', prefix: '' },
+    { target: 885, suffix: '', prefix: '#' },
+    { target: 50, suffix: '', prefix: '' }
+  ];
+
+  statNumbers.forEach((el, index) => {
+    const config = targets[index] || { target: parseInt(el.textContent) || 100, suffix: '', prefix: '' };
+    const duration = 1800; // ms
+    const startTime = performance.now();
+    el.classList.add('counter-animating');
+
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out quartic easing: 1 - pow(1 - progress, 4)
+      const easeProgress = 1 - Math.pow(1 - progress, 4);
+      const currentVal = Math.floor(easeProgress * config.target);
+
+      el.textContent = `${config.prefix}${currentVal}${config.suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        el.textContent = `${config.prefix}${config.target}${config.suffix}`;
+        el.classList.remove('counter-animating');
+      }
+    }
+
+    // Slight staggered delay for each stat number
+    setTimeout(() => {
+      requestAnimationFrame(updateCounter);
+    }, index * 120);
+  });
 }
