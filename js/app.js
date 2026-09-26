@@ -27,7 +27,99 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Initialize Video Kiosk Chapters & Gallery
   initVideoChapters();
   initGallery();
+
+  // 6. Initialize Mobile Navigation Drawer
+  initMobileMenu();
 });
+
+/* Mobile Navigation Drawer Controller */
+function initMobileMenu() {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const drawer = document.getElementById('mobileNavDrawer');
+  const backdrop = document.getElementById('mobileNavBackdrop');
+  const closeBtn = document.getElementById('mobileNavCloseBtn');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+  const mobileLangBtns = document.querySelectorAll('.mobile-lang-btn');
+  const mobileThemeBtns = document.querySelectorAll('.mobile-theme-btn');
+
+  if (!menuBtn || !drawer) return;
+
+  function openMenu() {
+    menuBtn.classList.add('active');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('active');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menuBtn.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('active');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', () => {
+    if (drawer.classList.contains('active')) closeMenu();
+    else openMenu();
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // Mobile Language Switching
+  mobileLangBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      const desktopBtn = document.getElementById(`lang${lang.charAt(0).toUpperCase() + lang.slice(1)}Btn`);
+      if (desktopBtn) desktopBtn.click();
+      mobileLangBtns.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  window.addEventListener('languageChanged', (e) => {
+    const lang = e.detail?.lang || 'en';
+    mobileLangBtns.forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+  });
+
+  // Mobile Theme Switching
+  mobileThemeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-theme');
+      const desktopBtn = document.getElementById(`theme${theme.charAt(0).toUpperCase() + theme.slice(1)}Btn`);
+      if (desktopBtn) desktopBtn.click();
+      mobileThemeBtns.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  window.addEventListener('themeChanged', (e) => {
+    const theme = e.detail?.theme || 'dark';
+    mobileThemeBtns.forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-theme') === theme);
+    });
+  });
+
+  const curTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  mobileThemeBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-theme') === curTheme));
+
+  const curLang = document.documentElement.lang || 'en';
+  mobileLangBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === curLang));
+}
 
 /* Documentary Reel Chapters Controller */
 function initVideoChapters() {

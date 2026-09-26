@@ -98,14 +98,18 @@ export function initSilkRoadMap() {
     minZoom: 3,
     maxZoom: 9,
     scrollWheelZoom: false, // Prevents accidental scroll interception
-    zoomControl: true
+    zoomControl: true,
+    attributionControl: false // Completely removes third-party attribution badges/links
   });
 
-  // CartoDB Dark Matter Basemap (Authentic Eurasian topography)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
+  // Esri World Dark Gray Base & Reference (No API key, no watermark, authentic cartography)
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
+  }).addTo(map);
+
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16,
+    opacity: 0.85
   }).addTo(map);
 
   // Silk Road Trade Route Coordinates (Historical caravan path through oasis gates)
@@ -152,6 +156,17 @@ export function initSilkRoadMap() {
     });
   }
 
+  function getPopupHtml(key, lang) {
+    const c = cities[key];
+    if (!c) return '';
+    const l = lang || currentLang || 'en';
+    return `
+      <div class="map-popup-title">${c.title[l] || c.title.en}</div>
+      <div class="map-popup-tag">${c.country[l] || c.country.en}</div>
+      <div class="map-popup-desc">${c.desc[l] || c.desc.en}</div>
+    `;
+  }
+
   function updateDetailsCard(cityKey) {
     const data = cities[cityKey];
     if (!data) return;
@@ -173,15 +188,11 @@ export function initSilkRoadMap() {
     const marker = L.marker(c.coords, { icon: createCustomIcon(isGold) }).addTo(map);
 
     const lang = currentLang || 'en';
-    const popupContent = `
-      <div class="map-popup-title">${c.title[lang] || c.title.en}</div>
-      <div class="map-popup-tag">${c.country[lang] || c.country.en}</div>
-      <div class="map-popup-desc">${c.desc[lang] || c.desc.en}</div>
-    `;
-
-    marker.bindPopup(popupContent, { maxWidth: 280 });
+    marker.bindPopup(getPopupHtml(key, lang), { maxWidth: 280 });
 
     marker.on('click', () => {
+      const curLang = currentLang || 'en';
+      marker.setPopupContent(getPopupHtml(key, curLang));
       updateDetailsCard(key);
       map.flyTo(c.coords, 5, { duration: 1.2 });
     });
@@ -195,9 +206,13 @@ export function initSilkRoadMap() {
       const cityKey = btn.getAttribute('data-city');
       const c = cities[cityKey];
       if (c) {
+        const curLang = currentLang || 'en';
         updateDetailsCard(cityKey);
         map.flyTo(c.coords, 6, { duration: 1.5 });
-        if (markers[cityKey]) markers[cityKey].openPopup();
+        if (markers[cityKey]) {
+          markers[cityKey].setPopupContent(getPopupHtml(cityKey, curLang));
+          markers[cityKey].openPopup();
+        }
       }
     });
   });
@@ -212,9 +227,15 @@ export function initSilkRoadMap() {
 
   // Update text when language changes
   window.addEventListener('languageChanged', (e) => {
+    const newLang = e.detail?.lang || currentLang || 'en';
     const activeBtn = document.querySelector('.city-pill-btn.active');
     const activeKey = activeBtn ? activeBtn.getAttribute('data-city') : 'shakhrisabz';
     updateDetailsCard(activeKey);
+
+    // Refresh popup content for all markers dynamically
+    Object.keys(markers).forEach(key => {
+      markers[key].setPopupContent(getPopupHtml(key, newLang));
+    });
   });
 
   // Initial selection

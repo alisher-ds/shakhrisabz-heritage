@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
-  <!-- Leaflet.js Interactive Geospatial Cartography (CartoDB Dark Matter) -->
+  <!-- Leaflet.js Interactive Geospatial Cartography (Esri Canvas World Dark Gray) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
@@ -57,9 +57,12 @@
   <nav>
     <div class="nav-inner">
       <div class="nav-brand">
+        <!-- Monumental Timurid Arch & Geometric Rosette Crest -->
         <div class="brand-crest-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 21V10c0-4.4 3.6-8 8-8s8 3.6 8 8v11"/>
+            <path d="M8 21v-8a4 4 0 0 1 8 0v8"/>
+            <path d="M12 2v4M2 21h20M12 13v-2"/>
           </svg>
         </div>
         <div class="brand-text-group">
@@ -72,6 +75,7 @@
         </div>
       </div>
 
+      <!-- Desktop Nav & Controls -->
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#transformation" data-en="1975 vs 2025" data-zh="半世纪变迁" data-uz="1975 vs 2025">1975 vs 2025</a></li>
@@ -100,6 +104,13 @@
           </div>
         </div>
       </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </nav>
 
@@ -109,14 +120,6 @@
          HERO SECTION: EDITORIAL MULTI-SLIDE CAROUSEL
          ======================================================== -->
     <div class="hero-slider-container" id="heroSlider" tabindex="0" role="region" aria-label="Expedition photo slideshow">
-
-      <!-- Geographic Coordinates Strip -->
-      <div class="hero-geo-strip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-        </svg>
-        <span>39°03'00"N 66°50'00"E · ELEVATION 650M · KASHKADARYA, UZBEKISTAN</span>
-      </div>
 
       <!-- Slide 1: Ak-Saray Youth Delegation -->
       <div class="slide active">
@@ -170,9 +173,15 @@
          EXPEDITION STAT TICKER BAR (MUSEUM DATA STRIP)
          ======================================================== -->
     <div class="hero-stat-strip">
+      <!-- Stat 1: Archival Negative & Optics -->
       <div class="stat-item-card">
         <div class="stat-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="15" rx="3"/>
+            <circle cx="12" cy="10.5" r="3.5"/>
+            <path d="M12 7v1m3.5 2.5h-1m-5 0h-1m2.5 3.5v-1"/>
+            <path d="M6 21h12M12 18v3"/>
+          </svg>
         </div>
         <div class="stat-info">
           <span class="stat-number">500+</span>
@@ -180,9 +189,17 @@
         </div>
       </div>
 
+      <!-- Stat 2: Scholarly Delegation & Torch -->
       <div class="stat-item-card">
         <div class="stat-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3 6-6 0z"/>
+            <path d="M12 8v13"/>
+            <circle cx="6" cy="15" r="3"/>
+            <circle cx="18" cy="15" r="3"/>
+            <path d="M3 21a3 3 0 0 1 6 0M15 21a3 3 0 0 1 6 0"/>
+            <path d="M9 13a3 3 0 0 1 6 0"/>
+          </svg>
         </div>
         <div class="stat-info">
           <span class="stat-number">20</span>
@@ -190,9 +207,14 @@
         </div>
       </div>
 
+      <!-- Stat 3: UNESCO Monumental Temple Colonnade -->
       <div class="stat-item-card">
         <div class="stat-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M4 18h16M4 10h16M12 2L3 7h18L12 2z"/>
+            <path d="M6 10v8M10 10v8M14 10v8M18 10v8"/>
+            <circle cx="12" cy="5" r="1" fill="currentColor"/>
+          </svg>
         </div>
         <div class="stat-info">
           <span class="stat-number">#885</span>
@@ -200,9 +222,14 @@
         </div>
       </div>
 
+      <!-- Stat 4: Wikimedia Global Knowledge Medallion -->
       <div class="stat-item-card">
         <div class="stat-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v10M9 9.5a3 3 0 0 1 6 0c0 2-3 2.5-3 4.5"/>
+            <path d="M3.6 9c1.5 0 2.4-1.5 2.4-3M20.4 9c-1.5 0-2.4-1.5-2.4-3"/>
+          </svg>
         </div>
         <div class="stat-info">
           <span class="stat-number">$2,000</span>
@@ -248,9 +275,9 @@
           <!-- Range Input for Touch / Keyboard Accessibility -->
           <input type="range" min="0" max="100" value="50" class="comparison-range-input" id="comparisonRange" aria-label="Compare 1975 archival survey with 2025 modern expedition photo">
 
-          <!-- Floating Badges -->
-          <div class="comparison-floating-badge badge-1975" data-en="1975: Archival Survey (Natural Ruin & Soviet Setting)" data-zh="1975年：历史原貌（原生废墟与苏联时期风貌）" data-uz="1975: Arxiv Tasviri (Asl xaroba va sovet muhiti)">1975: Archival Survey (Natural Ruin & Soviet Setting)</div>
-          <div class="comparison-floating-badge badge-2025" data-en="2025: Modern Expedition (Masonry Infill & Tourist Plaza)" data-zh="2025年：现代实地调研（砖砌补强与步行广场）" data-uz="2025: Zamonaviy Ekspeditsiya (G'ishtin mustahkamlash va maydon)">2025: Modern Expedition (Masonry Infill & Tourist Plaza)</div>
+          <!-- Floating Badges (Clean & Compact) -->
+          <div class="comparison-floating-badge badge-1975" data-en="1975: Archival Survey" data-zh="1975年：历史原貌" data-uz="1975: Arxiv Tasviri">1975: Archival Survey</div>
+          <div class="comparison-floating-badge badge-2025" data-en="2025: Modern Expedition" data-zh="2025年：现代考察" data-uz="2025: Zamonaviy Holat">2025: Modern Expedition</div>
         </div>
 
         <!-- Slider Hint -->
@@ -263,33 +290,43 @@
 
         <!-- Curatorial Analytical Cards -->
         <div class="transformation-insights-grid">
-          <!-- Card 1 -->
+          <!-- Card 1: Pylon Masonry Restoration -->
           <div class="insight-card">
             <div class="insight-card-header">
               <div class="insight-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16"/>
+                  <path d="M4 9h16M4 15h16M9 3v6M15 3v6M12 9v6M7 15v6M17 15v6"/>
+                  <path d="M9 21v-4a3 3 0 0 1 6 0v4"/>
+                </svg>
               </div>
               <h3 class="insight-title" data-en="Structural Consolidation" data-zh="结构性砖砌补强" data-uz="Me'moriy Konsolidatsiya">Structural Consolidation</h3>
             </div>
             <p class="insight-desc" data-en="Notice the western pylon's inner fracture: in 1975, the raw core brickwork was severely eroded. Modern intervention filled the vertical void with horizontal baked-brick courses to halt structural collapse." data-zh="对比西侧塔柱内侧断裂带：1975年风化坍塌严重，现代保护工程以规整的横向烧结砖层填补了纵向裂隙，防止了巨塔进一步倾覆。" data-uz="G'arbiy pilonning ichki yorig'iga e'tibor bering: 1975-yilda xom g'ishtlar yemirilgan edi. Yangi restavratsiya minora qulab tushmasligi uchun yoriqni gorizontal pishiq g'isht qatlamlari bilan to'ldirgan.">Notice the western pylon's inner fracture: in 1975, the raw core brickwork was severely eroded. Modern intervention filled the vertical void with horizontal baked-brick courses to halt structural collapse.</p>
           </div>
 
-          <!-- Card 2 -->
+          <!-- Card 2: Ancient Oasis Cityscape -->
           <div class="insight-card">
             <div class="insight-card-header">
               <div class="insight-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 21h20M3 21V11l4-3 4 3v10M11 21V5l5-3 5 3v16"/>
+                  <path d="M7 14h.01M7 17h.01M16 9h.01M16 13h.01M16 17h.01"/>
+                </svg>
               </div>
               <h3 class="insight-title" data-en="Urban Setting & Landscape" data-zh="周边环境与城市肌理" data-uz="Shahar Landshafti va Muhit">Urban Setting & Landscape</h3>
             </div>
             <p class="insight-desc" data-en="In 1975, Ak-Saray was embedded within an unpaved rural buffer with organic mature trees and Soviet-era street poles. By 2025, surrounding vernacular buildings were cleared for a vast polished granite pedestrian plaza." data-zh="1975年阿克萨赖宫被原生林木、泥土小径和苏联时期路灯环绕。至2025年，周围传统街区已被整体清拆，取而代之的是宽阔平整的现代化花岗岩步道广场。" data-uz="1975-yilda Oqsaroy tabiiy daraxtzor, tuproq yo'laklar va sovet chiroqlari qurshovida edi. 2025-yilga kelib, an'anaviy mahallalar o'rnida yirik sayyohlik tosh esplanadasi barpo etildi.">In 1975, Ak-Saray was embedded within an unpaved rural buffer with organic mature trees and Soviet-era street poles. By 2025, surrounding vernacular buildings were cleared for a vast polished granite pedestrian plaza.</p>
           </div>
 
-          <!-- Card 3 -->
+          <!-- Card 3: World Heritage in Danger Alert Emblem -->
           <div class="insight-card">
             <div class="insight-card-header">
               <div class="insight-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2l7 4v6c0 5.5-3.5 10.7-7 12-3.5-1.3-7-6.5-7-12V6l7-4z"/>
+                  <path d="M12 8v5M12 16h.01"/>
+                </svg>
               </div>
               <h3 class="insight-title" data-en="UNESCO 'In Danger' Dilemma" data-zh="教科文组织“濒危”反思" data-uz="YUNESKO 'Xavf Ostida' Bahsi">UNESCO 'In Danger' Dilemma</h3>
             </div>
@@ -387,31 +424,31 @@
       </div>
 
       <div class="map-container">
-        <!-- City Filter Tabs -->
+        <!-- Trilingual City Filter Tabs -->
         <div class="map-city-tabs" role="tablist" aria-label="Silk Road Key Cities">
           <button class="city-pill-btn active" data-city="shakhrisabz">
             <span class="pill-dot"></span>
-            <span>Shakhrisabz (#885)</span>
+            <span data-en="Shakhrisabz (#885)" data-zh="沙赫里萨布兹 (#885)" data-uz="Shahrisabz (#885)">Shakhrisabz (#885)</span>
           </button>
           <button class="city-pill-btn" data-city="samarkand">
             <span class="pill-dot"></span>
-            <span>Samarkand</span>
+            <span data-en="Samarkand" data-zh="撒马尔罕" data-uz="Samarqand">Samarkand</span>
           </button>
           <button class="city-pill-btn" data-city="dunhuang">
             <span class="pill-dot"></span>
-            <span>Dunhuang</span>
+            <span data-en="Dunhuang" data-zh="敦煌" data-uz="Dunxuan">Dunhuang</span>
           </button>
           <button class="city-pill-btn" data-city="xian">
             <span class="pill-dot"></span>
-            <span>Xi'an</span>
+            <span data-en="Xi'an" data-zh="西安" data-uz="Sian">Xi'an</span>
           </button>
           <button class="city-pill-btn" data-city="nanjing">
             <span class="pill-dot"></span>
-            <span>Nanjing (2026 IYF)</span>
+            <span data-en="Nanjing (2026 IYF)" data-zh="南京 (2026 IYF)" data-uz="Nankin (2026 IYF)">Nanjing (2026 IYF)</span>
           </button>
           <button class="city-pill-btn" data-city="changsha">
             <span class="pill-dot"></span>
-            <span>Changsha (2026 IYF)</span>
+            <span data-en="Changsha (2026 IYF)" data-zh="长沙 (2026 IYF)" data-uz="Changsha (2026 IYF)">Changsha (2026 IYF)</span>
           </button>
         </div>
 
@@ -547,32 +584,12 @@
     </div>
   </div>
 
-  <!-- Institutional Museum Footer -->
+  <!-- Institutional Museum Footer (Cleaned & Authoritative) -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
         <h4 data-en="Shakhrisabz Cultural Heritage Archive" data-zh="沙赫里萨布兹文化遗产档案" data-uz="Shahrisabz Madaniy Merosi Arxivi">Shakhrisabz Cultural Heritage Archive</h4>
         <p data-en="An open-access digital heritage initiative dedicated to preserving the architectural and cultural memory of UNESCO World Heritage Site #885. Funded through a regional grant from the Wikimedia Foundation, co-organized by youth stewards from Karshi State University and Alisher Tuychiyev." data-zh="致力于保护联合国教科文组织第885号世界遗产历史与建筑记忆的开放数字人文学术平台。获得维基媒体基金会区域资助支持，由卡尔希国立大学青年团队与Alisher Tuychiyev共同实地文献考察。" data-uz="YUNESKO Butunjahon merosi obyekti #885 ning me'moriy va madaniy xotirasini saqlashga bag'ishlangan ochiq raqamli meros platformasi. Vikimedia Jamg'armasi granti ko'magida Qarshi davlat universiteti yoshlar jamoasi va Alisher Tuychiyev tomonidan yaratilgan.">An open-access digital heritage initiative dedicated to preserving the architectural and cultural memory of UNESCO World Heritage Site #885. Funded through a regional grant from the Wikimedia Foundation, co-organized by youth stewards from Karshi State University and Alisher Tuychiyev.</p>
-      </div>
-
-      <div class="footer-col">
-        <h5 data-en="Institutional Links" data-zh="机构与认证" data-uz="Rasmiy Havolalar">Institutional Links</h5>
-        <ul>
-          <li><a href="https://whc.unesco.org/en/list/885" target="_blank" rel="noopener">UNESCO World Heritage #885</a></li>
-          <li><a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons Archive</a></li>
-          <li><a href="https://github.com/alisher-ds/shakhrisabz-heritage" target="_blank" rel="noopener">GitHub Repository</a></li>
-          <li><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0 License</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5 data-en="Expedition Team" data-zh="考察团队" data-uz="Ekspeditsiya Jamoasi">Expedition Team</h5>
-        <ul>
-          <li><span style="color: var(--text-primary); font-weight: 600;">Alisher Tuychiyev</span> (Heritage Guide)</li>
-          <li>Abdulla Oripov Creative School</li>
-          <li>Najot Ta'lim Machine Learning</li>
-          <li>Karshi State University Youth Cohort</li>
-        </ul>
       </div>
     </div>
 
@@ -582,13 +599,21 @@
     </div>
   </footer>
 
-  <!-- Floating Concierge Button (Always visible on bottom right) -->
+  <!-- Floating Concierge Button (Elevated Illuminated Star Emblem) -->
   <button class="floating-docent-btn" id="floatingDocentBtn" aria-label="Open AI Heritage Docent">
-    <span class="docent-pulse-dot" aria-hidden="true"></span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-    </svg>
-    <span class="floating-btn-label" data-en="AI Heritage Docent" data-zh="AI丝路导师" data-uz="AI Maslahatchi">AI Heritage Docent</span>
+    <div class="docent-btn-icon-box" aria-hidden="true">
+      <svg class="docent-star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="#d4af37" fill="rgba(212, 175, 55, 0.25)"/>
+        <circle cx="12" cy="12" r="3" fill="#38bdf8"/>
+      </svg>
+    </div>
+    <div class="docent-btn-text-wrap">
+      <div class="docent-status-indicator">
+        <span class="pulse-beacon"></span>
+        <span class="status-text" data-en="LIVE CONCIERGE" data-zh="智能导览在线" data-uz="ONLAYN MASLAHATCHI">LIVE CONCIERGE</span>
+      </div>
+      <span class="floating-btn-label" data-en="AI Heritage Docent" data-zh="丝路AI导师" data-uz="AI Maslahatchi">AI Heritage Docent</span>
+    </div>
   </button>
 
   <!-- Slide-In Curatorial Drawer & Backdrop -->
@@ -598,7 +623,10 @@
       <div class="drawer-header-brand">
         <div class="drawer-avatar" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2L2 7h20L12 2z"/>
+            <path d="M12 2l3 6-6 0z"/>
+            <path d="M12 8v13"/>
+            <circle cx="6" cy="15" r="3"/>
+            <circle cx="18" cy="15" r="3"/>
           </svg>
         </div>
         <div class="drawer-title-group">
@@ -632,6 +660,78 @@
         <span data-en="Send" data-zh="发送" data-uz="Yuborish">Send</span>
       </button>
     </div>
+  </aside>
+
+  <!-- Mobile Navigation Drawer & Backdrop (Hamburger Menu Overlay) -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-modal="true" aria-labelledby="mobileNavTitle">
+    <div class="mobile-nav-header">
+      <div class="brand-text-group">
+        <span class="nav-title" id="mobileNavTitle" data-en="Shakhrisabz Archive" data-zh="沙赫里萨布兹档案" data-uz="Shahrisabz Arxivi">Shakhrisabz Archive</span>
+        <span class="nav-subtitle" data-en="Silk Road Heritage Expedition" data-zh="丝绸之路遗产考察" data-uz="Ipak Yo'li Meros Ekspeditsiyasi">Silk Road Heritage Expedition</span>
+      </div>
+      <button class="mobile-nav-close-btn" id="mobileNavCloseBtn" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <!-- Mobile Controls: Language & Theme -->
+    <div class="mobile-nav-controls">
+      <div class="mobile-control-row">
+        <span class="mobile-control-label" data-en="Language" data-zh="语言选择" data-uz="Tilni tanlash">Language</span>
+        <div class="lang-toggle" role="group" aria-label="Mobile Language selector">
+          <button class="lang-btn active mobile-lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn mobile-lang-btn" data-lang="zh">ZH</button>
+          <button class="lang-btn mobile-lang-btn" data-lang="uz">UZ</button>
+        </div>
+      </div>
+
+      <div class="mobile-control-row">
+        <span class="mobile-control-label" data-en="Appearance" data-zh="界面主题" data-uz="Mavzu">Appearance</span>
+        <div class="theme-toggle" role="group" aria-label="Mobile Theme switcher">
+          <button class="theme-btn active mobile-theme-btn" data-theme="dark" title="Dark mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <span data-en="Dark" data-zh="深色" data-uz="Tungi">Dark</span>
+          </button>
+          <button class="theme-btn mobile-theme-btn" data-theme="light" title="Light mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line></svg>
+            <span data-en="Light" data-zh="浅色" data-uz="Kunduzgi">Light</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Links -->
+    <ul class="mobile-nav-links">
+      <li>
+        <a href="#transformation" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-en="1975 vs 2025 Metamorphosis" data-zh="1975与2025半世纪变迁" data-uz="1975 vs 2025 O'zgarish">1975 vs 2025 Metamorphosis</span>
+        </a>
+      </li>
+      <li>
+        <a href="#video" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <span data-en="Documentary Film" data-zh="实地考察纪录短片" data-uz="Hujjatli Film">Documentary Film</span>
+        </a>
+      </li>
+      <li>
+        <a href="#corridor" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span data-en="Silk Road Corridor" data-zh="丝绸之路地理文化走廊" data-uz="Ipak Yo'li Yo'lagi">Silk Road Corridor</span>
+        </a>
+      </li>
+      <li>
+        <a href="#docent" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span data-en="AI Heritage Docent" data-zh="丝路AI导览顾问" data-uz="AI Meros Maslahatchisi">AI Heritage Docent</span>
+        </a>
+      </li>
+      <li>
+        <a href="#gallery" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span data-en="Archival Exhibition" data-zh="文献摄影图库展" data-uz="Arxiv Ko'rgazmasi">Archival Exhibition</span>
+        </a>
+      </li>
+    </ul>
   </aside>
 
   <!-- Main ES6 Module Application Entry -->

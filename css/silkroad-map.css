@@ -91,6 +91,10 @@
   font-family: var(--font-sans) !important;
 }
 
+.leaflet-control-attribution {
+  display: none !important;
+}
+
 /* Custom Animated Map Marker Pulse */
 .custom-map-marker {
   position: relative;
