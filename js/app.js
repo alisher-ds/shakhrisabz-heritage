@@ -4,7 +4,6 @@
 import { initTheme } from './theme.js';
 import { initI18n } from './i18n.js';
 import { initGallery } from './gallery.js';
-import { initAiRestoration } from './ai-restoration.js';
 import { initSilkRoadMap } from './silkroad-map.js';
 import { initAiDocent } from './ai-docent.js';
 
@@ -16,8 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Initialize Hero Slideshow
   initHeroSlider();
 
-  // 3. Initialize AI Modules
-  initAiRestoration();
+  // 3. Initialize Silk Road & AI Modules
   initSilkRoadMap();
   initAiDocent();
 
@@ -88,7 +86,6 @@ function initHeroSlider() {
     else startAutoplay();
   };
 
-  // Keyboard navigation on hero container
   if (heroContainer) {
     heroContainer.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') window.nextSlide();
@@ -96,6 +93,5 @@ function initHeroSlider() {
     });
   }
 
-  // Start autoplay
   startAutoplay();
 }
