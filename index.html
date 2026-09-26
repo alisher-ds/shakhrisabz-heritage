@@ -35,6 +35,7 @@
   <!-- Modular Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/transformation.css">
   <link rel="stylesheet" href="css/silkroad-map.css">
   <link rel="stylesheet" href="css/ai-docent.css">
 </head>
@@ -49,6 +50,7 @@
       </div>
       <div class="nav-right">
         <ul class="nav-links">
+          <li><a href="#transformation" data-en="1975 vs 2025" data-zh="1975与2025对比" data-uz="1975 vs 2025">1975 vs 2025</a></li>
           <li><a href="#video" data-en="Documentary Film" data-zh="纪录片" data-uz="Hujjatli Film">Documentary Film</a></li>
           <li><a href="#corridor" data-en="Silk Road Corridor" data-zh="丝路走廊" data-uz="Ipak Yo'li Yo'lagi">Silk Road Corridor</a></li>
           <li><a href="#docent" data-en="AI Docent" data-zh="AI向导" data-uz="AI Yo'lboshchi">AI Docent</a></li>
@@ -154,7 +156,91 @@
     </div>
 
     <!-- ========================================================
-         01. CINEMATIC VIDEO SECTION
+         01. 50-YEAR TRANSFORMATION (1975 vs 2025)
+         ======================================================== -->
+    <section id="transformation" class="showcase-section">
+      <div class="section-header-bar">
+        <div>
+          <span class="section-tag" data-en="Half-Century Archival Comparative Analysis" data-zh="半个世纪历史档案对比分析" data-uz="Yarim Asrlik Tarixiy Arxiv Qiyosiy Tahlili">Half-Century Archival Comparative Analysis</span>
+          <h2 class="section-title" data-en="50-Year Metamorphosis: 1975 Archival Survey vs. 2025 Field Expedition" data-zh="50年沧桑巨变：1975年档案考察 vs 2025年青年实地调研" data-uz="50 Yillik Metamorfoza: 1975-yilgi Arxiv vs 2025-yilgi Dala Ekspeditsiyasi">50-Year Metamorphosis: 1975 Archival Survey vs. 2025 Field Expedition</h2>
+          <p class="section-subtitle" data-en="Drag the slider to examine 50 years of brick conservation, urban landscape clearing, and the UNESCO #885 'World Heritage in Danger' conservation dilemma." data-zh="拖动滑块对比阿克萨赖宫50年间的砖砌加固、城市景观演变与联合国教科文组织885号“濒危世界遗产”保护伦理抉择。" data-uz="Oqsaroydagi 50 yillik g'ishtin tiklash, shahar landshaftining o'zgarishi va YUNESKO #885 xavf ostidagi meros dilemmasini ko'rish uchun slayderni suring.">Drag the slider to examine 50 years of brick conservation, urban landscape clearing, and the UNESCO #885 'World Heritage in Danger' conservation dilemma.</p>
+        </div>
+      </div>
+
+      <div class="transformation-container">
+        <!-- Interactive Slider Box -->
+        <div class="comparison-box" id="comparisonBox">
+          <!-- 1975 Base Image (Before) -->
+          <img src="assets/aksaray_1975_archive.jpg" alt="Ak-Saray Palace in 1975" class="comparison-base-img">
+          
+          <!-- 2025 Clipped Image (After) -->
+          <img src="assets/aksaray_2025_modern.jpg" alt="Ak-Saray Palace in 2025" class="comparison-clip-img">
+
+          <!-- Divider Line with Handle -->
+          <div class="comparison-divider-line" id="comparisonDivider">
+            <div class="comparison-handle-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M8 7l-5 5 5 5M16 7l5 5-5 5" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Range Input for Drag & Keyboard -->
+          <input type="range" min="0" max="100" value="50" class="comparison-range-input" id="comparisonRange" aria-label="Compare 1975 archival photo with 2025 modern expedition photo">
+
+          <!-- Badges -->
+          <div class="comparison-floating-badge badge-1975" data-en="1975: Archival Survey (Natural Ruin & Soviet Setting)" data-zh="1975年：历史原貌（原生废墟与苏联时期风貌）" data-uz="1975: Arxiv Tasviri (Asl xaroba va sovet muhiti)">1975: Archival Survey (Natural Ruin & Soviet Setting)</div>
+          <div class="comparison-floating-badge badge-2025" data-en="2025: Modern Expedition (Masonry Infill & Tourist Plaza)" data-zh="2025年：现代实地调研（砖砌补强与步行广场）" data-uz="2025: Zamonaviy Ekspeditsiya (G'ishtin mustahkamlash va sayyohlik maydoni)">2025: Modern Expedition (Masonry Infill & Tourist Plaza)</div>
+        </div>
+
+        <!-- Slider Hint -->
+        <div class="slider-hint-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 16l-4-4m0 0l4-4m-4 4h18m-4 4l4-4m0 0l-4-4" />
+          </svg>
+          <span data-en="Drag handle or swipe across image to explore 50-year transformation" data-zh="拖动中心滑块或在画面上左右滑动以对比50年历史变迁" data-uz="50 yillik o'zgarishni ko'rish uchun slayderni suring yoki rasmni suring">Drag handle or swipe across image to explore 50-year transformation</span>
+        </div>
+
+        <!-- Analytical Insight Cards -->
+        <div class="transformation-insights-grid">
+          <!-- Card 1 -->
+          <div class="insight-card">
+            <div class="insight-card-header">
+              <div class="insight-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4" /></svg>
+              </div>
+              <h3 class="insight-title" data-en="Structural Consolidation" data-zh="结构性砖砌加固" data-uz="Me'moriy Konsolidatsiya">Structural Consolidation</h3>
+            </div>
+            <p class="insight-desc" data-en="Notice the western pylon's inner fracture: in 1975, the raw core brickwork was severely eroded. Modern intervention filled the vertical void with horizontal baked-brick courses to halt structural collapse." data-zh="对比西侧塔柱内侧断裂带：1975年风化坍塌严重，现代保护工程以规整的横向烧结砖层填补了纵向裂隙，防止了巨塔进一步倾覆。" data-uz="G'arbiy pilonning ichki yorig'iga e'tibor bering: 1975-yilda xom g'ishtlar yemirilgan edi. Yangi restavratsiya minora qulab tushmasligi uchun yoriqni gorizontal pishiq g'isht qatlamlari bilan to'ldirgan.">Notice the western pylon's inner fracture: in 1975, the raw core brickwork was severely eroded. Modern intervention filled the vertical void with horizontal baked-brick courses to halt structural collapse.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="insight-card">
+            <div class="insight-card-header">
+              <div class="insight-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+              </div>
+              <h3 class="insight-title" data-en="Urban Setting & Landscape" data-zh="周边环境与城市肌理" data-uz="Shahar Landshafti va Muhit">Urban Setting & Landscape</h3>
+            </div>
+            <p class="insight-desc" data-en="In 1975, Ak-Saray was embedded within an unpaved rural buffer with organic mature trees and Soviet-era street poles. By 2025, surrounding vernacular buildings were cleared for a vast polished granite pedestrian plaza." data-zh="1975年阿克萨赖宫被原生林木、泥土小径和苏联时期路灯环绕。至2025年，周围传统街区已被整体清拆，取而代之的是宽阔平整的现代化花岗岩步道广场。" data-uz="1975-yilda Oqsaroy tabiiy daraxtzor, tuproq yo'laklar va sovet chiroqlari qurshovida edi. 2025-yilga kelib, an'anaviy mahallalar o'rnida yirik sayyohlik tosh esplanadasi barpo etildi.">In 1975, Ak-Saray was embedded within an unpaved rural buffer with organic mature trees and Soviet-era street poles. By 2025, surrounding vernacular buildings were cleared for a vast polished granite pedestrian plaza.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="insight-card">
+            <div class="insight-card-header">
+              <div class="insight-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
+              </div>
+              <h3 class="insight-title" data-en="UNESCO 'In Danger' Dilemma" data-zh="教科文组织“濒危”反思" data-uz="YUNESKO 'Xavf Ostida' Bahsi">UNESCO 'In Danger' Dilemma</h3>
+            </div>
+            <p class="insight-desc" data-en="This 50-year visual evidence captures why UNESCO inscribed Shakhrisabz on the List of World Heritage in Danger (2016): balancing structural survival and tourism development against the preservation of authentic historical integrity." data-zh="这组珍贵影像直观见证了2016年沙赫里萨布兹被列入《濒危世界遗产名录》的核心矛盾：在抢救性加固与旅游开发的同时，如何守护珍贵的历史原真性与文化血脉。" data-uz="Ushbu 50 yillik tasviriy dalil YUNESKO 2016-yilda Shahrisabzni 'Xavf ostidagi meros' ro'yxatiga kiritganining sababini ko'rsatadi: me'moriy qulashdan asrash va turizm manfaatlari bilan tarixiy autentiklik o'rtasidagi ziddiyat.">This 50-year visual evidence captures why UNESCO inscribed Shakhrisabz on the List of World Heritage in Danger (2016): balancing structural survival and tourism development against the preservation of authentic historical integrity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         02. CINEMATIC VIDEO SECTION
          ======================================================== -->
     <section id="video" class="showcase-section">
       <div class="section-header-bar">

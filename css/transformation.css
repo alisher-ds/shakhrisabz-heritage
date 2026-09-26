@@ -1,0 +1,233 @@
+/* ==========================================================================
+   50-Year Transformation (1975 vs 2025) Interactive Comparison Slider
+   ========================================================================== */
+
+.transformation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.comparison-box {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  aspect-ratio: 1000 / 718;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--hero-slider-shadow);
+  user-select: none;
+  background: #000;
+}
+
+/* Background image (1975 Archival) */
+.comparison-base-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Foreground image (2025 Modern) clipped with CSS */
+.comparison-clip-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: inset(0 0 0 var(--slider-pos, 50%));
+  will-change: clip-path;
+}
+
+/* Vertical divider line */
+.comparison-divider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--slider-pos, 50%);
+  width: 2px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  transform: translateX(-50%);
+  z-index: 4;
+  will-change: left;
+}
+
+/* Handle circle in the center of the divider */
+.comparison-handle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #09090b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.comparison-box:hover .comparison-handle-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.comparison-handle-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Transparent Range Input Overlay for Drag / Touch / Keyboard Accessibility */
+.comparison-range-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 6;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.comparison-range-input:focus-visible ~ .comparison-divider-line .comparison-handle-btn {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+/* Floating Badges */
+.comparison-floating-badge {
+  position: absolute;
+  top: 1rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(9, 9, 11, 0.75);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.badge-1975 {
+  left: 1rem;
+}
+
+.badge-2025 {
+  right: 1rem;
+  background: rgba(2, 132, 199, 0.75);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Slider Drag Hint */
+.slider-hint-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: -0.75rem;
+}
+
+.slider-hint-bar svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-gold);
+}
+
+/* Analytical Insight Cards */
+.transformation-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.insight-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-light);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.insight-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.insight-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-card:nth-child(2) .insight-icon {
+  background: rgba(2, 132, 199, 0.12);
+  color: var(--accent-blue);
+}
+
+.insight-card:nth-child(3) .insight-icon {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.insight-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.insight-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 860px) {
+  .transformation-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-floating-badge {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

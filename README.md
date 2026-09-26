@@ -19,12 +19,12 @@ Funded through a regional grant from the **Wikimedia Foundation** ($2,000 USD), 
 
 ---
 
-## 🚀 Key Modules & AI Innovations
+## 🚀 Key Modules & Innovations
 
-### 1. 🤖 AI Architectural Restoration Lab: Ak-Saray Palace (1404 vs 2026)
-* **The Challenge:** In 1404, Spanish diplomat Ruy González de Clavijo recorded that Ak-Saray's monumental arch soared over 70 meters high with a 22.5m span. Today, only two 38m ruin pylons survive due to historical destruction.
-* **The AI Solution:** Using generative architectural diffusion models calibrated on Galina Pugachenkova's ground plan measurements and surviving Timurid girih tilework from Bibi-Khanym, we synthesized a photorealistic reconstruction of Ak-Saray in 1404.
-* **Interactive Feature:** Users can drag a real-time before/after comparison slider to see the 600-year transition between modern archaeological ruins and restored 15th-century monumental glory.
+### 1. 🏛️ 50-Year Metamorphosis: Archival Survey vs. Modern Conservation (1975 vs. 2025)
+* **The Archival Discovery:** Comparative visual analysis between a 1975 Soviet-era archival photograph and the 2025 youth expedition survey of Ak-Saray Palace (UNESCO #885).
+* **Conservation & UNESCO Dilemma:** Highlights 50 years of brickwork consolidation (filling structural vertical fissures on the western pylon) vs. modern urban clearing (transition from rural dirt paths and mature trees to an expansive tourist plaza), directly examining the factors behind Shakhrisabz's inclusion on the UNESCO List of World Heritage in Danger (2016).
+* **Interactive Feature:** Touch, mouse, and keyboard-enabled real-time comparison slider with GPU-accelerated CSS `clip-path` and analytical insight cards.
 
 ### 2. 🗺️ Silk Road Geocultural Corridor (Interactive Map)
 * An interactive geospatial visualization demonstrating the 6,000 km arterial route connecting **Shakhrisabz** to China's creative capitals (**Changsha** — UNESCO City of Media Arts, and **Nanjing** — UNESCO City of Literature).
@@ -53,14 +53,14 @@ shakhrisabz-heritage/
 ├── css/
 │   ├── variables.css            # Obsidian & Platinum color tokens (Dark/Light)
 │   ├── main.css                 # Base layout, typography, navigation, modal
-│   ├── ai-restoration.css       # Split-screen comparison slider styles
+│   ├── transformation.css       # 50-year comparison slider & insight cards
 │   ├── silkroad-map.css         # Geocultural SVG route animation & cards
 │   └── ai-docent.css            # Conversational assistant & prompt chips
 ├── js/
 │   ├── app.js                   # Application controller & hero slideshow
 │   ├── theme.js                 # Anti-FOUC theme engine (Light/Dark)
 │   ├── i18n.js                  # Trilingual localization engine (EN, ZH, UZ)
-│   ├── ai-restoration.js        # Touch/mouse/keyboard comparison slider
+│   ├── transformation.js        # Touch/mouse/keyboard comparison slider engine
 │   ├── silkroad-map.js          # Interactive Silk Road map nodes & details
 │   ├── ai-docent.js             # Conversational AI knowledge assistant
 │   └── gallery.js               # Dynamic JSON-driven photo exhibition

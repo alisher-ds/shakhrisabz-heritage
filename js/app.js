@@ -3,6 +3,7 @@
    ======================================================== */
 import { initTheme } from './theme.js';
 import { initI18n } from './i18n.js';
+import { initTransformationSlider } from './transformation.js';
 import { initGallery } from './gallery.js';
 import { initSilkRoadMap } from './silkroad-map.js';
 import { initAiDocent } from './ai-docent.js';
@@ -12,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initI18n();
 
-  // 2. Initialize Hero Slideshow
+  // 2. Initialize Hero Slideshow & Transformation Comparison
   initHeroSlider();
+  initTransformationSlider();
 
   // 3. Initialize Silk Road & AI Modules
   initSilkRoadMap();
