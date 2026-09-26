@@ -153,7 +153,8 @@
 .floating-docent-btn {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  left: 2rem;
+  right: auto;
   z-index: 950;
   display: inline-flex;
   align-items: center;
@@ -176,29 +177,30 @@
 }
 
 .docent-btn-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(14, 165, 233, 0.25));
-  border: 1px solid var(--border-gold);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.25), rgba(212, 175, 55, 0.2));
+  border: 1.5px solid var(--border-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--gold-400);
-  box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 14px rgba(14, 165, 233, 0.35);
+  overflow: hidden;
 }
 
-.docent-star-icon {
-  width: 20px;
-  height: 20px;
-  filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.8));
-  animation: starRotate 12s linear infinite;
+.docent-3d-avatar-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(14, 165, 233, 0.6));
+  animation: floatAvatar 3s ease-in-out infinite alternate;
 }
 
-@keyframes starRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes floatAvatar {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-2px) scale(1.05); }
 }
 
 .docent-btn-text-wrap {
@@ -268,17 +270,17 @@
 .docent-drawer {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   bottom: 0;
   width: 480px;
   max-width: 95vw;
   background: var(--surface-1);
-  border-left: 1px solid var(--border-medium);
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+  border-right: 1px solid var(--border-medium);
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.8);
   z-index: 1001;
   display: flex;
   flex-direction: column;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -511,19 +513,20 @@
 
   .floating-docent-btn {
     bottom: max(1.25rem, env(safe-area-inset-bottom));
-    right: 1.25rem;
+    left: 1.25rem;
+    right: auto;
     padding: 6px 14px 6px 8px;
     gap: 8px;
   }
 
   .docent-btn-icon-box {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
 
-  .docent-star-icon {
-    width: 17px;
-    height: 17px;
+  .docent-3d-avatar-img {
+    width: 26px;
+    height: 26px;
   }
 
   .status-text {
