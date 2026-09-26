@@ -18,6 +18,20 @@ export function initAiDocent() {
 
   if (!drawer || !drawerChatStream) return;
 
+  // Enforce bottom-left corner positioning regardless of any client cache
+  if (floatingBtn) {
+    const applyLeftPosition = () => {
+      const isMobile = window.innerWidth <= 768;
+      floatingBtn.style.setProperty('position', 'fixed', 'important');
+      floatingBtn.style.setProperty('left', isMobile ? '1.2rem' : '1.75rem', 'important');
+      floatingBtn.style.setProperty('right', 'auto', 'important');
+      floatingBtn.style.setProperty('bottom', isMobile ? 'max(1.2rem, env(safe-area-inset-bottom))' : '1.75rem', 'important');
+      floatingBtn.style.setProperty('z-index', '9999', 'important');
+    };
+    applyLeftPosition();
+    window.addEventListener('resize', applyLeftPosition, { passive: true });
+  }
+
   const knowledgeBase = [
     // 1. UNESCO #885 & Heritage in Danger
     {
