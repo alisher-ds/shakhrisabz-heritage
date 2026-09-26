@@ -240,4 +240,17 @@ export function initSilkRoadMap() {
 
   // Initial selection
   updateDetailsCard('shakhrisabz');
+
+  // Invalidate map size whenever corridor section is scrolled into view
+  const corridorSec = document.getElementById('corridor');
+  if (corridorSec && 'IntersectionObserver' in window) {
+    const mapObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => map.invalidateSize(), 300);
+        }
+      });
+    }, { threshold: 0.1 });
+    mapObserver.observe(corridorSec);
+  }
 }

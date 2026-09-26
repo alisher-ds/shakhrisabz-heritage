@@ -242,7 +242,7 @@ function initHeroSlider() {
 
 /* ========================================================
    LIVING MOTION & SCROLL REVEAL ENGINE
-   IntersectionObserver with Staggered Cascades & Counter
+   IntersectionObserver with Continuous Bidirectional Float
    ======================================================== */
 function initScrollAnimations() {
   // If user prefers reduced motion, reveal everything immediately
@@ -257,9 +257,10 @@ function initScrollAnimations() {
   const elementsToReveal = [
     { selector: '.hero-stat-strip', classToAdd: 'reveal-on-scroll stagger-children' },
     { selector: '.section-header-bar', classToAdd: 'reveal-on-scroll' },
-    { selector: '.transform-split-card', classToAdd: 'reveal-scale-up' },
+    { selector: '.comparison-box', classToAdd: 'reveal-scale-up' },
+    { selector: '.transformation-insights-grid', classToAdd: 'reveal-on-scroll stagger-children' },
     { selector: '.documentary-showcase-grid', classToAdd: 'reveal-on-scroll stagger-children' },
-    { selector: '.silkroad-interactive-card', classToAdd: 'reveal-scale-up' },
+    { selector: '.map-container', classToAdd: 'reveal-scale-up' },
     { selector: '.docent-spotlight-card', classToAdd: 'reveal-scale-up' },
     { selector: '.gallery-grid', classToAdd: 'reveal-on-scroll stagger-children' },
     { selector: 'footer .footer-inner', classToAdd: 'reveal-on-scroll' }
@@ -271,27 +272,26 @@ function initScrollAnimations() {
     });
   });
 
-  // Intersection Observer for scroll triggers
+  // Intersection Observer for continuous bidirectional scroll triggers
   const observerOptions = {
     root: null,
     rootMargin: '0px 0px -40px 0px',
-    threshold: 0.1
+    threshold: 0.08
   };
 
-  let hasAnimatedStats = false;
-
-  const revealObserver = new IntersectionObserver((entries, observer) => {
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-revealed');
 
         // Check if stats ticker is revealed and trigger counting numbers
-        if (!hasAnimatedStats && (entry.target.classList.contains('hero-stat-strip') || entry.target.closest('.hero-stat-strip'))) {
-          hasAnimatedStats = true;
+        if (entry.target.classList.contains('hero-stat-strip') || entry.target.closest('.hero-stat-strip')) {
           animateStatCounters();
         }
-
-        observer.unobserve(entry.target);
+      } else {
+        // Continuous living motion: when element scrolls out of view,
+        // remove is-revealed so it gently floats in again upon scrolling back
+        entry.target.classList.remove('is-revealed');
       }
     });
   }, observerOptions);
@@ -303,43 +303,63 @@ function initScrollAnimations() {
 }
 
 /* Dynamic Rolling Numbers Counter Animation for Expedition Stats */
+let isStatsAnimating = false;
 function animateStatCounters() {
+  if (isStatsAnimating) return;
   const statNumbers = document.querySelectorAll('.stat-number');
   if (!statNumbers.length) return;
 
+  isStatsAnimating = true;
+
   const targets = [
-    { target: 500, suffix: '+', prefix: '' },
-    { target: 20, suffix: '', prefix: '' },
-    { target: 885, suffix: '', prefix: '#' },
-    { target: 50, suffix: '', prefix: '' }
+    { target: 500, suffix: '+', prefix: '', format: val => `${val}+` },
+    { target: 20, suffix: '', prefix: '', format: val => `${val}` },
+    { target: 885, suffix: '', prefix: '#', format: val => `#${val}` },
+    { target: 2000, suffix: '', prefix: '$', format: val => `$${val.toLocaleString()}` }
   ];
+
+  let completedCount = 0;
 
   statNumbers.forEach((el, index) => {
     const config = targets[index] || { target: parseInt(el.textContent) || 100, suffix: '', prefix: '' };
-    const duration = 1800; // ms
+    const duration = 1600; // ms
     const startTime = performance.now();
     el.classList.add('counter-animating');
 
     function updateCounter(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out quartic easing: 1 - pow(1 - progress, 4)
       const easeProgress = 1 - Math.pow(1 - progress, 4);
       const currentVal = Math.floor(easeProgress * config.target);
 
-      el.textContent = `${config.prefix}${currentVal}${config.suffix}`;
+      if (config.format) {
+        el.textContent = config.format(currentVal);
+      } else {
+        el.textContent = `${config.prefix}${currentVal}${config.suffix}`;
+      }
 
       if (progress < 1) {
         requestAnimationFrame(updateCounter);
       } else {
-        el.textContent = `${config.prefix}${config.target}${config.suffix}`;
+        if (config.format) {
+          el.textContent = config.format(config.target);
+        } else {
+          el.textContent = `${config.prefix}${config.target}${config.suffix}`;
+        }
         el.classList.remove('counter-animating');
+        completedCount++;
+        if (completedCount >= statNumbers.length) {
+          // Allow re-triggering if user scrolls away and returns later
+          setTimeout(() => {
+            isStatsAnimating = false;
+          }, 600);
+        }
       }
     }
 
     // Slight staggered delay for each stat number
     setTimeout(() => {
       requestAnimationFrame(updateCounter);
-    }, index * 120);
+    }, index * 100);
   });
 }
