@@ -19,15 +19,22 @@ export function initAiDocent() {
   if (!drawer || !drawerChatStream) return;
 
   // Enforce bottom-right corner positioning regardless of any client cache
+  const applyRightPosition = () => {
+    if (!floatingBtn) return;
+    if (drawer.classList.contains('active')) {
+      floatingBtn.style.setProperty('display', 'none', 'important');
+      return;
+    }
+    const isMobile = window.innerWidth <= 768;
+    floatingBtn.style.removeProperty('display');
+    floatingBtn.style.setProperty('position', 'fixed', 'important');
+    floatingBtn.style.setProperty('right', isMobile ? '1.2rem' : '1.75rem', 'important');
+    floatingBtn.style.setProperty('left', 'auto', 'important');
+    floatingBtn.style.setProperty('bottom', isMobile ? 'max(1.2rem, env(safe-area-inset-bottom))' : '1.75rem', 'important');
+    floatingBtn.style.setProperty('z-index', '9999', 'important');
+  };
+
   if (floatingBtn) {
-    const applyRightPosition = () => {
-      const isMobile = window.innerWidth <= 768;
-      floatingBtn.style.setProperty('position', 'fixed', 'important');
-      floatingBtn.style.setProperty('right', isMobile ? '1.2rem' : '1.75rem', 'important');
-      floatingBtn.style.setProperty('left', 'auto', 'important');
-      floatingBtn.style.setProperty('bottom', isMobile ? 'max(1.2rem, env(safe-area-inset-bottom))' : '1.75rem', 'important');
-      floatingBtn.style.setProperty('z-index', '9999', 'important');
-    };
     applyRightPosition();
     window.addEventListener('resize', applyRightPosition, { passive: true });
   }
@@ -331,7 +338,12 @@ export function initAiDocent() {
   function openDrawer() {
     drawer.classList.add('active');
     backdrop.classList.add('active');
+    document.body.classList.add('docent-drawer-open');
     document.body.style.overflow = 'hidden';
+    if (floatingBtn) {
+      floatingBtn.classList.add('btn-hidden');
+      floatingBtn.style.setProperty('display', 'none', 'important');
+    }
     setTimeout(() => {
       if (drawerInput) drawerInput.focus();
     }, 200);
@@ -340,7 +352,13 @@ export function initAiDocent() {
   function closeDrawer() {
     drawer.classList.remove('active');
     backdrop.classList.remove('active');
+    document.body.classList.remove('docent-drawer-open');
     document.body.style.overflow = '';
+    if (floatingBtn) {
+      floatingBtn.classList.remove('btn-hidden');
+      floatingBtn.style.removeProperty('display');
+      applyRightPosition();
+    }
   }
 
   if (floatingBtn) floatingBtn.addEventListener('click', openDrawer);
@@ -354,26 +372,135 @@ export function initAiDocent() {
     }
   });
 
+  const thinkingPhrases = {
+    uz: {
+      quick: "AI o'ylamoqda...",
+      medium: "Tarixiy arxiv manbalari tahlil qilinmoqda...",
+      complex: "Chuqur arxiv tadqiqotlari va Temuriylar davri xronikasi o'rganilmoqda..."
+    },
+    en: {
+      quick: "AI is thinking...",
+      medium: "Analyzing historical archive and curatorial records...",
+      complex: "Synthesizing deep archival surveys and Timurid chronicles..."
+    },
+    zh: {
+      quick: "AI 正在思考中...",
+      medium: "正在检索历史文献与考察档案...",
+      complex: "正在深度综合学术文献与实地考察报告..."
+    }
+  };
+
+  function getThinkingDetails(query) {
+    const lang = (currentLang && thinkingPhrases[currentLang]) ? currentLang : 'en';
+    const dict = thinkingPhrases[lang];
+    const len = query.trim().length;
+
+    let label = dict.quick;
+    let duration = 1200 + Math.floor(Math.random() * 400); // 1.2s - 1.6s
+
+    if (len >= 25 && len < 60) {
+      label = dict.medium;
+      duration = 1800 + Math.floor(Math.random() * 600); // 1.8s - 2.4s
+    } else if (len >= 60) {
+      label = dict.complex;
+      duration = 2500 + Math.min(len * 12, 1100) + Math.floor(Math.random() * 400); // 2.5s - 3.9s
+    }
+
+    return { label, duration };
+  }
+
   function appendMessage(sender, text) {
     const bubble = document.createElement('div');
     bubble.className = `drawer-bubble ${sender}`;
     bubble.textContent = text;
     drawerChatStream.appendChild(bubble);
     drawerChatStream.scrollTop = drawerChatStream.scrollHeight;
+    return bubble;
   }
 
+  function showThinkingIndicator(label) {
+    const bubble = document.createElement('div');
+    bubble.className = 'drawer-bubble bot thinking-bubble';
+    bubble.id = 'aiThinkingBubble';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'thinking-wrapper';
+
+    const dots = document.createElement('div');
+    dots.className = 'thinking-dots';
+    dots.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 3; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'thinking-dot';
+      dots.appendChild(dot);
+    }
+
+    const labelSpan = document.createElement('span');
+    labelSpan.className = 'thinking-label';
+    labelSpan.textContent = label;
+
+    wrapper.appendChild(dots);
+    wrapper.appendChild(labelSpan);
+    bubble.appendChild(wrapper);
+
+    drawerChatStream.appendChild(bubble);
+    drawerChatStream.scrollTop = drawerChatStream.scrollHeight;
+    return bubble;
+  }
+
+  function typewriterBotResponse(text, onComplete) {
+    const bubble = document.createElement('div');
+    bubble.className = 'drawer-bubble bot';
+    drawerChatStream.appendChild(bubble);
+
+    // Fast, authentic word-by-word streaming
+    const words = text.split(' ');
+    let wordIndex = 0;
+    const interval = setInterval(() => {
+      if (wordIndex < words.length) {
+        bubble.textContent = words.slice(0, wordIndex + 1).join(' ');
+        drawerChatStream.scrollTop = drawerChatStream.scrollHeight;
+        wordIndex++;
+      } else {
+        clearInterval(interval);
+        if (onComplete) onComplete();
+      }
+    }, 28);
+  }
+
+  let isAiResponding = false;
+
   function handleSend(customText) {
+    if (isAiResponding) return;
+
     const query = (customText || (drawerInput ? drawerInput.value : '')).trim();
     if (!query) return;
 
     appendMessage('user', query);
     if (drawerInput && !customText) drawerInput.value = '';
 
-    // Show simulated typing delay
+    isAiResponding = true;
+    if (drawerSendBtn) drawerSendBtn.disabled = true;
+    if (drawerInput) drawerInput.disabled = true;
+
+    const { label, duration } = getThinkingDetails(query);
+    const thinkingBubble = showThinkingIndicator(label);
+
     setTimeout(() => {
+      if (thinkingBubble && thinkingBubble.parentNode) {
+        thinkingBubble.parentNode.removeChild(thinkingBubble);
+      }
+
       const response = getAiResponse(query);
-      appendMessage('bot', response);
-    }, 280);
+      typewriterBotResponse(response, () => {
+        isAiResponding = false;
+        if (drawerSendBtn) drawerSendBtn.disabled = false;
+        if (drawerInput) {
+          drawerInput.disabled = false;
+          drawerInput.focus();
+        }
+      });
+    }, duration);
   }
 
   if (drawerSendBtn && drawerInput) {
@@ -386,6 +513,7 @@ export function initAiDocent() {
   // Bind mini chips inside drawer
   miniChips.forEach(chip => {
     chip.addEventListener('click', () => {
+      if (isAiResponding) return;
       const text = chip.textContent.trim();
       handleSend(text);
     });
@@ -394,11 +522,12 @@ export function initAiDocent() {
   // Bind sample prompt pills in section 04 spotlight card
   samplePills.forEach(pill => {
     pill.addEventListener('click', () => {
+      if (isAiResponding) return;
       const query = pill.getAttribute('data-query') || pill.textContent.trim();
       openDrawer();
       setTimeout(() => {
         handleSend(query);
-      }, 300);
+      }, 350);
     });
   });
 }

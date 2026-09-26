@@ -252,6 +252,17 @@
   border-color: #ffffff;
 }
 
+/* When AI Docent drawer is open, hide the floating trigger button completely */
+.floating-docent-btn.btn-hidden,
+body.docent-drawer-open .floating-docent-btn,
+.docent-drawer.active ~ .floating-docent-btn {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(24px) scale(0.7) !important;
+}
+
 /* --------------------------------------------------------------------------
    03. Slide-In Curatorial Drawer / Floating Modal Concierge (Slides from Right)
    -------------------------------------------------------------------------- */
@@ -432,6 +443,67 @@
   background: linear-gradient(135deg, var(--lapis-600), var(--lapis-500));
   color: #ffffff;
   border-bottom-right-radius: 2px;
+}
+
+/* AI Docent Realistic Thinking State Indicator */
+.drawer-bubble.bot.thinking-bubble {
+  background: var(--surface-2);
+  border: 1px dashed var(--gold-400);
+  padding: 10px 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom-left-radius: 4px;
+}
+
+.thinking-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.thinking-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.thinking-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  animation: thinkingBounce 1.4s infinite ease-in-out both;
+}
+
+.thinking-dot:nth-child(1) { animation-delay: -0.32s; }
+.thinking-dot:nth-child(2) { animation-delay: -0.16s; }
+.thinking-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes thinkingBounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.35;
+  }
+  40% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.thinking-label {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* Disabled state for drawer input and send button during thinking */
+.drawer-input:disabled,
+.drawer-send-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 /* Drawer Input Area */
@@ -620,4 +692,18 @@
 [data-theme="light"] .drawer-send-btn {
   background: linear-gradient(135deg, #d4af37, #b8860b) !important;
   color: #000000 !important;
+}
+
+[data-theme="light"] .drawer-bubble.bot.thinking-bubble {
+  background: #ffffff !important;
+  border: 1.5px dashed var(--gold-600) !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .drawer-bubble.bot.thinking-bubble .thinking-dot {
+  background: var(--gold-600) !important;
+}
+
+[data-theme="light"] .drawer-bubble.bot.thinking-bubble .thinking-label {
+  color: #1e293b !important;
 }
