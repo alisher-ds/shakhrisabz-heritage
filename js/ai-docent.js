@@ -5,11 +5,18 @@
 import { currentLang } from './i18n.js';
 
 export function initAiDocent() {
-  const chatHistory = document.getElementById('chatHistory');
-  const chatInput = document.getElementById('chatInput');
-  const chatSendBtn = document.getElementById('chatSendBtn');
+  const drawer = document.getElementById('docentDrawer');
+  const backdrop = document.getElementById('docentBackdrop');
+  const closeBtn = document.getElementById('docentCloseBtn');
+  const floatingBtn = document.getElementById('floatingDocentBtn');
+  const openSpotlightBtn = document.getElementById('openDocentDrawerBtn');
+  const drawerChatStream = document.getElementById('drawerChatStream');
+  const drawerInput = document.getElementById('drawerInput');
+  const drawerSendBtn = document.getElementById('drawerSendBtn');
+  const samplePills = document.querySelectorAll('.prompt-sample-pill');
+  const miniChips = document.querySelectorAll('.chip-mini-btn');
 
-  if (!chatHistory || !chatInput || !chatSendBtn) return;
+  if (!drawer || !drawerChatStream) return;
 
   const knowledgeBase = [
     // 1. UNESCO #885 & Heritage in Danger
@@ -307,39 +314,77 @@ export function initAiDocent() {
     return defaults[lang] || defaults.en;
   }
 
-  function appendMessage(sender, text) {
-    const bubble = document.createElement('div');
-    bubble.className = `chat-bubble ${sender}`;
-    bubble.textContent = text;
-    chatHistory.appendChild(bubble);
-    chatHistory.scrollTop = chatHistory.scrollHeight;
+  function openDrawer() {
+    drawer.classList.add('active');
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      if (drawerInput) drawerInput.focus();
+    }, 200);
   }
 
-  function handleSend() {
-    const query = chatInput.value.trim();
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (floatingBtn) floatingBtn.addEventListener('click', openDrawer);
+  if (openSpotlightBtn) openSpotlightBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+
+  function appendMessage(sender, text) {
+    const bubble = document.createElement('div');
+    bubble.className = `drawer-bubble ${sender}`;
+    bubble.textContent = text;
+    drawerChatStream.appendChild(bubble);
+    drawerChatStream.scrollTop = drawerChatStream.scrollHeight;
+  }
+
+  function handleSend(customText) {
+    const query = (customText || (drawerInput ? drawerInput.value : '')).trim();
     if (!query) return;
 
     appendMessage('user', query);
-    chatInput.value = '';
+    if (drawerInput && !customText) drawerInput.value = '';
 
     // Show simulated typing delay
     setTimeout(() => {
       const response = getAiResponse(query);
       appendMessage('bot', response);
-    }, 320);
+    }, 280);
   }
 
-  chatSendBtn.addEventListener('click', handleSend);
-  chatInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') handleSend();
+  if (drawerSendBtn && drawerInput) {
+    drawerSendBtn.addEventListener('click', () => handleSend());
+    drawerInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleSend();
+    });
+  }
+
+  // Bind mini chips inside drawer
+  miniChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const text = chip.textContent.trim();
+      handleSend(text);
+    });
   });
 
-  // Bind quick topic chips in sidebar
-  document.querySelectorAll('.quick-chips .chip-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const text = btn.textContent.trim();
-      chatInput.value = text;
-      handleSend();
+  // Bind sample prompt pills in section 04 spotlight card
+  samplePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const query = pill.getAttribute('data-query') || pill.textContent.trim();
+      openDrawer();
+      setTimeout(() => {
+        handleSend(query);
+      }, 300);
     });
   });
 }

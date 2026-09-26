@@ -37,6 +37,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
+  <!-- Leaflet.js Interactive Geospatial Cartography (CartoDB Dark Matter) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
   <!-- Modular Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
@@ -70,9 +74,9 @@
 
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="#transformation" data-en="50-Year Metamorphosis" data-zh="半世纪变迁" data-uz="50 Yillik O'zgarish">50-Year Metamorphosis</a></li>
+          <li><a href="#transformation" data-en="1975 vs 2025" data-zh="半世纪变迁" data-uz="1975 vs 2025">1975 vs 2025</a></li>
           <li><a href="#video" data-en="Documentary" data-zh="纪录片" data-uz="Hujjatli Film">Documentary</a></li>
-          <li><a href="#corridor" data-en="Silk Road Corridor" data-zh="丝路走廊" data-uz="Ipak Yo'li Yo'lagi">Silk Road Corridor</a></li>
+          <li><a href="#corridor" data-en="Silk Road" data-zh="丝路走廊" data-uz="Ipak Yo'li">Silk Road</a></li>
           <li><a href="#docent" data-en="AI Docent" data-zh="AI导览" data-uz="AI Maslahatchi">AI Docent</a></li>
           <li><a href="#gallery" data-en="Exhibition" data-zh="档案图库" data-uz="Ko'rgazma">Exhibition</a></li>
         </ul>
@@ -213,10 +217,11 @@
     <section id="transformation" class="showcase-section">
       <div class="section-header-bar">
         <div>
-          <span class="section-eyebrow">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span data-en="[ 01 / HISTORIC TRANSFORMATION ]" data-zh="[ 01 / 历史沧桑巨变 ]" data-uz="[ 01 / TARIXIY O'ZGARISH ]">[ 01 / HISTORIC TRANSFORMATION ]</span>
-          </span>
+          <div class="curatorial-eyebrow">
+            <span class="eyebrow-num">01</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text" data-en="Historic Metamorphosis" data-zh="历史沧桑巨变" data-uz="Tarixiy Metamorfoza">Historic Metamorphosis</span>
+          </div>
           <h2 class="section-title" data-en="50-Year Metamorphosis: 1975 Archival Survey vs. 2025 Field Expedition" data-zh="50年沧桑对比：1975年历史档案与2025年实地考察" data-uz="50 Yillik Metamorfoza: 1975-yilgi Arxiv va 2025-yilgi Konservatsiya">50-Year Metamorphosis: 1975 Archival Survey vs. 2025 Field Expedition</h2>
           <p class="section-subtitle" data-en="Drag the slider to examine 50 years of brick conservation, urban landscape clearing, and the UNESCO #885 'World Heritage in Danger' conservation dilemma at Ak-Saray Palace." data-zh="拖动滑块对比阿克萨赖宫50年间的砖砌加固、城市景观变迁以及联合国教科文组织885号“濒危世界遗产”保护伦理抉择。" data-uz="Oqsaroydagi 50 yillik g'ishtin tiklash, shahar landshaftining o'zgarishi va YUNESKO #885 xavf ostidagi meros dilemmasini ko'rish uchun slayderni suring.">Drag the slider to examine 50 years of brick conservation, urban landscape clearing, and the UNESCO #885 'World Heritage in Danger' conservation dilemma at Ak-Saray Palace.</p>
         </div>
@@ -295,32 +300,71 @@
     </section>
 
     <!-- ========================================================
-         02. CINEMATIC DOCUMENTARY FILM REEL
+         02. CINEMATIC DOCUMENTARY FILM REEL (KIOSK VERTICAL FRAME)
          ======================================================== -->
     <section id="video" class="showcase-section">
       <div class="section-header-bar">
         <div>
-          <span class="section-eyebrow">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            <span data-en="[ 02 / CINEMATIC EXPEDITION FILM ]" data-zh="[ 02 / 实地考察纪录片 ]" data-uz="[ 02 / HUJJATLI FILM ]">[ 02 / CINEMATIC EXPEDITION FILM ]</span>
-          </span>
-          <h2 class="section-title" data-en="Expeditionary Documentary Film" data-zh="考察纪录短片" data-uz="Ekspeditsiya Hujjatli Filmi">Expeditionary Documentary Film</h2>
-          <p class="section-subtitle" data-en="Documenting the training cohort at Karshi State University and systematic field surveying across the ancient urban fabric of Shakhrisabz." data-zh="记录卡尔希国立大学青年团队的培训过程及沙赫里萨布兹全域的实地田野调研。" data-uz="Qarshi davlat universitetidagi o'quv mashg'ulotlari hamda tarixiy Shahrisabz bo'ylab dala tadqiqotlari jarayoni.">Documenting the training cohort at Karshi State University and systematic field surveying across the ancient urban fabric of Shakhrisabz.</p>
+          <div class="curatorial-eyebrow">
+            <span class="eyebrow-num">02</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text" data-en="Cinematic Fieldwork Reel" data-zh="实地考察纪录短片" data-uz="Ekspeditsiya Hujjatli Filmi">Cinematic Fieldwork Reel</span>
+          </div>
+          <h2 class="section-title" data-en="Expeditionary Documentary Film" data-zh="实地考察纪录短片" data-uz="Ekspeditsiya Hujjatli Filmi">Expeditionary Documentary Film</h2>
+          <p class="section-subtitle" data-en="Documenting the training cohort at Karshi State University and systematic field surveying across the ancient urban fabric of Shakhrisabz." data-zh="记录卡尔希国立大学青年团队的学术培训过程及沙赫里萨布兹全域的历史遗迹实地调研。" data-uz="Qarshi davlat universitetidagi ilmiy seminar hamda tarixiy Shahrisabz bo'ylab dala tadqiqotlari jarayoni.">Documenting the training cohort at Karshi State University and systematic field surveying across the ancient urban fabric of Shakhrisabz.</p>
         </div>
-        <div class="video-badge" data-en="4K Archival Master · 0:49" data-zh="4K高画质胶卷 · 0:49" data-uz="4K Arxiv Kadrlari · 0:49">4K Archival Master · 0:49</div>
       </div>
 
-      <div class="video-wrapper">
-        <video class="video-player" controls preload="metadata" poster="assets/Jamoaviy oqsaroyda.jpg">
-          <source src="assets/documentary.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-        <div class="video-meta-strip">
+      <div class="documentary-showcase-grid">
+        <!-- Left: Vertical Museum Kiosk Player -->
+        <div class="video-kiosk-frame">
+          <video id="docuVideo" class="video-player-vertical" controls preload="metadata" poster="assets/video_poster.jpg" playsinline>
+            <source src="assets/documentary.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+
+        <!-- Right: Curatorial Log Panel & Chapter Index -->
+        <div class="documentary-log-panel">
           <div>
-            <strong data-en="Organized & Filmed by:" data-zh="联合组织与摄像：" data-uz="Tashkil Qilingan va Tasvirga Olingan:">Organized & Filmed by:</strong> Alisher Tuychiev (Heritage Guide) & Youth Delegation
+            <span class="docu-header-badge" data-en="4K Archival Master · 0:49" data-zh="4K超高清档案 · 0:49" data-uz="4K Arxiv Kadrlari · 0:49">4K Archival Master · 0:49</span>
+            <h3 class="docu-panel-title" style="margin-top: 0.75rem;" data-en="Field Documentation of UNESCO #885" data-zh="联合国教科文组织885号遗产实录" data-uz="YUNESKO #885 Dala Hujjatlashtiruvi">Field Documentation of UNESCO #885</h3>
+            <p class="docu-panel-desc" style="margin-top: 0.5rem;" data-en="Recorded during our youth-led cultural expedition funded by the Wikimedia Foundation. Central Asian youth researchers trained in field surveying, architectural epigraphy, and high-resolution spatial capture." data-zh="本片拍摄于维基媒体基金会资助的青年文化考察期间。中亚青年学者团队接受了系统的田野测绘、碑铭转译及高分辨率影像采集训练。" data-uz="Vikimedia Jamg'armasi granti doirasida tashkil etilgan yoshlar ekspeditsiyasining noyob kadrlari. Yosh tadqiqotchilar me'moriy epigrafika va obidalarni yuqori sifatda suratga olish bo'yicha amaliy mashg'ulotlar o'tkazdilar.">Recorded during our youth-led cultural expedition funded by the Wikimedia Foundation. Central Asian youth researchers trained in field surveying, architectural epigraphy, and high-resolution spatial capture.</p>
           </div>
-          <div>
-            <span data-en="Archived on Wikimedia Commons under CC BY-SA 4.0 Open License" data-zh="采用CC BY-SA 4.0协议归档于维基共享资源" data-uz="CC BY-SA 4.0 litsenziyasi bilan Wikimedia Commons'ga kiritilgan">Archived on Wikimedia Commons under CC BY-SA 4.0 Open License</span>
+
+          <div class="docu-chapters-list">
+            <button class="chapter-btn active" data-time="0">
+              <span class="chapter-time">00:00</span>
+              <div class="chapter-info">
+                <h4 data-en="Ak-Saray Palace Portal & Architectural Survey" data-zh="阿克萨赖宫主门廊与建筑测量" data-uz="Oqsaroy peshtoqi va me'moriy o'lchovlar">Ak-Saray Palace Portal & Architectural Survey</h4>
+                <p data-en="Colossal pylons, glazed tiles, and monument scale" data-zh="巨型塔柱、釉面瓷砖与古建尺度" data-uz="Ulkan pilonlar, moviy koshinlar va mahobat">Colossal pylons, glazed tiles, and monument scale</p>
+              </div>
+            </button>
+
+            <button class="chapter-btn" data-time="19">
+              <span class="chapter-time">00:19</span>
+              <div class="chapter-info">
+                <h4 data-en="University Research Cohort Fieldwork" data-zh="卡尔希国立大学青年团队实地调研" data-uz="Universitet yosh tadqiqotchilar jamoasi">University Research Cohort Fieldwork</h4>
+                <p data-en="20 student researchers cataloging epigraphic inscriptions" data-zh="20名青年学者现场编目与碑铭转译" data-uz="20 nafar talaba ishtirokidagi ilmiy-amaliy dala ishlari">20 student researchers cataloging epigraphic inscriptions</p>
+              </div>
+            </button>
+
+            <button class="chapter-btn" data-time="35">
+              <span class="chapter-time">00:35</span>
+              <div class="chapter-info">
+                <h4 data-en="Miraki Alpine Watershed & Historic Canals" data-zh="米拉基高山水源地与古代水系" data-uz="Miraki tog' suvlari va tarixiy Oqsuv kanali">Miraki Alpine Watershed & Historic Canals</h4>
+                <p data-en="Oqsuv mountain stream supplying Timurid oases" data-zh="滋养帖木儿绿洲都城的高山奥克苏夫渠系" data-uz="Shahrisabzni suv bilan ta'minlagan qadimiy tog' kanali">Oqsuv mountain stream supplying Timurid oases</p>
+              </div>
+            </button>
+          </div>
+
+          <div class="docu-meta-strip">
+            <div>
+              <strong data-en="Organized & Filmed by:" data-zh="联合组织与摄像：" data-uz="Tashkil Qilingan va Tasvirga Olingan:">Organized & Filmed by:</strong> Alisher Tuychiyev & Youth Delegation
+            </div>
+            <div>
+              <span data-en="Archived on Wikimedia Commons · CC BY-SA 4.0" data-zh="采用CC BY-SA 4.0归档于维基共享资源" data-uz="Wikimedia Commons · CC BY-SA 4.0">Archived on Wikimedia Commons · CC BY-SA 4.0</span>
+            </div>
           </div>
         </div>
       </div>
@@ -332,135 +376,121 @@
     <section id="corridor" class="map-section">
       <div class="section-header-bar">
         <div>
-          <span class="section-eyebrow">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <span data-en="[ 03 / SILK ROAD GEOCULTURAL NETWORK ]" data-zh="[ 03 / 丝绸之路地理文化走廊 ]" data-uz="[ 03 / IPAK YO'LI GEOGRAFIK YO'LAGI ]">[ 03 / SILK ROAD GEOCULTURAL NETWORK ]</span>
-          </span>
+          <div class="curatorial-eyebrow">
+            <span class="eyebrow-num">03</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text" data-en="Silk Road Geocultural Network" data-zh="丝绸之路地理文化走廊" data-uz="Ipak Yo'li Geografik Tarmog'i">Silk Road Geocultural Network</span>
+          </div>
           <h2 class="section-title" data-en="Central Asian Oasis to China's Creative Hubs" data-zh="中亚绿洲与中国创意名城的对话" data-uz="Markaziy Osiyo Vohasidan Xitoyning Ijodiy Markazlarigacha">Central Asian Oasis to China's Creative Hubs</h2>
           <p class="section-subtitle" data-en="Click any node along the 6,000 km caravan artery connecting Shakhrisabz's Timurid heritage with 2026 IYF host cities Nanjing and Changsha." data-zh="点击横跨6000公里商道的沿线枢纽，探索沙赫里萨布兹与2026青年论坛主办地南京、长沙的千年文明互鉴。" data-uz="Shahrisabz merosini 2026-yilgi forum mezbon shaharlari (Nanjing va Changsha) bilan bog'lovchi 6,000 km lik Ipak yo'li shaharlarini bosing.">Click any node along the 6,000 km caravan artery connecting Shakhrisabz's Timurid heritage with 2026 IYF host cities Nanjing and Changsha.</p>
         </div>
       </div>
 
       <div class="map-container">
-        <div class="map-svg-wrapper">
-          <svg class="silkroad-svg" viewBox="0 0 1000 400">
-            <defs>
-              <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#38bdf8"/>
-                <stop offset="50%" stop-color="#0284c7"/>
-                <stop offset="100%" stop-color="#d4af37"/>
-              </linearGradient>
-            </defs>
-
-            <!-- Route Path -->
-            <path class="silkroad-trail" d="M 120,240 Q 220,190 320,200 T 520,180 T 720,220 T 880,260 T 920,310" stroke="url(#routeGradient)"></path>
-
-            <!-- Nodes -->
-            <g class="silkroad-city-node active" data-city="shakhrisabz" transform="translate(120, 240)">
-              <circle class="node-pulse" r="6" fill="#38bdf8"></circle>
-              <circle r="8" fill="#38bdf8" stroke="#ffffff" stroke-width="2"></circle>
-              <text x="0" y="-16" text-anchor="middle" fill="currentColor" font-size="12" font-weight="700">Shakhrisabz (#885)</text>
-            </g>
-
-            <g class="silkroad-city-node" data-city="samarkand" transform="translate(220, 190)">
-              <circle r="7" fill="#0284c7" stroke="#ffffff" stroke-width="2"></circle>
-              <text x="0" y="-14" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">Samarkand</text>
-            </g>
-
-            <g class="silkroad-city-node" data-city="dunhuang" transform="translate(520, 180)">
-              <circle r="7" fill="#d4af37" stroke="#ffffff" stroke-width="2"></circle>
-              <text x="0" y="-14" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">Dunhuang</text>
-            </g>
-
-            <g class="silkroad-city-node" data-city="xian" transform="translate(720, 220)">
-              <circle r="7" fill="#d4af37" stroke="#ffffff" stroke-width="2"></circle>
-              <text x="0" y="-14" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">Xi'an</text>
-            </g>
-
-            <g class="silkroad-city-node" data-city="nanjing" transform="translate(880, 260)">
-              <circle class="node-pulse" r="6" fill="#d4af37"></circle>
-              <circle r="8" fill="#d4af37" stroke="#ffffff" stroke-width="2"></circle>
-              <text x="0" y="-16" text-anchor="middle" fill="currentColor" font-size="11" font-weight="700">Nanjing (2026 IYF)</text>
-            </g>
-
-            <g class="silkroad-city-node" data-city="changsha" transform="translate(920, 310)">
-              <circle class="node-pulse" r="6" fill="#d4af37"></circle>
-              <circle r="8" fill="#d4af37" stroke="#ffffff" stroke-width="2"></circle>
-              <text x="0" y="24" text-anchor="middle" fill="currentColor" font-size="11" font-weight="700">Changsha (2026 IYF)</text>
-            </g>
-          </svg>
+        <!-- City Filter Tabs -->
+        <div class="map-city-tabs" role="tablist" aria-label="Silk Road Key Cities">
+          <button class="city-pill-btn active" data-city="shakhrisabz">
+            <span class="pill-dot"></span>
+            <span>Shakhrisabz (#885)</span>
+          </button>
+          <button class="city-pill-btn" data-city="samarkand">
+            <span class="pill-dot"></span>
+            <span>Samarkand</span>
+          </button>
+          <button class="city-pill-btn" data-city="dunhuang">
+            <span class="pill-dot"></span>
+            <span>Dunhuang</span>
+          </button>
+          <button class="city-pill-btn" data-city="xian">
+            <span class="pill-dot"></span>
+            <span>Xi'an</span>
+          </button>
+          <button class="city-pill-btn" data-city="nanjing">
+            <span class="pill-dot"></span>
+            <span>Nanjing (2026 IYF)</span>
+          </button>
+          <button class="city-pill-btn" data-city="changsha">
+            <span class="pill-dot"></span>
+            <span>Changsha (2026 IYF)</span>
+          </button>
         </div>
 
-        <!-- City Details Readout Card -->
+        <!-- Leaflet Map Container & Floating Reset Button -->
+        <div style="position: relative;">
+          <div id="silkroadMap" class="leaflet-map-frame"></div>
+          <button class="map-reset-btn" id="mapResetBtn" aria-label="Reset Map View">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+            <span data-en="Reset View" data-zh="重置视角" data-uz="Ko'rinishni Tiklash">Reset View</span>
+          </button>
+        </div>
+
+        <!-- Curatorial Analytical Readout Card -->
         <div class="map-details-card" id="mapDetails">
           <div class="map-details-city">
             <span class="map-details-tag" id="mapCityCountry">Uzbekistan · UNESCO #885</span>
             <h3 id="mapCityTitle">Shakhrisabz (Kesh)</h3>
           </div>
           <div class="map-details-desc" id="mapCityDesc">
-            Birthplace of Amir Temur and cradle of the Timurid Renaissance. Home to the monumental Ak-Saray Palace and Dorut-Tilovat, historic center of Silk Road gemstone, cobalt mineral, and carpet trade.
+            Birthplace of Amir Temur and monumental cradle of the Timurid Renaissance. Anchored by the colossal Ak-Saray Palace and Dorut-Tilovat, historically famed for exporting Central Asian cobalt blue minerals and lapis lazuli eastward to China.
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         04. SILK ROAD AI DOCENT (KNOWLEDGE ASSISTANT)
+         04. SILK ROAD AI DOCENT (SPOTLIGHT CARD & MODAL CONCIERGE)
          ======================================================== -->
     <section id="docent" class="docent-section">
       <div class="section-header-bar">
         <div>
-          <span class="section-eyebrow">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span data-en="[ 04 / CONVERSATIONAL AI DOCENT ]" data-zh="[ 04 / 对话式AI导览导师 ]" data-uz="[ 04 / AI MEROS MASLAHATCHISI ]">[ 04 / CONVERSATIONAL AI DOCENT ]</span>
-          </span>
+          <div class="curatorial-eyebrow">
+            <span class="eyebrow-num">04</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text" data-en="Interactive AI Docent" data-zh="对话式AI导览" data-uz="Interaktiv AI Maslahatchi">Interactive AI Docent</span>
+          </div>
           <h2 class="section-title" data-en="Silk Road AI Heritage Assistant" data-zh="丝路遗产AI智能导览助理" data-uz="Ipak Yo'li AI Meros Maslahatchisi">Silk Road AI Heritage Assistant</h2>
           <p class="section-subtitle" data-en="Ask interactive questions in English, Chinese, or Uzbek about our expedition, Ak-Saray's history, culinary heritage, or UNESCO #885 status." data-zh="支持以英语、中文或乌兹别克语就实地考察、阿克萨赖宫历史、传统美食或联合国教科文组织885号遗产史实进行交互问答。" data-uz="Ekspeditsiyamiz, Oqsaroy tarixi, milliy taomlar yoki YUNESKO merosi haqida istalgan tilda savol bering.">Ask interactive questions in English, Chinese, or Uzbek about our expedition, Ak-Saray's history, culinary heritage, or UNESCO #885 status.</p>
         </div>
       </div>
 
-      <div class="docent-container">
-        <div class="docent-intro-panel">
-          <div>
-            <div class="docent-avatar-wrap">
-              <div class="docent-avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2L2 7h20L12 2z"/></svg>
-              </div>
-              <div class="docent-title-group">
-                <h3 data-en="Silk Road Docent" data-zh="丝路数字导师" data-uz="Ipak Yo'li Maslahatchisi">Silk Road Docent</h3>
-                <p data-en="AI Knowledge Assistant" data-zh="AI遗产专席顾问" data-uz="AI Meros Mutaxassisi">AI Knowledge Assistant</p>
-              </div>
-            </div>
-            <p class="docent-bio" data-en="Trained on primary Timurid chronicles, archaeological field reports from Karshi State University, and UNESCO World Heritage conservation dossiers." data-zh="基于帖木儿一手文献、卡尔希国立大学考古考察田野报告以及联合国教科文组织世界遗产档案数据深度训练。" data-uz="Temuriylar davri qo'lyozmalari, Qarshi davlat universiteti dala hisobotlari va YUNESKO Butunjahon merosi hujjatlari asosida faoliyat yuritadi.">Trained on primary Timurid chronicles, archaeological field reports from Karshi State University, and UNESCO World Heritage conservation dossiers.</p>
-          </div>
-
-          <div>
-            <div class="quick-chips-title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              <span data-en="Curated Inquiries" data-zh="精选热点咨询" data-uz="Tanlangan Savollar">Curated Inquiries</span>
-            </div>
-            <div class="quick-chips">
-              <button class="chip-btn" data-en="What is the significance of UNESCO World Heritage #885?" data-zh="联合国教科文组织世界遗产#885的核心意义是什么？" data-uz="YUNESKO Butunjahon Merosi #885 ning ahamiyati nimada?">What is the significance of UNESCO World Heritage #885?</button>
-              <button class="chip-btn" data-en="Tell me about Ak-Saray Palace and its history." data-zh="请向我介绍阿克萨赖宫及其历史。" data-uz="Oqsaroy qasri va uning tarixi haqida aytib bering.">Tell me about Ak-Saray Palace and its history.</button>
-              <button class="chip-btn" data-en="Where was Amir Temur born and what was Kesh?" data-zh="帖木儿大帝出生于何处？渴石古城有何渊源？" data-uz="Amir Temur qayerda tug'ilgan va Kesh tarixi qanday?">Where was Amir Temur born and what was Kesh?</button>
-              <button class="chip-btn" data-en="Tell me about Dorut Tilovat and Kok Gumbaz Mosque." data-zh="请向我介绍多鲁特提洛瓦特与青色穹顶清真寺。" data-uz="Dorut Tilovat va Ko'k Gumbaz masjidi haqida aytib bering.">Tell me about Dorut Tilovat and Kok Gumbaz Mosque.</button>
-              <button class="chip-btn" data-en="What is traditional Tandir Kebab and food culture?" data-zh="卡什卡达里亚特色地坑焖烤羊肉美食有何讲究？" data-uz="Qashqadaryo tandir go'shti va milliy taomlari qanday?">What is traditional Tandir Kebab and food culture?</button>
-              <button class="chip-btn" data-en="How did the Wikimedia Foundation grant support this expedition?" data-zh="维基媒体基金会资助是如何支持本次考察的？" data-uz="Vikimedia Jamg'armasi granti ekspeditsiyani qanday qo'llab-quvvatladi?">How did the Wikimedia Foundation grant support this expedition?</button>
-            </div>
-          </div>
+      <div class="docent-spotlight-card">
+        <div class="spotlight-left">
+          <span class="spotlight-badge" data-en="Autonomous Heritage Concierge" data-zh="自主式文化遗产数字专员" data-uz="Avtonom Raqamli Meros Maslahatchisi">Autonomous Heritage Concierge</span>
+          <h3 class="spotlight-title" data-en="Engage with the Living Memory of Shakhrisabz" data-zh="对话沙赫里萨布兹的活态历史记忆" data-uz="Shahrisabzning Jonli Tarixiy Xotirasi Bilan Muloqot">Engage with the Living Memory of Shakhrisabz</h3>
+          <p class="spotlight-desc" data-en="Trained on primary Timurid chronicles, archaeological field reports from Karshi State University, and UNESCO World Heritage conservation dossiers. Instant answers in English, Chinese, and Uzbek." data-zh="基于帖木儿一手文献、卡尔希国立大学考古考察田野报告以及联合国教科文组织世界遗产档案数据深度训练。支持英语、中文与乌兹别克语三语智能问答。" data-uz="Temuriylar davri qo'lyozmalari, Qarshi davlat universiteti dala hisobotlari va YUNESKO Butunjahon merosi hujjatlari asosida faoliyat yuritadi. Ingliz, xitoy va o'zbek tillarida tezkor javoblar.">Trained on primary Timurid chronicles, archaeological field reports from Karshi State University, and UNESCO World Heritage conservation dossiers. Instant answers in English, Chinese, and Uzbek.</p>
+          <button class="spotlight-cta-btn" id="openDocentDrawerBtn" aria-label="Open AI Docent Assistant">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <span data-en="Launch Interactive Docent" data-zh="启动AI导览对话" data-uz="AI Maslahatchini Ochish">Launch Interactive Docent</span>
+          </button>
         </div>
 
-        <div class="docent-chat-panel">
-          <div class="chat-history" id="chatHistory">
-            <div class="chat-bubble bot" data-en="Welcome to the Shakhrisabz Cultural Heritage Archive! I am your Silk Road AI Docent. Ask me anything about our expedition, Shakhrisabz history, Amir Temur, or UNESCO conservation." data-zh="欢迎来到沙赫里萨布兹文化遗产档案！我是您的丝路AI导览导师。欢迎随时向我询问关于考察、沙赫里萨布兹历史、帖木儿大帝或遗产保护的任何问题。" data-uz="Shahrisabz madaniy merosi arxiviga xush kelibsiz! Men sizning Ipak yo'li AI maslahatchisiman. Ekspeditsiyamiz, Shahrisabz tarixi, Amir Temur yoki me'morchiligimiz haqida istagan savolingizni bering.">Welcome to the Shakhrisabz Cultural Heritage Archive! I am your Silk Road AI Docent. Ask me anything about our expedition, Shakhrisabz history, Amir Temur, or UNESCO conservation.</div>
-          </div>
-          <div class="chat-input-bar">
-            <input type="text" class="chat-input" id="chatInput" placeholder="Ask about Shakhrisabz, Ak-Saray, or the Silk Road..." data-en="Ask about Shakhrisabz, Ak-Saray, or the Silk Road..." data-zh="请输入关于沙赫里萨布兹、阿克萨赖或丝绸之路的问题..." data-uz="Shahrisabz, Oqsaroy yoki Ipak yo'li haqida savol bering...">
-            <button class="chat-send-btn" id="chatSendBtn" aria-label="Send message">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              <span data-en="Send" data-zh="发送" data-uz="Yuborish">Send</span>
-            </button>
-          </div>
+        <div class="spotlight-sample-prompts">
+          <span class="sample-prompt-title" data-en="Recommended Curatorial Inquiries" data-zh="精选学术与文化咨询" data-uz="Tavsiya Etilgan Savollar">Recommended Curatorial Inquiries</span>
+          
+          <button class="prompt-sample-pill" data-query="What is the significance of UNESCO World Heritage #885?">
+            <span data-en="Why is Shakhrisabz on the UNESCO 'In Danger' list?" data-zh="为什么沙赫里萨布兹被列入濒危世界遗产名录？" data-uz="Nega Shahrisabz YUNESKO xavf ostidagi meros ro'yxatida?">Why is Shakhrisabz on the UNESCO 'In Danger' list?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button class="prompt-sample-pill" data-query="Tell me about Ak-Saray Palace and its history.">
+            <span data-en="Explain the 50-year brick transformation at Ak-Saray" data-zh="解析阿克萨赖宫50年间的砖砌加固演变" data-uz="Oqsaroydagi 50 yillik g'ishtin tiklash haqida ma'lumot bering">Explain the 50-year brick transformation at Ak-Saray</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button class="prompt-sample-pill" data-query="What is traditional Tandir Kebab and food culture?">
+            <span data-en="What makes Kashkadarya Tandir Kebab unique?" data-zh="卡什卡达里亚地坑烤肉有何独特之处？" data-uz="Qashqadaryo tandir go'shtining siri nimada?">What makes Kashkadarya Tandir Kebab unique?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button class="prompt-sample-pill" data-query="How did the Wikimedia Foundation grant support this expedition?">
+            <span data-en="How did the Wikimedia grant fund this youth fieldwork?" data-zh="维基媒体基金会资助如何支持本次青年考察？" data-uz="Vikimedia granti yoshlar ekspeditsiyasini qanday qo'llab-quvvatladi?">How did the Wikimedia grant fund this youth fieldwork?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -471,10 +501,11 @@
     <section id="gallery" class="showcase-section">
       <div class="section-header-bar">
         <div>
-          <span class="section-eyebrow">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span data-en="[ 05 / PHOTOGRAPHIC COMMONS ]" data-zh="[ 05 / 影像档案全景 ]" data-uz="[ 05 / FOTORASMLAR ARXIVI ]">[ 05 / PHOTOGRAPHIC COMMONS ]</span>
-          </span>
+          <div class="curatorial-eyebrow">
+            <span class="eyebrow-num">05</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text" data-en="Photographic Commons" data-zh="影像档案全景" data-uz="Fotosuratlar Arxivi">Photographic Commons</span>
+          </div>
           <h2 class="section-title" data-en="Curated Photographic Exhibition" data-zh="精选文献摄影图库" data-uz="Tanlangan Fotosuratlar Ko'rgazmasi">Curated Photographic Exhibition</h2>
           <p class="section-subtitle" data-en="Click any photo to inspect high-resolution architectural masonry and epigraphic translations under CC BY-SA 4.0 open licensing." data-zh="点击任意照片以全高分辨率查看详细的建筑与碑铭注释，支持开放版权获取。" data-uz="Me'moriy va epigrafik izohlar bilan yuqori sifatda ko'rish uchun istalgan surat ustiga bosing.">Click any photo to inspect high-resolution architectural masonry and epigraphic translations under CC BY-SA 4.0 open licensing.</p>
         </div>
@@ -550,6 +581,58 @@
       <div>Designed for the 2026 International Youth Forum (Changsha & Nanjing, China).</div>
     </div>
   </footer>
+
+  <!-- Floating Concierge Button (Always visible on bottom right) -->
+  <button class="floating-docent-btn" id="floatingDocentBtn" aria-label="Open AI Heritage Docent">
+    <span class="docent-pulse-dot" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span class="floating-btn-label" data-en="AI Heritage Docent" data-zh="AI丝路导师" data-uz="AI Maslahatchi">AI Heritage Docent</span>
+  </button>
+
+  <!-- Slide-In Curatorial Drawer & Backdrop -->
+  <div class="docent-backdrop" id="docentBackdrop" aria-hidden="true"></div>
+  <aside class="docent-drawer" id="docentDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="drawer-header">
+      <div class="drawer-header-brand">
+        <div class="drawer-avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2L2 7h20L12 2z"/>
+          </svg>
+        </div>
+        <div class="drawer-title-group">
+          <h3 id="drawerTitle" data-en="Silk Road AI Docent" data-zh="丝路遗产AI导师" data-uz="Ipak Yo'li AI Maslahatchisi">Silk Road AI Docent</h3>
+          <p data-en="Autonomous Curatorial Guide" data-zh="自主式文化导览顾问" data-uz="Avtonom Meros Qo'llanmasi">Autonomous Curatorial Guide</p>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="docentCloseBtn" aria-label="Close AI Docent drawer">&times;</button>
+    </div>
+
+    <!-- Quick Inquiry Mini-Chips in Drawer -->
+    <div class="drawer-chips-bar" role="toolbar" aria-label="Quick topic prompts">
+      <button class="chip-mini-btn" data-en="UNESCO #885 Status" data-zh="教科文组织885号" data-uz="YUNESKO #885 Holati">UNESCO #885 Status</button>
+      <button class="chip-mini-btn" data-en="Ak-Saray 50-Yr Metamorphosis" data-zh="阿克萨赖宫50年变迁" data-uz="Oqsaroy 50 Yillik O'zgarish">Ak-Saray 50-Yr Metamorphosis</button>
+      <button class="chip-mini-btn" data-en="Amir Temur & Kesh" data-zh="帖木儿大帝与渴石" data-uz="Amir Temur va Kesh">Amir Temur & Kesh</button>
+      <button class="chip-mini-btn" data-en="Dorut Tilovat & Kok Gumbaz" data-zh="多鲁特提洛瓦特与青色穹顶" data-uz="Dorut Tilovat & Ko'k Gumbaz">Dorut Tilovat & Kok Gumbaz</button>
+      <button class="chip-mini-btn" data-en="Kashkadarya Tandir Kebab" data-zh="卡什卡达里亚烤肉" data-uz="Tandir Go'sht">Kashkadarya Tandir Kebab</button>
+      <button class="chip-mini-btn" data-en="Wikimedia Expedition" data-zh="维基媒体基金会考察" data-uz="Vikimedia Ekspeditsiyasi">Wikimedia Expedition</button>
+    </div>
+
+    <!-- Chat History Stream -->
+    <div class="drawer-chat-stream" id="drawerChatStream" role="log" aria-live="polite">
+      <div class="drawer-bubble bot" data-en="Greetings! I am the Silk Road AI Docent for the Shakhrisabz Cultural Heritage Archive. Ask me anything about our expedition, Ak-Saray Palace, Amir Temur, or UNESCO conservation." data-zh="您好！我是沙赫里萨布兹文化遗产档案的丝路AI导师。欢迎向我询问关于考察实况、阿克萨赖宫、帖木儿大帝或遗产保护的任何问题。" data-uz="Assalomu alaykum! Men Shahrisabz madaniy merosi arxivi AI maslahatchisiman. Ekspeditsiyamiz, Oqsaroy, Amir Temur yoki YUNESKO konservatsiyasi haqida istagan savolingizni bering.">Greetings! I am the Silk Road AI Docent for the Shakhrisabz Cultural Heritage Archive. Ask me anything about our expedition, Ak-Saray Palace, Amir Temur, or UNESCO conservation.</div>
+    </div>
+
+    <!-- Drawer Input Bar -->
+    <div class="drawer-input-bar">
+      <input type="text" class="drawer-input" id="drawerInput" placeholder="Ask about Shakhrisabz, Ak-Saray, or the Silk Road..." data-en="Ask about Shakhrisabz, Ak-Saray, or the Silk Road..." data-zh="请输入关于沙赫里萨布兹、阿克萨赖或丝路的问题..." data-uz="Shahrisabz, Oqsaroy yoki Ipak yo'li haqida savol bering...">
+      <button class="drawer-send-btn" id="drawerSendBtn" aria-label="Send query">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span data-en="Send" data-zh="发送" data-uz="Yuborish">Send</span>
+      </button>
+    </div>
+  </aside>
 
   <!-- Main ES6 Module Application Entry -->
   <script type="module" src="js/app.js"></script>

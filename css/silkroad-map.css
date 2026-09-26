@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SILK ROAD GEOCULTURAL CORRIDOR (INTERACTIVE MAP) STYLES
+   SILK ROAD GEOCULTURAL CORRIDOR — REAL GEOSPATIAL MAP (LEAFLET.JS)
    ========================================================================== */
 
 .map-section {
@@ -14,69 +14,212 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-museum);
-  padding: 1.5rem;
+  padding: 1.75rem;
   margin-top: 1rem;
 }
 
-.map-svg-wrapper {
+/* Quick City Filter Bar above Map */
+.map-city-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+
+.map-city-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.city-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.city-pill-btn:hover {
+  border-color: var(--border-gold);
+  color: var(--text-primary);
+  background: var(--surface-3);
+}
+
+.city-pill-btn.active {
+  background: var(--gold-400);
+  color: #07080a;
+  border-color: var(--gold-400);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.city-pill-btn.active .pill-dot {
+  background: #07080a;
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-400);
+}
+
+/* Leaflet Map Frame */
+.leaflet-map-frame {
   position: relative;
   width: 100%;
-  height: 440px;
-  background: radial-gradient(circle at 40% 50%, rgba(14, 165, 233, 0.12) 0%, rgba(7, 8, 10, 0.98) 100%);
+  height: 480px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-medium);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+  z-index: 10;
 }
 
-[data-theme="light"] .map-svg-wrapper {
-  background: radial-gradient(circle at 40% 50%, rgba(2, 132, 199, 0.08) 0%, rgba(241, 243, 247, 0.98) 100%);
+/* Custom Leaflet Dark UI Overrides */
+.leaflet-container {
+  background-color: #07080a !important;
+  font-family: var(--font-sans) !important;
 }
 
-svg.silkroad-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+/* Custom Animated Map Marker Pulse */
+.custom-map-marker {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Route Trail Animation */
-.silkroad-trail {
-  stroke: var(--lapis-400);
-  stroke-width: 3;
-  stroke-dasharray: 8 6;
-  fill: none;
-  filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
-  animation: trailDash 35s linear infinite;
+.marker-pin {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 12px var(--gold-400);
+  z-index: 2;
+  transition: transform 0.2s ease;
 }
 
-@keyframes trailDash {
-  to {
-    stroke-dashoffset: -1000;
-  }
-}
-
-.silkroad-city-node {
-  cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.silkroad-city-node:hover {
+.custom-map-marker:hover .marker-pin {
   transform: scale(1.3);
 }
 
-.node-pulse {
-  animation: pulseNode 2.2s infinite ease-out;
+.marker-pulse-ring {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.4);
+  animation: markerPulse 2s infinite ease-out;
+  z-index: 1;
 }
 
-@keyframes pulseNode {
-  0% { r: 6; opacity: 1; }
-  100% { r: 20; opacity: 0; }
+.custom-map-marker.lapis .marker-pin {
+  background: var(--lapis-400);
+  box-shadow: 0 0 12px var(--lapis-400);
 }
 
-/* Map Details Card (Selected city readout) */
+.custom-map-marker.lapis .marker-pulse-ring {
+  background: rgba(14, 165, 233, 0.4);
+}
+
+@keyframes markerPulse {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Leaflet Popup Museum Styling */
+.leaflet-popup-content-wrapper {
+  background: rgba(16, 18, 26, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8) !important;
+  color: var(--text-primary) !important;
+  padding: 4px 6px !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(16, 18, 26, 0.92) !important;
+  border: 1px solid var(--border-gold) !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  line-height: 1.5 !important;
+}
+
+.map-popup-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold-400);
+  margin-bottom: 4px;
+}
+
+.map-popup-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--lapis-400);
+  margin-bottom: 6px;
+}
+
+.map-popup-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* Reset View Floating Button */
+.map-reset-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 400;
+  background: rgba(16, 18, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.map-reset-btn:hover {
+  background: var(--surface-3);
+  border-color: var(--border-gold);
+  color: var(--gold-400);
+}
+
+.map-reset-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Curatorial Readout Card below the map */
 .map-details-card {
   display: grid;
   grid-template-columns: 1fr 2.5fr;
-  gap: 1.75rem;
+  gap: 2rem;
   margin-top: 1.5rem;
   background: var(--surface-2);
   border: 1px solid var(--border-medium);
@@ -94,7 +237,7 @@ svg.silkroad-svg {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 3.5px;
   background: linear-gradient(to bottom, var(--lapis-400), var(--gold-400));
 }
 
@@ -113,7 +256,7 @@ svg.silkroad-svg {
 }
 
 .map-details-tag {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -123,12 +266,12 @@ svg.silkroad-svg {
 .map-details-desc {
   font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-@media (max-width: 768px) {
-  .map-svg-wrapper {
-    height: 320px;
+@media (max-width: 900px) {
+  .leaflet-map-frame {
+    height: 380px;
   }
   .map-details-card {
     grid-template-columns: 1fr;

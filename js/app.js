@@ -24,9 +24,38 @@ document.addEventListener('DOMContentLoaded', () => {
   initSilkRoadMap();
   initAiDocent();
 
-  // 5. Initialize Data-Driven Gallery
+  // 5. Initialize Video Kiosk Chapters & Gallery
+  initVideoChapters();
   initGallery();
 });
+
+/* Documentary Reel Chapters Controller */
+function initVideoChapters() {
+  const video = document.getElementById('docuVideo');
+  const chapterBtns = document.querySelectorAll('.chapter-btn');
+  if (!video || !chapterBtns.length) return;
+
+  chapterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const timeSec = parseFloat(btn.getAttribute('data-time')) || 0;
+      chapterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      video.currentTime = timeSec;
+      video.play().catch(() => {});
+    });
+  });
+
+  video.addEventListener('timeupdate', () => {
+    const cur = video.currentTime;
+    let activeIndex = 0;
+    if (cur >= 35) activeIndex = 2;
+    else if (cur >= 19) activeIndex = 1;
+
+    chapterBtns.forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === activeIndex);
+    });
+  });
+}
 
 /* Top Scroll Progress Bar */
 function initScrollProgressBar() {

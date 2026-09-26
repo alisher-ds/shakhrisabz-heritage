@@ -1,98 +1,222 @@
 /* ========================================================
-   SILK ROAD GEOCULTURAL CORRIDOR (Interactive Map)
+   SILK ROAD GEOCULTURAL CORRIDOR (LEAFLET GEOSPATIAL MAP)
+   Real Eurasian Cartography with Historical Silk Road Waypoints
    ======================================================== */
 import { currentLang } from './i18n.js';
 
 export function initSilkRoadMap() {
-  const citiesData = {
+  const mapElement = document.getElementById('silkroadMap');
+  const detailsCard = document.getElementById('mapDetails');
+  const cityTitleEl = document.getElementById('mapCityTitle');
+  const cityTagEl = document.getElementById('mapCityCountry');
+  const cityDescEl = document.getElementById('mapCityDesc');
+  const resetBtn = document.getElementById('mapResetBtn');
+  const cityPillBtns = document.querySelectorAll('.city-pill-btn');
+
+  if (!mapElement) return;
+
+  // City Data with Real Geographic Coordinates
+  const cities = {
     shakhrisabz: {
-      name: { en: "Shakhrisabz", zh: "沙赫里萨布兹", uz: "Shahrisabz" },
-      role: { en: "Timurid Architectural Cradle", zh: "帖木儿建筑摇篮", uz: "Temuriylar Me'morchilik Beshigi" },
+      coords: [39.05, 66.83],
+      country: { en: "Uzbekistan · UNESCO #885", zh: "乌兹别克斯坦 · 教科文组织第885号", uz: "O'zbekiston · YUNESKO #885" },
+      title: { en: "Shakhrisabz (Kesh)", zh: "沙赫里萨布兹（古称渴石）", uz: "Shahrisabz (Qadimiy Kesh)" },
       desc: {
-        en: "Birthplace of Amir Temur (UNESCO #885). Source of legendary craftsmen who transported Central Asian cobalt blue glazing and girih geometry across Eurasia.",
-        zh: "帖木儿大帝的诞生地（联合国教科文组织 #885）。将中亚钴蓝釉彩和伊斯兰几何学传播到整个欧亚大陆的传奇工匠之源。",
-        uz: "Amir Temurning tug'ilgan shahri (YUNESKO #885). Markaziy Osiyo kobalt moviy koshinchiligi va geometrik naqshlarini butun Yevroosiyoga yoygan buyuk me'morlar vatani."
-      }
+        en: "Birthplace of Amir Temur and monumental cradle of the Timurid Renaissance. Anchored by the colossal Ak-Saray Palace and Dorut-Tilovat, historically famed for exporting Central Asian cobalt blue minerals and lapis lazuli eastward to China.",
+        zh: "帖木儿大帝诞生地，帖木儿文艺复兴建筑策源地。拥有巍峨阿克萨赖宫与多鲁特提洛瓦特圣地，历史上向东向中国输出优质钴蓝颜料与青金石。",
+        uz: "Amir Temur tavallud topgan zamin va Temuriylar me'morchiligi beshigi. Ulkan Oqsaroy va Dorut Tilovat majmuasi bilan mashhur bo'lib, tarixdan Xitoyga zangori kobalt bo'yog'i va lojuvard eksport qilingan asosiy savdo maskani."
+      },
+      color: "gold"
     },
     samarkand: {
-      name: { en: "Samarkand", zh: "撒马尔罕", uz: "Samarqand" },
-      role: { en: "Imperial Capital & Crossroads", zh: "帝国首都与丝路十字路口", uz: "Poytaxt va Buyuk Chorraha" },
+      coords: [39.65, 66.96],
+      country: { en: "Uzbekistan · UNESCO #603", zh: "乌兹别克斯坦 · 丝路十字路口", uz: "O'zbekiston · YUNESKO #603" },
+      title: { en: "Samarkand", zh: "撒马尔罕", uz: "Samarqand" },
       desc: {
-        en: "The grand crossroad of cultures (UNESCO #603). Central trade hub receiving Chinese silk, raw jade, and paper while exporting Central Asian lapis lazuli and horses.",
-        zh: "文明的十字路口（联合国教科文组织 #603）。汇聚中国丝绸、玉石和纸张，同时出口中亚青金石和汗血宝马的核心枢纽。",
-        uz: "Madaniyatlar chorrahasi (YUNESKO #603). Xitoy ipaklari, nefrit va qog'ozini qabul qilib, o'rniga lojuvard toshlari va tulporlarini yetkazib bergan buyuk markaz."
-      }
+        en: "Imperial capital of the Timurid Empire and the legendary crossroads of Silk Road caravans. Renowned for Registan square, Bibi-Khanym Mosque, and Sogdian merchant guilds connecting Mediterranean trade with Chang'an.",
+        zh: "帖木儿帝国的帝国都城，丝绸之路上举世闻名的十字路口。以雷吉斯坦广场与比比哈努姆清真寺闻名，是联通地中海与长安的粟特商人贸易网络中枢。",
+        uz: "Temuriylar saltanatining buyuk poytaxti va karvon yo'llarining markazi. Registon maydoni, Bibixonim masjidi va Xitoy bilan savdo qilgan qadimiy sug'd savdogarlarining tayanch shahri."
+      },
+      color: "lapis"
     },
     dunhuang: {
-      name: { en: "Dunhuang", zh: "敦煌", uz: "Dunxuan" },
-      role: { en: "Gateway of the Oasis Trail", zh: "丝路绿洲门户与莫高窟", uz: "Ipak Yo'li Voha Darvozasi" },
+      coords: [40.14, 94.66],
+      country: { en: "China · UNESCO #440", zh: "中国甘肃 · 莫高窟敦煌", uz: "Xitoy · Dunxuan (Mogao g'orlari)" },
+      title: { en: "Dunhuang (Mogao Grottoes)", zh: "敦煌（莫高窟）", uz: "Dunxuan (Mogao g'orlari)" },
       desc: {
-        en: "Home of the Mogao Caves (UNESCO #440). Historical junction where Central Asian Sogdian merchants traded and translated cultural manuscripts with China.",
-        zh: "莫高窟所在地（联合国教科文组织 #440）。中亚粟特商人与中国商人进行文化手稿翻译和商贸往来的历史要冲。",
-        uz: "Mogao g'orlari maskani (YUNESKO #440). Sug'd savdogarlari va xitoylik elchilar uchrashib, qadimiy qo'lyozmalarni almashgan tarixiy voha."
-      }
+        en: "The historic oasis throat where the northern and southern Silk Roads converged. Home to the world-renowned Mogao Grottoes preserving millennia of Buddhist art, Sogdian merchant contracts, and multicultural Silk Road manuscripts.",
+        zh: "丝绸之路南北两道在此交汇的绿洲重镇。世界文化遗产莫高窟所在地，珍藏着千百年来的佛教壁画、粟特古信札及多民族文明互鉴的珍贵经卷。",
+        uz: "Ipak yo'lining shimoliy va janubiy tarmoqlari tutashgan qadimiy voha. Dunyoga mashhur Mogao g'orlari, buddaviylik san'ati va Buyuk Ipak yo'lining ko'p madaniyatli yozma yodgorliklari markazi."
+      },
+      color: "lapis"
     },
     xian: {
-      name: { en: "Xi'an (Chang'an)", zh: "西安（长安）", uz: "Si'an (Chan'an)" },
-      role: { en: "Eastern Silk Road Terminus", zh: "陆上丝绸之路东起点", uz: "Ipak Yo'lining Sharqiy Boshlanishi" },
+      coords: [34.34, 108.94],
+      country: { en: "China · UNESCO #666", zh: "中国陕西 · 汉唐丝路起点", uz: "Xitoy · Sian (Qadimiy Chang'an)" },
+      title: { en: "Xi'an (Ancient Chang'an)", zh: "西安（汉唐古都长安）", uz: "Sian (Qadimiy Chang'an)" },
       desc: {
-        en: "Ancient imperial capital of China. Center of cultural synthesis where Central Asian music, polo, and glassware flourished during the Tang Dynasty.",
-        zh: "中国古都。唐代中亚胡乐、马球和玻璃器皿在此大放异彩的文化交融中心。",
-        uz: "Xitoyning qadimiy poytaxti. Tang sulolasi davrida Markaziy Osiyo musiqasi, kiyimlari va shisha san'ati gullab-yashnagan madaniy markaz."
-      }
+        en: "Ancient Chang'an, the eastern departure terminal of the Silk Road. For centuries, Sogdian caravans from Central Asian oases like Kesh arrived here carrying jade, glass, and cobalt, trading for imperial silk rolls and tea.",
+        zh: "古都长安，古代丝绸之路的东方起点。数百年来，来自中亚渴石等绿洲的粟特驼队历经万里抵达此处，以玉石、琉璃和钴蓝颜料交换丝绸绢匹与茶叶。",
+        uz: "Qadimiy Chang'an — Buyuk Ipak yo'lining Sharqdagi boshlanish nuqtasi. Asrlar davomida Markaziy Osiyo karvonlari bu yerga kobalt, qimmatbaho toshlar olib borgan va Xitoy ipagi hamda choyi bilan savdo qilgan."
+      },
+      color: "lapis"
     },
     nanjing: {
-      name: { en: "Nanjing", zh: "南京", uz: "Nanjing" },
-      role: { en: "UNESCO City of Literature & 2026 IYF Host", zh: "文学之都·2026青年论坛主办地", uz: "Adabiyot Shahri & IYF 2026 Mezboni" },
+      coords: [32.06, 118.79],
+      country: { en: "China · 2026 IYF Host City", zh: "中国江苏 · 联合国教科文组织文学之都", uz: "Xitoy · 2026 IYF Mezbon Shahri" },
+      title: { en: "Nanjing (2026 IYF)", zh: "南京（2026国际青年论坛）", uz: "Nankin (2026 IYF Mezboni)" },
       desc: {
-        en: "UNESCO City of Literature and maritime Silk Road hub. Host city of the 2026 International Youth Forum exploring historical dialogue with Central Asia.",
-        zh: "联合国教科文组织“文学之都”，海上丝绸之路重要节点。2026年国际青年论坛主办城市，推动与中亚的历史文明对话。",
-        uz: "YUNESKO 'Adabiyot shahri' va 2026-yilgi Xalqaro Yoshlar Forumi mezbon shahri. Markaziy Osiyo bilan tarixiy madaniy aloqalarni o'rganish markazi."
-      }
+        en: "UNESCO City of Literature and historic imperial capital of China. The 2026 International Youth Forum will convene here to foster youth-led creative expression of global heritage in the age of artificial intelligence.",
+        zh: "联合国教科文组织“文学之都”，中国历史文化名城。2026年国际青年论坛（IYF）在此汇聚全球青年领袖，探讨人工智能时代青年如何创新守护与表达世界遗产。",
+        uz: "YUNESKOning 'Adabiyot shahri' va Xitoyning qadimiy poytaxtlaridan biri. 2026-yilgi Xalqaro Yoshlar Forumi (IYF) mezbon shahri bo'lib, bu yerda sun'iy intellekt davrida yoshlarning madaniy merosni asrashdagi roli muhokama qilinadi."
+      },
+      color: "gold"
     },
     changsha: {
-      name: { en: "Changsha", zh: "长沙", uz: "Changsha" },
-      role: { en: "UNESCO City of Media Arts & 2026 IYF Host", zh: "媒体艺术之都·2026青年论坛主办地", uz: "Media San'ati Shahri & IYF 2026 Mezboni" },
+      coords: [28.23, 112.93],
+      country: { en: "China · 2026 IYF Host City", zh: "中国湖南 · 联合国教科文组织媒体艺术之都", uz: "Xitoy · 2026 IYF Mezbon Shahri" },
+      title: { en: "Changsha (2026 IYF)", zh: "长沙（2026国际青年论坛）", uz: "Changsha (2026 IYF Mezboni)" },
       desc: {
-        en: "UNESCO Creative City of Media Arts. Ancient home of Tongguan porcelain kilns that historically exported cobalt-glazed ceramics along maritime Silk Road corridors.",
-        zh: "联合国教科文组织“媒体艺术之都”。历史上通过海上丝绸之路出口釉下彩瓷的铜官窑故乡，2026年国际青年论坛闭幕地。",
-        uz: "YUNESKO 'Media san'ati shahri'. Qadimiy Tongguan sopolchilik markazi, Ipak yo'li bo'ylab sirlangan koshinlar eksport qilgan shahar va IYF 2026 mezbon markazi."
-      }
+        en: "UNESCO City of Media Arts and home to the ancient Tongguan Kilns, which historically glazed iconic blue-and-white ceramics exported across the Maritime Silk Road using Central Asian cobalt mineral pigments.",
+        zh: "联合国教科文组织“媒体艺术之都”，著名的长沙铜官窑所在地。历史上该窑口巧妙利用中亚输入的钴蓝矿料烧制极具丝路外销特色的早期青花与彩绘瓷器。",
+        uz: "YUNESKOning 'Media san'ati shahri'. Tarixda Markaziy Osiyodan keltirilgan kobalt bo'yog'idan foydalanib mashhur moviy koshin va chinni buyumlar ishlab chiqargan qadimiy Tongguan markazi."
+      },
+      color: "gold"
     }
   };
 
-  const titleEl = document.getElementById('mapCityTitle');
-  const roleEl = document.getElementById('mapCityRole');
-  const descEl = document.getElementById('mapCityDesc');
-
-  function updateCityCard(key) {
-    const city = citiesData[key];
-    if (!city) return;
-
-    const lang = currentLang || 'en';
-    if (titleEl) titleEl.textContent = city.name[lang] || city.name.en;
-    if (roleEl) roleEl.textContent = city.role[lang] || city.role.en;
-    if (descEl) descEl.textContent = city.desc[lang] || city.desc.en;
+  // Check if Leaflet is loaded
+  if (typeof L === 'undefined') {
+    console.warn('Leaflet library is loading or unavailable.');
+    return;
   }
 
-  // Bind city node buttons
-  document.querySelectorAll('.silkroad-city-node').forEach((node) => {
-    node.addEventListener('click', () => {
-      const cityKey = node.getAttribute('data-city');
-      updateCityCard(cityKey);
-      document.querySelectorAll('.silkroad-city-node').forEach(n => n.classList.remove('active'));
-      node.classList.add('active');
+  // Initialize Map: Centered between Central Asia and East Asia
+  const map = L.map('silkroadMap', {
+    center: [36.0, 92.0],
+    zoom: 4,
+    minZoom: 3,
+    maxZoom: 9,
+    scrollWheelZoom: false, // Prevents accidental scroll interception
+    zoomControl: true
+  });
+
+  // CartoDB Dark Matter Basemap (Authentic Eurasian topography)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Silk Road Trade Route Coordinates (Historical caravan path through oasis gates)
+  const routeWaypoints = [
+    [39.05, 66.83], // Shakhrisabz
+    [39.65, 66.96], // Samarkand
+    [40.53, 72.80], // Osh / Fergana
+    [39.47, 75.99], // Kashgar
+    [41.17, 80.26], // Aksu
+    [41.72, 82.96], // Kucha
+    [42.95, 89.19], // Turpan
+    [40.14, 94.66], // Dunhuang
+    [39.81, 98.29], // Jiayuguan Pass
+    [36.06, 103.83], // Lanzhou (Yellow River Crossing)
+    [34.34, 108.94], // Xi'an
+    [32.06, 118.79], // Nanjing
+    [28.23, 112.93]  // Changsha
+  ];
+
+  // Draw Glowing Polyline Caravan Route
+  const routeLine = L.polyline(routeWaypoints, {
+    color: '#0ea5e9',
+    weight: 3.5,
+    opacity: 0.85,
+    dashArray: '8, 6',
+    lineCap: 'round'
+  }).addTo(map);
+
+  // Markers Dictionary
+  const markers = {};
+
+  function createCustomIcon(isGold) {
+    const colorClass = isGold ? 'gold' : 'lapis';
+    return L.divIcon({
+      className: 'custom-leaflet-marker',
+      html: `
+        <div class="custom-map-marker ${colorClass}">
+          <div class="marker-pulse-ring"></div>
+          <div class="marker-pin"></div>
+        </div>
+      `,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+  }
+
+  function updateDetailsCard(cityKey) {
+    const data = cities[cityKey];
+    if (!data) return;
+    const lang = currentLang || 'en';
+
+    if (cityTitleEl) cityTitleEl.textContent = data.title[lang] || data.title.en;
+    if (cityTagEl) cityTagEl.textContent = data.country[lang] || data.country.en;
+    if (cityDescEl) cityDescEl.textContent = data.desc[lang] || data.desc.en;
+
+    cityPillBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-city') === cityKey);
+    });
+  }
+
+  // Add Markers for Cities
+  Object.keys(cities).forEach(key => {
+    const c = cities[key];
+    const isGold = c.color === 'gold';
+    const marker = L.marker(c.coords, { icon: createCustomIcon(isGold) }).addTo(map);
+
+    const lang = currentLang || 'en';
+    const popupContent = `
+      <div class="map-popup-title">${c.title[lang] || c.title.en}</div>
+      <div class="map-popup-tag">${c.country[lang] || c.country.en}</div>
+      <div class="map-popup-desc">${c.desc[lang] || c.desc.en}</div>
+    `;
+
+    marker.bindPopup(popupContent, { maxWidth: 280 });
+
+    marker.on('click', () => {
+      updateDetailsCard(key);
+      map.flyTo(c.coords, 5, { duration: 1.2 });
+    });
+
+    markers[key] = marker;
+  });
+
+  // Bind City Pill Buttons
+  cityPillBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cityKey = btn.getAttribute('data-city');
+      const c = cities[cityKey];
+      if (c) {
+        updateDetailsCard(cityKey);
+        map.flyTo(c.coords, 6, { duration: 1.5 });
+        if (markers[cityKey]) markers[cityKey].openPopup();
+      }
     });
   });
 
-  // Listen to language change to update currently selected city
-  window.addEventListener('languageChanged', () => {
-    const activeNode = document.querySelector('.silkroad-city-node.active') || document.querySelector('.silkroad-city-node');
-    if (activeNode) {
-      updateCityCard(activeNode.getAttribute('data-city'));
-    }
+  // Reset Button
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      map.flyTo([36.0, 92.0], 4, { duration: 1.2 });
+      updateDetailsCard('shakhrisabz');
+    });
+  }
+
+  // Update text when language changes
+  window.addEventListener('languageChanged', (e) => {
+    const activeBtn = document.querySelector('.city-pill-btn.active');
+    const activeKey = activeBtn ? activeBtn.getAttribute('data-city') : 'shakhrisabz';
+    updateDetailsCard(activeKey);
   });
 
-  // Initial load
-  updateCityCard('shakhrisabz');
+  // Initial selection
+  updateDetailsCard('shakhrisabz');
 }
