@@ -18,18 +18,18 @@ export function initAiDocent() {
 
   if (!drawer || !drawerChatStream) return;
 
-  // Enforce bottom-left corner positioning regardless of any client cache
+  // Enforce bottom-right corner positioning regardless of any client cache
   if (floatingBtn) {
-    const applyLeftPosition = () => {
+    const applyRightPosition = () => {
       const isMobile = window.innerWidth <= 768;
       floatingBtn.style.setProperty('position', 'fixed', 'important');
-      floatingBtn.style.setProperty('left', isMobile ? '1.2rem' : '1.75rem', 'important');
-      floatingBtn.style.setProperty('right', 'auto', 'important');
+      floatingBtn.style.setProperty('right', isMobile ? '1.2rem' : '1.75rem', 'important');
+      floatingBtn.style.setProperty('left', 'auto', 'important');
       floatingBtn.style.setProperty('bottom', isMobile ? 'max(1.2rem, env(safe-area-inset-bottom))' : '1.75rem', 'important');
       floatingBtn.style.setProperty('z-index', '9999', 'important');
     };
-    applyLeftPosition();
-    window.addEventListener('resize', applyLeftPosition, { passive: true });
+    applyRightPosition();
+    window.addEventListener('resize', applyRightPosition, { passive: true });
   }
 
   const knowledgeBase = [

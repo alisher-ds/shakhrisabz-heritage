@@ -1438,7 +1438,8 @@ footer {
   }
   .slider-bottom-controls {
     bottom: 1.25rem;
-    right: 1.25rem;
+    left: 1.25rem;
+    right: auto;
     padding: 5px 12px;
   }
   .slider-dot {
