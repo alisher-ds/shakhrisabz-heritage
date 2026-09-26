@@ -1,5 +1,5 @@
 /* ========================================================
-   MAIN APPLICATION CONTROLLER
+   MAIN APPLICATION CONTROLLER — MUSEUM EDITORIAL EDITION
    ======================================================== */
 import { initTheme } from './theme.js';
 import { initI18n } from './i18n.js';
@@ -13,17 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initI18n();
 
-  // 2. Initialize Hero Slideshow & Transformation Comparison
+  // 2. Initialize Scroll Progress Bar
+  initScrollProgressBar();
+
+  // 3. Initialize Hero Slideshow & Transformation Comparison
   initHeroSlider();
   initTransformationSlider();
 
-  // 3. Initialize Silk Road & AI Modules
+  // 4. Initialize Silk Road & AI Modules
   initSilkRoadMap();
   initAiDocent();
 
-  // 4. Initialize Data-Driven Gallery
+  // 5. Initialize Data-Driven Gallery
   initGallery();
 });
+
+/* Top Scroll Progress Bar */
+function initScrollProgressBar() {
+  const progressBar = document.getElementById('progressBar');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    progressBar.style.width = `${scrolled}%`;
+  }, { passive: true });
+}
 
 /* Hero Slider Logic */
 function initHeroSlider() {
@@ -37,7 +53,7 @@ function initHeroSlider() {
   let currentSlide = 0;
   let isPlaying = true;
   let slideInterval = null;
-  const slideDuration = 6000;
+  const slideDuration = 6500;
 
   function showSlide(index) {
     if (index >= slides.length) index = 0;
@@ -83,6 +99,7 @@ function initHeroSlider() {
   window.nextSlide = () => { nextSlide(); if (isPlaying) startAutoplay(); };
   window.prevSlide = () => { prevSlide(); if (isPlaying) startAutoplay(); };
   window.goToSlide = (idx) => { showSlide(idx); if (isPlaying) startAutoplay(); };
+  window.jumpToSlide = (idx) => { showSlide(idx); if (isPlaying) startAutoplay(); };
   window.toggleSlidePlay = () => {
     if (isPlaying) stopAutoplay();
     else startAutoplay();

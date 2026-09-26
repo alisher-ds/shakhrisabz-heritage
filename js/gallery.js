@@ -1,5 +1,6 @@
 /* ========================================================
    CURATED PHOTO GALLERY (Data-Driven with JSON)
+   Museum Editorial Edition
    ======================================================== */
 import { currentLang } from './i18n.js';
 
@@ -10,6 +11,7 @@ export function initGallery() {
   const mImg = document.getElementById('mImg');
   const mTitle = document.getElementById('mTitle');
   const mDesc = document.getElementById('mDesc');
+  const mBadge = document.getElementById('mBadge');
 
   if (!grid) return;
 
@@ -26,24 +28,21 @@ export function initGallery() {
 
     filtered.forEach(item => {
       const card = document.createElement('article');
-      card.className = 'photo-card';
+      card.className = 'gallery-card';
       card.setAttribute('data-cat', item.category);
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
       card.setAttribute('aria-haspopup', 'dialog');
 
       card.innerHTML = `
-        <div class="photo-media">
-          <img src="${item.image}" alt="${item.title[lang] || item.title.en}" loading="lazy">
-          <span class="photo-overlay">${item.badge[lang] || item.badge.en}</span>
+        <div class="gallery-thumb-wrap">
+          <img class="gallery-thumb" src="${item.image}" alt="${item.title[lang] || item.title.en}" loading="lazy">
+          <span class="gallery-card-badge">${item.badge[lang] || item.badge.en}</span>
         </div>
-        <div class="photo-body">
-          <h3 class="photo-title">${item.title[lang] || item.title.en}</h3>
-          <p class="photo-caption">${item.caption[lang] || item.caption.en}</p>
-          <div class="photo-footer">
-            <span><span>Photo:</span> <strong>Alisher Tuychiev & Youth Team</strong></span>
-            <span>${item.tag[lang] || item.tag.en}</span>
-          </div>
+        <div class="gallery-card-body">
+          <span class="gallery-card-tag">${item.tag[lang] || item.tag.en}</span>
+          <h3 class="gallery-card-title">${item.title[lang] || item.title.en}</h3>
+          <p class="gallery-card-desc">${item.caption[lang] || item.caption.en}</p>
         </div>
       `;
 
@@ -68,8 +67,9 @@ export function initGallery() {
     mImg.alt = item.title[lang] || item.title.en;
     mTitle.textContent = item.modal.title[lang] || item.title[lang] || item.title.en;
     mDesc.textContent = item.modal.description[lang] || item.caption[lang] || item.caption.en;
+    if (mBadge) mBadge.textContent = item.badge[lang] || item.badge.en;
 
-    modal.style.display = 'flex';
+    modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 
     // Focus close button
@@ -79,7 +79,7 @@ export function initGallery() {
 
   function closeModal() {
     if (!modal) return;
-    modal.style.display = 'none';
+    modal.classList.remove('active');
     document.body.style.overflow = '';
   }
 
@@ -105,19 +105,22 @@ export function initGallery() {
     });
   });
 
-  // Re-render when language changes
-  window.addEventListener('languageChanged', () => {
-    renderCards();
-  });
-
-  // Fetch JSON data
+  // Fetch JSON archive
   fetch('data/heritage-archive.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Network response was not ok');
+      return res.json();
+    })
     .then(data => {
       archiveData = data;
       renderCards();
     })
     .catch(err => {
-      console.error('Failed to load heritage data:', err);
+      console.warn('Could not load heritage-archive.json, falling back...', err);
     });
+
+  // Re-render when language changes
+  window.addEventListener('languageChanged', () => {
+    renderCards();
+  });
 }

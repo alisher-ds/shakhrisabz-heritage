@@ -1,33 +1,35 @@
-/* Silk Road Geocultural Corridor Map */
+/* ==========================================================================
+   SILK ROAD GEOCULTURAL CORRIDOR (INTERACTIVE MAP) STYLES
+   ========================================================================== */
+
 .map-section {
-  padding: 48px 0 60px;
-  border-top: 1px solid var(--border);
+  margin-top: 5rem;
 }
 
 .map-container {
   position: relative;
   width: 100%;
-  background: var(--surface-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--hero-slider-shadow);
-  padding: 24px;
-  margin-top: 16px;
+  box-shadow: var(--shadow-museum);
+  padding: 1.5rem;
+  margin-top: 1rem;
 }
 
 .map-svg-wrapper {
   position: relative;
   width: 100%;
-  height: 420px;
-  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.08) 0%, rgba(9, 9, 11, 0.95) 100%);
-  border-radius: 10px;
+  height: 440px;
+  background: radial-gradient(circle at 40% 50%, rgba(14, 165, 233, 0.12) 0%, rgba(7, 8, 10, 0.98) 100%);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-subtle);
 }
 
 [data-theme="light"] .map-svg-wrapper {
-  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.06) 0%, rgba(244, 244, 246, 0.95) 100%);
+  background: radial-gradient(circle at 40% 50%, rgba(2, 132, 199, 0.08) 0%, rgba(241, 243, 247, 0.98) 100%);
 }
 
 svg.silkroad-svg {
@@ -36,13 +38,14 @@ svg.silkroad-svg {
   display: block;
 }
 
-/* Route Path Animation */
+/* Route Trail Animation */
 .silkroad-trail {
-  stroke: #0284c7;
+  stroke: var(--lapis-400);
   stroke-width: 3;
   stroke-dasharray: 8 6;
   fill: none;
-  animation: trailDash 30s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
+  animation: trailDash 35s linear infinite;
 }
 
 @keyframes trailDash {
@@ -53,59 +56,74 @@ svg.silkroad-svg {
 
 .silkroad-city-node {
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .silkroad-city-node:hover {
-  transform: scale(1.25);
+  transform: scale(1.3);
 }
 
 .node-pulse {
-  animation: pulseNode 2s infinite ease-out;
+  animation: pulseNode 2.2s infinite ease-out;
 }
 
 @keyframes pulseNode {
   0% { r: 6; opacity: 1; }
-  100% { r: 18; opacity: 0; }
+  100% { r: 20; opacity: 0; }
 }
 
-/* Map Info Card (Active city details) */
+/* Map Details Card (Selected city readout) */
 .map-details-card {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 20px;
-  margin-top: 18px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 18px 22px;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-details-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--lapis-400), var(--gold-400));
 }
 
 .map-details-city {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 .map-details-city h3 {
-  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text);
-  margin-bottom: 4px;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
 }
 
 .map-details-tag {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #0284c7;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.1em;
+  color: var(--gold-400);
 }
 
-.map-details-text {
-  font-size: 0.88rem;
+.map-details-desc {
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -114,7 +132,7 @@ svg.silkroad-svg {
   }
   .map-details-card {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 14px;
+    gap: 1rem;
+    padding: 1.25rem;
   }
 }

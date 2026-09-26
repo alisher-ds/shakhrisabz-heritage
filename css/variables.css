@@ -1,70 +1,105 @@
+/* ==========================================================================
+   SHAKHRISABZ CULTURAL HERITAGE ARCHIVE — DESIGN SYSTEM TOKENS
+   Theme: Obsidian Imperial Silk Road (Museum-Grade Curatorial System)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
 :root {
-  --bg: #09090b;
-  --surface: #121215;
-  --surface-card: #18181c;
-  --surface-hover: #222228;
-  --text: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  --border: #27272a;
-  --border-light: #3f3f46;
-  --nav-bg: rgba(9, 9, 11, 0.94);
-  --nav-title: #ffffff;
-  --nav-badge-color: #e4e4e7;
-  --nav-badge-bg: rgba(255, 255, 255, 0.08);
-  --nav-badge-border: rgba(255, 255, 255, 0.18);
-  --pill-bg: #121215;
-  --pill-border: #3f3f46;
-  --pill-active-bg: #ffffff;
-  --pill-active-color: #09090b;
-  --filter-active-bg: #ffffff;
-  --filter-active-color: #09090b;
-  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --card-hover-border: rgba(255, 255, 255, 0.35);
-  --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
-  --hero-slider-border: #3f3f46;
-  --hero-slider-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
-  --video-badge-bg: rgba(255, 255, 255, 0.08);
-  --video-badge-border: rgba(255, 255, 255, 0.18);
-  --video-badge-color: #f4f4f5;
-  --video-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
-  --accent-gold: #d4af37;
-  --accent-blue: #0284c7;
-  --accent-blue-glow: rgba(2, 132, 199, 0.35);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  /* Core Color Hierarchy (Dark Museum Mode - Default) */
+  --bg-core: #07080a;
+  --bg-canvas: #0b0d12;
+  --surface-1: #10121a;
+  --surface-2: #161924;
+  --surface-3: #1f2333;
+  --surface-glass: rgba(16, 18, 26, 0.78);
+  --surface-glass-hover: rgba(22, 25, 36, 0.92);
+
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #07080a;
+
+  /* Accent: Timurid Imperial Gold (Zarhal & Terracotta) */
+  --gold-50: #fefce8;
+  --gold-100: #fef9c3;
+  --gold-200: #fef08a;
+  --gold-400: #e5c158;
+  --gold-500: #d4af37;
+  --gold-600: #b8860b;
+  --gold-700: #996515;
+  --gold-glow: rgba(212, 175, 55, 0.22);
+  --gold-glow-subtle: rgba(212, 175, 55, 0.1);
+
+  /* Accent: Silk Road Cobalt & Lapis Lazuli Turquoise (Koshin Glaze) */
+  --lapis-400: #38bdf8;
+  --lapis-500: #0ea5e9;
+  --lapis-600: #0284c7;
+  --lapis-glow: rgba(14, 165, 233, 0.25);
+
+  /* Borders & Hairlines */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-strong: rgba(255, 255, 255, 0.25);
+  --border-gold: rgba(212, 175, 55, 0.35);
+  --border-gold-hover: rgba(212, 175, 55, 0.65);
+
+  /* Shadows & Depth */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 20px 48px -8px rgba(0, 0, 0, 0.85);
+  --shadow-museum: 0 30px 80px -15px rgba(0, 0, 0, 0.92), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --glow-gold-box: 0 0 40px -10px rgba(212, 175, 55, 0.25);
+
+  /* Fonts */
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout & Spacing */
+  --max-width: 1360px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Light Museum Mode (High Architectural Contrast) */
 [data-theme="light"] {
-  --bg: #fcfcfd;
-  --surface: #ffffff;
-  --surface-card: #ffffff;
-  --surface-hover: #f4f4f6;
-  --text: #09090b;
-  --text-secondary: #52525b;
-  --text-muted: #71717a;
-  --border: #e4e4e7;
-  --border-light: #d4d4d8;
-  --nav-bg: rgba(252, 252, 253, 0.94);
-  --nav-title: #09090b;
-  --nav-badge-color: #3f3f46;
-  --nav-badge-bg: rgba(0, 0, 0, 0.05);
-  --nav-badge-border: rgba(0, 0, 0, 0.12);
-  --pill-bg: #f4f4f6;
-  --pill-border: #d4d4d8;
-  --pill-active-bg: #09090b;
-  --pill-active-color: #ffffff;
-  --filter-active-bg: #09090b;
-  --filter-active-color: #ffffff;
-  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  --card-hover-border: #a1a1aa;
-  --card-hover-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
-  --hero-slider-border: #e4e4e7;
-  --hero-slider-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.14);
-  --video-badge-bg: rgba(0, 0, 0, 0.05);
-  --video-badge-border: rgba(0, 0, 0, 0.12);
-  --video-badge-color: #18181b;
-  --video-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12);
-  --accent-gold: #b45309;
-  --accent-blue: #0369a1;
-  --accent-blue-glow: rgba(3, 105, 161, 0.15);
+  --bg-core: #f8f9fa;
+  --bg-canvas: #f1f3f7;
+  --surface-1: #ffffff;
+  --surface-2: #f4f6fa;
+  --surface-3: #e8ecf4;
+  --surface-glass: rgba(255, 255, 255, 0.88);
+  --surface-glass-hover: rgba(255, 255, 255, 0.98);
+
+  --text-primary: #0a0c10;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #f8fafc;
+
+  --gold-500: #b8860b;
+  --gold-400: #c89b3c;
+  --gold-glow: rgba(184, 134, 11, 0.15);
+  --gold-glow-subtle: rgba(184, 134, 11, 0.08);
+
+  --lapis-500: #0284c7;
+  --lapis-glow: rgba(2, 132, 199, 0.15);
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.14);
+  --border-strong: rgba(0, 0, 0, 0.22);
+  --border-gold: rgba(184, 134, 11, 0.3);
+  --border-gold-hover: rgba(184, 134, 11, 0.6);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 48px -8px rgba(0, 0, 0, 0.12);
+  --shadow-museum: 0 30px 80px -15px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
 }

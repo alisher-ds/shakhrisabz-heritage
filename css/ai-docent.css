@@ -1,79 +1,97 @@
-/* Silk Road AI Docent Assistant */
+/* ==========================================================================
+   SILK ROAD AI DOCENT KNOWLEDGE ASSISTANT — CURATORIAL STYLES
+   ========================================================================== */
+
 .docent-section {
-  padding: 48px 0 60px;
-  border-top: 1px solid var(--border);
+  margin-top: 5rem;
 }
 
 .docent-container {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
-  gap: 24px;
-  background: var(--surface-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  gap: 0;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--hero-slider-shadow);
-  margin-top: 16px;
+  box-shadow: var(--shadow-museum);
+  margin-top: 1rem;
 }
 
 .docent-intro-panel {
-  padding: 32px 28px;
-  background: var(--surface);
-  border-right: 1px solid var(--border);
+  padding: 2.25rem 2rem;
+  background: var(--surface-2);
+  border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .docent-avatar-wrap {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 18px;
+  margin-bottom: 1.25rem;
 }
 
 .docent-avatar {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(14, 165, 233, 0.2));
+  border: 1px solid var(--border-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 14px var(--accent-blue-glow);
+  color: var(--gold-400);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.docent-avatar svg {
+  width: 24px;
+  height: 24px;
 }
 
 .docent-title-group h3 {
-  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
 .docent-title-group p {
-  font-size: 0.78rem;
-  color: #0284c7;
-  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--gold-400);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
 }
 
 .docent-bio {
   font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.55;
-  margin-bottom: 24px;
+  line-height: 1.6;
 }
 
 /* Prompt Chips */
 .quick-chips-title {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.8px;
-  margin-bottom: 10px;
+  color: var(--gold-400);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quick-chips-title svg {
+  width: 14px;
+  height: 14px;
 }
 
 .quick-chips {
@@ -83,49 +101,52 @@
 }
 
 .chip-btn {
-  background: var(--surface-card);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
   text-align: left;
   cursor: pointer;
-  transition: all 0.15s ease;
-  line-height: 1.35;
+  transition: all var(--transition-fast);
+  line-height: 1.4;
+  position: relative;
 }
 
 .chip-btn:hover {
-  background: var(--surface-hover);
-  border-color: #0284c7;
-  transform: translateX(3px);
+  background: var(--surface-3);
+  color: var(--text-primary);
+  border-color: var(--border-gold);
+  transform: translateX(4px);
 }
 
 /* Chat Console */
 .docent-chat-panel {
   display: flex;
   flex-direction: column;
-  height: 480px;
-  background: var(--bg);
+  height: 520px;
+  background: var(--bg-core);
 }
 
 .chat-history {
   flex-grow: 1;
-  padding: 24px;
+  padding: 2rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1.25rem;
   scrollbar-width: thin;
 }
 
 .chat-bubble {
   max-width: 82%;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-size: 0.88rem;
-  line-height: 1.5;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  line-height: 1.6;
   animation: fadeInBubble 0.25s ease-out;
+  box-shadow: var(--shadow-sm);
 }
 
 @keyframes fadeInBubble {
@@ -135,58 +156,67 @@
 
 .chat-bubble.bot {
   align-self: flex-start;
-  background: var(--surface-card);
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
   border-bottom-left-radius: 2px;
 }
 
 .chat-bubble.user {
   align-self: flex-end;
-  background: #0284c7;
+  background: linear-gradient(135deg, var(--lapis-600), var(--lapis-500));
   color: #ffffff;
   border-bottom-right-radius: 2px;
 }
 
 .chat-input-bar {
   display: flex;
-  padding: 14px 18px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  gap: 10px;
+  padding: 1rem 1.5rem;
+  background: var(--surface-1);
+  border-top: 1px solid var(--border-subtle);
+  gap: 12px;
 }
 
 .chat-input {
   flex-grow: 1;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 0.88rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.9rem;
   outline: none;
   font-family: inherit;
+  transition: border-color var(--transition-fast);
 }
 
 .chat-input:focus {
-  border-color: #0284c7;
+  border-color: var(--gold-400);
 }
 
 .chat-send-btn {
-  background: #ffffff;
-  color: #09090b;
+  background: var(--gold-400);
+  color: #07080a;
   border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-size: 0.86rem;
+  border-radius: var(--radius-sm);
+  padding: 12px 22px;
+  font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
 }
 
 .chat-send-btn:hover {
-  background: #e4e4e7;
+  background: var(--gold-200);
   transform: translateY(-1px);
+}
+
+.chat-send-btn svg {
+  width: 16px;
+  height: 16px;
 }
 
 @media (max-width: 900px) {
@@ -195,10 +225,13 @@
   }
   .docent-intro-panel {
     border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.5rem;
   }
   .docent-chat-panel {
-    height: 400px;
+    height: 420px;
+  }
+  .chat-bubble {
+    max-width: 92%;
   }
 }
