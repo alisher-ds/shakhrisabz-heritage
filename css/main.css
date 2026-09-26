@@ -88,15 +88,37 @@ a {
    02. Top Institutional Navigation (Issue 1 Fix: Single-Line No-Wrap)
    -------------------------------------------------------------------------- */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--surface-glass);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 12px 28px;
-  transition: background-color var(--transition-base), border-color var(--transition-base);
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1380px, calc(100% - 2.5rem));
+  z-index: 1000;
+  background: rgba(10, 14, 23, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+  padding: 10px 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav.scrolled {
+  background: rgba(7, 10, 16, 0.92);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+  top: 0.85rem;
+}
+
+[data-theme="light"] nav {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] nav.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
 }
 
 .nav-inner {
@@ -464,27 +486,39 @@ nav {
 }
 
 /* --------------------------------------------------------------------------
-   03. Page Layout & Hero Section
+   03. Page Layout & Hero Section (100% Fullscreen Viewport — Inter Nation Style)
    -------------------------------------------------------------------------- */
 .page-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px 80px 24px;
+  padding: 3.5rem 24px 80px 24px;
+  position: relative;
+  z-index: 10;
 }
 
-/* Editorial Hero Carousel */
+/* 100% Fullscreen Viewport — Edge-to-Edge Without Frames */
+.hero-fullscreen-viewport,
 .hero-slider-container {
   position: relative;
   width: 100%;
-  height: 78vh;
-  min-height: 520px;
-  max-height: 740px;
-  margin-top: 1.5rem;
-  border-radius: var(--radius-lg);
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  min-height: 640px;
   overflow: hidden;
-  box-shadow: var(--shadow-museum);
-  border: 1px solid var(--border-subtle);
   background: #000;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.hero-slides-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slide {
@@ -505,81 +539,161 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.04);
-  transition: transform 7s cubic-bezier(0.16, 1, 0.3, 1);
+  object-position: center 36%;
+  transform: scale(1.05);
+  transition: transform 8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .slide.active .slide-bg {
   transform: scale(1);
 }
 
+/* Cinematic Dark Gradient: Deep bottom shadow for text, subtle top tint for floating pill nav */
 .slide-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(7, 8, 10, 0.85) 0%,
-    rgba(7, 8, 10, 0.3) 45%,
-    transparent 80%
+    rgba(4, 6, 10, 0.95) 0%,
+    rgba(4, 6, 10, 0.72) 28%,
+    rgba(4, 6, 10, 0.25) 54%,
+    rgba(4, 6, 10, 0.15) 72%,
+    rgba(4, 6, 10, 0.6) 100%
   );
 }
 
-/* Slide Content */
+/* Slide Content — Lower-Left Quadrant Layout */
 .slide-content {
   position: absolute;
-  bottom: 2.25rem;
-  left: 2.5rem;
-  right: 2.5rem;
+  bottom: clamp(6.5rem, 13vh, 9rem);
+  left: clamp(1.5rem, 5.5vw, 5rem);
+  right: clamp(1.5rem, 5.5vw, 5rem);
   z-index: 2;
-  max-width: 780px;
+  max-width: 860px;
 }
 
-.slide-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  background: rgba(212, 175, 55, 0.18);
-  color: var(--gold-200);
-  border: 1px solid var(--border-gold);
-  border-radius: var(--radius-full);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+/* Vibrant Yellow/Gold Brand Tag (Matching Reference's "INTER NATION") */
+.hero-brand-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #facc15;
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 1.25vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
+.brand-spark {
+  color: #fbbf24;
+  font-size: 1rem;
+}
+
+/* Large Bold White Headline (Matching Reference's "INGLIZ TILI VA IELTS") */
 .slide-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-size: clamp(2.2rem, 4.6vw, 4.2rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.2;
-  margin-bottom: 0.6rem;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.85rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
 }
 
+/* Subtitle Description */
 .slide-desc {
-  font-size: 0.92rem;
-  color: rgba(248, 250, 252, 0.92);
-  line-height: 1.55;
-  max-width: 650px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.3vw, 1.18rem);
+  color: rgba(241, 245, 249, 0.92);
+  line-height: 1.6;
+  max-width: 720px;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
 }
 
-/* Slider Controls & Progress Indicator */
+/* Action Buttons Row */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Glowing Amber/Gold Primary CTA (Matching Reference's "Birinchi bepul darsga yozilish") */
+.hero-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #0b0f17 !important;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  padding: 14px 30px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero-cta-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(245, 158, 11, 0.6);
+  color: #000000 !important;
+}
+
+.cta-spark-symbol {
+  font-size: 1.1rem;
+  color: #0b0f17;
+}
+
+/* Frosted Glass Ghost Secondary CTA */
+.hero-cta-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(0.88rem, 1.05vw, 1rem);
+  padding: 13px 24px;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.hero-cta-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--gold-400);
+  color: var(--gold-200);
+  transform: translateY(-2px);
+}
+
+/* Slider Bottom Controls (Dots & Play/Pause) */
 .slider-bottom-controls {
   position: absolute;
-  bottom: 1.5rem;
-  right: 2rem;
+  bottom: clamp(6.5rem, 13vh, 9rem);
+  right: clamp(1.5rem, 5.5vw, 5rem);
   z-index: 3;
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(7, 8, 10, 0.75);
-  backdrop-filter: blur(12px);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
+  background: rgba(10, 14, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .slider-dots {
@@ -589,16 +703,18 @@ nav {
 
 .slider-dot {
   width: 28px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 3px;
   cursor: pointer;
   transition: all var(--transition-fast);
+  border: none;
+  padding: 0;
 }
 
 .slider-dot.active {
-  background: var(--gold-400);
-  width: 44px;
+  background: #facc15;
+  width: 48px;
 }
 
 .slider-play-pause {
@@ -615,12 +731,63 @@ nav {
 
 .slider-play-pause:hover {
   opacity: 1;
-  color: var(--gold-400);
+  color: #facc15;
 }
 
 .slider-play-pause svg {
   width: 14px;
   height: 14px;
+}
+
+/* Animated Smooth Scroll Cue (Bottom Center) */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.25s, transform 0.25s;
+}
+
+.hero-scroll-cue:hover {
+  color: #facc15;
+  transform: translateX(-50%) translateY(3px);
+}
+
+.scroll-cue-mouse {
+  width: 20px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.scroll-cue-wheel {
+  width: 3px;
+  height: 6px;
+  background: #facc15;
+  border-radius: 2px;
+  animation: scrollWheel 2s infinite ease-in-out;
+}
+
+.scroll-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
 }
 
 /* --------------------------------------------------------------------------
@@ -1173,7 +1340,13 @@ footer {
 
 @media (max-width: 900px) {
   nav {
-    padding: 10px 16px;
+    top: 0.75rem;
+    width: calc(100% - 1.5rem);
+    padding: 8px 16px;
+    border-radius: 9999px;
+  }
+  .nav-inner {
+    gap: 0.75rem;
   }
   .nav-links, .nav-controls {
     display: none !important;
@@ -1194,39 +1367,53 @@ footer {
 
 @media (max-width: 768px) {
   .page-wrapper {
-    padding: 0 16px 60px 16px;
+    padding: 2.5rem 16px 60px 16px;
   }
+  .hero-fullscreen-viewport,
   .hero-slider-container {
-    height: 58vh;
-    min-height: 380px;
+    height: 100vh;
+    height: 100svh;
+    min-height: 520px;
   }
   .slide-content {
-    bottom: 1.25rem;
+    bottom: 5.2rem;
     left: 1.25rem;
     right: 1.25rem;
   }
-  .slide-badge {
-    font-size: 0.68rem;
-    padding: 3px 8px;
-    margin-bottom: 0.4rem;
+  .hero-brand-accent {
+    font-size: 0.72rem;
+    margin-bottom: 0.35rem;
+    gap: 5px;
   }
   .slide-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.35rem;
-    line-height: 1.25;
+    font-size: clamp(1.5rem, 6.2vw, 2.2rem);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
   }
   .slide-desc {
-    font-size: 0.82rem;
-    line-height: 1.45;
+    font-size: 0.84rem;
+    line-height: 1.48;
+    margin-bottom: 1.15rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .hero-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .hero-cta-btn-primary,
+  .hero-cta-btn-ghost {
+    justify-content: center;
+    padding: 11px 18px;
+    font-size: 0.86rem;
+  }
   .slider-bottom-controls {
-    bottom: 1rem;
+    bottom: 1.25rem;
     right: 1.25rem;
-    padding: 4px 10px;
+    padding: 5px 12px;
   }
   .slider-dot {
     width: 20px;
@@ -1234,6 +1421,9 @@ footer {
   }
   .slider-dot.active {
     width: 32px;
+  }
+  .hero-scroll-cue {
+    display: none !important;
   }
   .gallery-grid {
     grid-template-columns: 1fr;

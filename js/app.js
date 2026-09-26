@@ -149,16 +149,17 @@ function initVideoChapters() {
   });
 }
 
-/* Top Scroll Progress Bar */
+/* Top Scroll Progress Bar & Floating Pill Navbar Scroll State */
 function initScrollProgressBar() {
   const progressBar = document.getElementById('progressBar');
-  if (!progressBar) return;
+  const nav = document.querySelector('nav');
 
   window.addEventListener('scroll', () => {
     const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-    progressBar.style.width = `${scrolled}%`;
+    if (progressBar) progressBar.style.width = `${scrolled}%`;
+    if (nav) nav.classList.toggle('scrolled', winScroll > 50);
   }, { passive: true });
 }
 
