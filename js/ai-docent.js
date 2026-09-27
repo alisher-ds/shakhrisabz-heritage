@@ -516,15 +516,24 @@ export function initAiDocent() {
       .split(/\s+/)
       .filter(t => t.length > 0);
 
-    // 3. Match keywords against tokens or stem matching
+    // 3. Match keywords against tokens, stems, and CJK substrings
     for (const kw of item.keywords) {
       const kwLower = kw.toLowerCase();
-      for (const token of queryTokens) {
-        if (token === kwLower) {
-          score += kwLower.length >= 5 ? 4 : 3;
-        } else if (token.startsWith(kwLower) && kwLower.length >= 4) {
-          // e.g. "ovqat" matches "ovqatlari", "temur" matches "temurning"
-          score += 3;
+      // Handle Chinese (CJK) ideograms
+      if (/[\u4e00-\u9fa5]/.test(kwLower)) {
+        if (queryLower.includes(kwLower)) {
+          score += 6;
+        }
+      } else {
+        // Handle Latin tokens (Uzbek & English)
+        for (const token of queryTokens) {
+          if (token === kwLower) {
+            score += kwLower.length >= 5 ? 4 : 3;
+          } else if (token.startsWith(kwLower) && kwLower.length >= 4) {
+            score += 3;
+          } else if (kwLower.length >= 4 && token.includes(kwLower)) {
+            score += 3;
+          }
         }
       }
     }
@@ -622,14 +631,14 @@ export function initAiDocent() {
     const len = query.trim().length;
 
     let label = dict.quick;
-    let duration = 1200 + Math.floor(Math.random() * 400); // 1.2s - 1.6s
+    let duration = 650 + Math.floor(Math.random() * 250); // 650ms - 900ms
 
     if (len >= 25 && len < 60) {
       label = dict.medium;
-      duration = 1800 + Math.floor(Math.random() * 600); // 1.8s - 2.4s
+      duration = 950 + Math.floor(Math.random() * 350); // 950ms - 1300ms
     } else if (len >= 60) {
       label = dict.complex;
-      duration = 2500 + Math.min(len * 12, 1100) + Math.floor(Math.random() * 400); // 2.5s - 3.9s
+      duration = 1350 + Math.floor(Math.random() * 450); // 1350ms - 1800ms
     }
 
     return { label, duration };
@@ -679,19 +688,30 @@ export function initAiDocent() {
     bubble.className = 'drawer-bubble bot';
     drawerChatStream.appendChild(bubble);
 
-    // Fast, authentic word-by-word streaming
-    const words = text.split(' ');
-    let wordIndex = 0;
+    // Multi-script streaming: character-chunks for CJK, word-chunks for Latin
+    let chunks = [];
+    if (/[\u4e00-\u9fa5]/.test(text) && text.split(' ').length < 6) {
+      for (let i = 0; i < text.length; i += 2) {
+        chunks.push(text.slice(i, i + 2));
+      }
+    } else {
+      chunks = text.split(' ').map(w => w + ' ');
+    }
+
+    let chunkIndex = 0;
+    let accumulated = '';
     const interval = setInterval(() => {
-      if (wordIndex < words.length) {
-        bubble.textContent = words.slice(0, wordIndex + 1).join(' ');
+      if (chunkIndex < chunks.length) {
+        accumulated += chunks[chunkIndex];
+        bubble.textContent = accumulated;
         drawerChatStream.scrollTop = drawerChatStream.scrollHeight;
-        wordIndex++;
+        chunkIndex++;
       } else {
+        bubble.textContent = text; // guarantee exact full string
         clearInterval(interval);
         if (onComplete) onComplete();
       }
-    }, 28);
+    }, 20);
   }
 
   let isAiResponding = false;

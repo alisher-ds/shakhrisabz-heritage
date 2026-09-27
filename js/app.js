@@ -124,19 +124,79 @@ function initMobileMenu() {
   mobileLangBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === curLang));
 }
 
-/* Documentary Reel Chapters Controller */
+/* Documentary Reel Chapters & Instant Playback Controller */
 function initVideoChapters() {
   const video = document.getElementById('docuVideo');
   const chapterBtns = document.querySelectorAll('.chapter-btn');
-  if (!video || !chapterBtns.length) return;
+  const playOverlay = document.getElementById('videoPlayOverlay');
+  const playMainBtn = document.getElementById('videoPlayMainBtn');
+  const fullscreenBtn = document.getElementById('videoFullscreenBtn');
 
+  if (!video) return;
+
+  function playVideo() {
+    if (playOverlay) playOverlay.classList.add('playing');
+    video.play().catch(() => {});
+  }
+
+  function pauseVideo() {
+    if (playOverlay) playOverlay.classList.remove('playing');
+  }
+
+  // Instant Play Overlay Click & Keyboard handler
+  if (playOverlay) {
+    playOverlay.addEventListener('click', playVideo);
+    playOverlay.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        playVideo();
+      }
+    });
+  }
+
+  // Direct "Play Film Now" Button
+  if (playMainBtn) {
+    playMainBtn.addEventListener('click', () => {
+      video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      playVideo();
+    });
+  }
+
+  // Fullscreen View Button
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', () => {
+      playVideo();
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+    });
+  }
+
+  // Synchronize overlay state with video events
+  video.addEventListener('play', () => {
+    if (playOverlay) playOverlay.classList.add('playing');
+  });
+
+  video.addEventListener('pause', () => {
+    if (video.currentTime < (video.duration || 49) - 0.5) {
+      if (playOverlay) playOverlay.classList.remove('playing');
+    }
+  });
+
+  video.addEventListener('ended', () => {
+    if (playOverlay) playOverlay.classList.remove('playing');
+  });
+
+  // Chapter buttons instant seek & play
   chapterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const timeSec = parseFloat(btn.getAttribute('data-time')) || 0;
       chapterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       video.currentTime = timeSec;
-      video.play().catch(() => {});
+      playVideo();
     });
   });
 
@@ -242,7 +302,7 @@ function initHeroSlider() {
 
 /* ========================================================
    LIVING MOTION & SCROLL REVEAL ENGINE
-   IntersectionObserver with Continuous Bidirectional Float
+   Stately Silk Road Motion with Guaranteed Content Visibility
    ======================================================== */
 function initScrollAnimations() {
   // If user prefers reduced motion, reveal everything immediately
@@ -253,16 +313,13 @@ function initScrollAnimations() {
     return;
   }
 
-  // Auto-apply reveal classes to key sections and modular cards
+  // Auto-apply reveal classes to headers and textual elements (media remains 100% visible)
   const elementsToReveal = [
     { selector: '.hero-stat-strip', classToAdd: 'reveal-on-scroll stagger-children' },
     { selector: '.section-header-bar', classToAdd: 'reveal-on-scroll' },
-    { selector: '.comparison-box', classToAdd: 'reveal-scale-up' },
     { selector: '.transformation-insights-grid', classToAdd: 'reveal-on-scroll stagger-children' },
-    { selector: '.documentary-showcase-grid', classToAdd: 'reveal-on-scroll stagger-children' },
-    { selector: '.map-container', classToAdd: 'reveal-scale-up' },
-    { selector: '.docent-spotlight-card', classToAdd: 'reveal-scale-up' },
-    { selector: '.gallery-grid', classToAdd: 'reveal-on-scroll stagger-children' },
+    { selector: '.documentary-showcase-grid', classToAdd: 'reveal-on-scroll' },
+    { selector: '.docent-spotlight-card', classToAdd: 'reveal-on-scroll' },
     { selector: 'footer .footer-inner', classToAdd: 'reveal-on-scroll' }
   ];
 
@@ -272,14 +329,14 @@ function initScrollAnimations() {
     });
   });
 
-  // Intersection Observer for continuous bidirectional scroll triggers
+  // Intersection Observer for scroll triggers
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.08
+    rootMargin: '0px 0px -20px 0px',
+    threshold: 0.05
   };
 
-  const revealObserver = new IntersectionObserver((entries) => {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-revealed');
@@ -288,10 +345,9 @@ function initScrollAnimations() {
         if (entry.target.classList.contains('hero-stat-strip') || entry.target.closest('.hero-stat-strip')) {
           animateStatCounters();
         }
-      } else {
-        // Continuous living motion: when element scrolls out of view,
-        // remove is-revealed so it gently floats in again upon scrolling back
-        entry.target.classList.remove('is-revealed');
+
+        // Once revealed, keep it permanently visible for stability and speed
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -300,6 +356,13 @@ function initScrollAnimations() {
   document.querySelectorAll('.reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale-up').forEach(el => {
     revealObserver.observe(el);
   });
+
+  // Safety fallback: reveal everything after 800ms so nothing stays invisible
+  setTimeout(() => {
+    document.querySelectorAll('.reveal-on-scroll, .reveal-scale-up, .reveal-from-left, .reveal-from-right').forEach(el => {
+      el.classList.add('is-revealed');
+    });
+  }, 800);
 }
 
 /* Dynamic Rolling Numbers Counter Animation for Expedition Stats */

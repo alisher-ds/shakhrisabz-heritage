@@ -3,6 +3,7 @@
    Museum Editorial Edition
    ======================================================== */
 import { currentLang } from './i18n.js';
+import { ARCHIVE_DATA } from './archive-data.js';
 
 export function initGallery() {
   const grid = document.getElementById('galleryGrid');
@@ -15,7 +16,8 @@ export function initGallery() {
 
   if (!grid) return;
 
-  let archiveData = [];
+  // Pre-load with synchronous data so photos appear instantly with zero delay
+  let archiveData = Array.isArray(ARCHIVE_DATA) ? ARCHIVE_DATA : [];
   let currentFilter = 'all';
 
   function renderCards() {
@@ -105,18 +107,23 @@ export function initGallery() {
     });
   });
 
-  // Fetch JSON archive
+  // 1. Initial immediate render from embedded archive
+  renderCards();
+
+  // 2. Progressive background refresh from external JSON if available
   fetch('data/heritage-archive.json')
     .then(res => {
       if (!res.ok) throw new Error('Network response was not ok');
       return res.json();
     })
     .then(data => {
-      archiveData = data;
-      renderCards();
+      if (Array.isArray(data) && data.length > 0) {
+        archiveData = data;
+        renderCards();
+      }
     })
-    .catch(err => {
-      console.warn('Could not load heritage-archive.json, falling back...', err);
+    .catch(() => {
+      // Graceful fallback: embedded ARCHIVE_DATA is already displayed!
     });
 
   // Re-render when language changes
