@@ -265,6 +265,232 @@ export function initAiDocent() {
         zh: "在我们的项目中，AI被定义为开放知识的“文化解译官”而非虚假图像的生成者。我们借助计算机视觉算法对古代石刻碑铭及三一体波斯/阿拉伯文书法进行高精度识别，并通过自然语言处理（NLP）驱动这套三语丝路AI导览导师，让全球青年能够即时跨越语言壁垒，探索真实的丝路文明档案。",
         uz: "Loyihamizda sun'iy intellekt soxta rasmlar to'qish uchun emas, balki qadimiy merosni to'g'ri tushuntirish va ommalashtirish uchun xizmat qiladi. Biz Computer Vision yordamida qadimiy tosh va devoriy bitiklarni avtomatik o'qish hamda tabiiy tilni qayta ishlash (NLP) orqali ushbu 3 tilda ishlovchi AI Docent maslahatchisini joriy qildik. Bu har qanday sayyohga qadimiy tariximizni o'z tilida bilib olish imkonini beradi."
       }
+    },
+
+    // 16. Curatorial Greetings & Persona Introduction
+    {
+      id: "greetings",
+      phrases: [
+        "salom", "assalomu alaykum", "hello", "hi there", "hey", "good morning", "good afternoon",
+        "你好", "您好", "sen kimsan", "who are you", "what can you do", "vazifang nima", "qanday yordam",
+        "bot kimsan", "tanishtir", "help me"
+      ],
+      keywords: ["salom", "assalom", "hello", "hi", "hey", "greetings", "kimsan", "tanishtir", "vazifa", "help", "yordam", "bot", "docent", "maslahatchi", "你好", "你是谁", "介绍"],
+      response: {
+        en: "Greetings! I am the Silk Road AI Docent, your autonomous curatorial guide for the Shakhrisabz Cultural Heritage Archive. You can ask me anything about: 1) Ak-Saray's 50-year metamorphosis, 2) Amir Temur's birthplace in Kesh, 3) UNESCO #885 World Heritage in Danger, 4) Dorut Tilovat & Kok Gumbaz, 5) Kashkadarya Tandir Kebab gastronomy, 6) The 2026 IYF Forum in China, or 7) Our youth Wikimedia expedition.",
+        zh: "您好！我是丝绸之路AI策展导览助手，专门为您解说沙赫里萨布兹文化遗产档案。您可以随时向我咨询：1）阿克萨赖宫50年变迁；2）帖木儿故里古城渴石；3）联合国教科文组织885号濒危遗产；4）多鲁特提洛瓦特与青色穹顶；5）地坑焖烤羊肉美食；6）2026年中国国际青年论坛；7）青年维基媒体考察成果。",
+        uz: "Assalomu alaykum! Men Shahrisabz madaniy merosi arxivi bo'yicha sun'iy intellekt kuratori — Silk Road AI Docentman. Mendan quyidagilar haqida so'rashingiz mumkin: 1) Oqsaroyning 50 yillik o'zgarishi, 2) Amir Temurning tavalludi va Kesh tarixi, 3) YUNESKO #885 xavf ostidagi meros holati, 4) Dorut Tilovat va Ko'k Gumbaz, 5) Qashqadaryo tandir go'shti, 6) 2026-yilgi Xitoydagi IYF forumi, yoki 7) Yoshlar Vikimedia ekspeditsiyamiz."
+      }
+    },
+
+    // 17. Gratitude, Compliments & Cultural Courtesy
+    {
+      id: "gratitude",
+      phrases: [
+        "rahmat", "tashakkur", "katta rahmat", "thank you", "thanks", "appreciate", "ajoyib", "zo'r",
+        "super", "maladets", "great job", "awesome", "perfect", "qoyil", "barakalla", "谢谢", "太棒了", "多谢"
+      ],
+      keywords: ["rahmat", "tashakkur", "spasibo", "thanks", "thank", "great", "zo'r", "ajoyib", "good", "bravo", "qoyil", "barakalla", "super", "awesome", "谢谢", "感谢", "太棒了"],
+      response: {
+        en: "You are most welcome! It is an absolute honor to share the extraordinary heritage of Shakhrisabz and the Timurid Renaissance with curious minds worldwide. Feel free to ask more questions about our architectural surveys, local legends, or expedition findings!",
+        zh: "不客气！非常荣幸能与您分享沙赫里萨布兹与帖木儿文艺复兴的辉煌文明。如果您对我们的建筑考察、历史传奇或实地学术成果还有任何疑问，欢迎随时提问！",
+        uz: "Arzimas, xursandman! Shahrisabzning buyuk tarixi va Temuriylar davri renessansi haqidagi bilimlarni siz bilan ulashish men uchun sharafdir. Yana qandaydir savollaringiz, me'moriy obidalar yoki ekspeditsiyamiz haqida qiziqishlaringiz bo'lsa, bemalol so'rang!"
+      }
+    },
+
+    // 18. 2026 International Youth Forum (IYF in Changsha & Nanjing)
+    {
+      id: "iyf_forum",
+      phrases: [
+        "iyf 2026", "international youth forum", "changsha forum", "nanjing forum", "china forum",
+        "xitoydagi forum", "forum nima", "iyf haqida", "iyf nima", "2026 forum", "forum sanasi", "november 15-20", "国际青年论坛", "iyf"
+      ],
+      keywords: ["iyf", "forum", "changsha", "nanjing", "november", "noyabr", "15-20", "youth", "yoshlar", "xalqaro", "unesco", "china", "xitoy", "mezbon", "host", "论坛", "国际青年", "长沙", "南京"],
+      response: {
+        en: "The 2026 International Youth Forum (IYF) on Creativity and Heritage along the Silk Roads takes place on November 15–20, 2026, hosted in Changsha (UNESCO City of Media Arts) and Nanjing (UNESCO City of Literature), China. Organized by UNESCO and the Chinese National Commission, the forum convenes outstanding young cultural leaders to explore 'Youth-led Creative Expression of Heritage in the Age of AI'. Our Shakhrisabz digital archive was specifically built for this global stage.",
+        zh: "2026年“一带一路”青年创意与遗产国际论坛（IYF）将于2026年11月15日至20日在中国长沙（联合国教科文组织“媒体艺术之都”）与南京（“文学之都”）举行。由联合国教科文组织与中国联合国教科文组织全国委员会联合主办，汇聚全球青年英才探讨“人工智能时代的青年文化遗产创意表达”。我们这套沙赫里萨布兹数字化档案正是为该国际盛会量身打造的代表作。",
+        uz: "2026-yilgi 'Ipak yo'li bo'ylab ijodkorlik va madaniy meros' Xalqaro Yoshlar Forumi (IYF) 2026-yil 15–20-noyabr kunlari Xitoyning Changsha (YUNESKO Media san'ati shahri) va Nanjing (YUNESKO Adabiyot shahri) shaharlarida bo'lib o'tadi. YUNESKO va Xitoy Milliy komissiyasi tomonidan tashkil etilgan ushbu nufuzli anjuman 'AI davrida yoshlarning madaniy merosni ifodalashi' mavzusiga bag'ishlangan bo'lib, bizning raqamli platformamiz aynan shu forumga taqdim etilmoqda."
+      }
+    },
+
+    // 19. Ruy González de Clavijo's Historical Embassy (1404)
+    {
+      id: "clavijo_embassy",
+      phrases: [
+        "clavijo", "ruy gonzalez", "ispan elchisi", "clavijo kim", "spanish ambassador", "castilian envoy",
+        "1404", "embajada a tamorlan", "klavixo", "klavixo kundaligi", "克拉维约", "西班牙使节"
+      ],
+      keywords: ["clavijo", "klavixo", "elchi", "ispan", "spanish", "castilian", "1404", "envoy", "ambassador", "kundalik", "tavsif", "ruy", "gonzalez", "embajada", "tamorlan", "克拉维约", "使节", "出使", "西班牙"],
+      response: {
+        en: "Ruy González de Clavijo was a Spanish diplomat dispatched by King Henry III of Castile to the imperial court of Amir Temur in 1404. Passing through Shakhrisabz in late August 1404, Clavijo recorded the only surviving eyewitness account of Ak-Saray Palace in its fully operational glory. He wrote about the colossal 70-meter vault, glistening turquoise tiles, gold leaf ceilings, and lush courtyard fountains, describing it as an architectural miracle surpassing European palaces.",
+        zh: "鲁伊·冈萨雷斯·德·克拉维约（Ruy González de Clavijo）是卡斯蒂利亚国王亨利三世于1404年派遣出使帖木儿帝国的西班牙使节。他在1404年8月途经沙赫里萨布兹，留下了关于阿克萨赖宫全盛时期唯一存世的目击文献。他在其名著《克拉维约东使记》中惊叹于宫殿高达70余米的巨型穹拱、蔚蓝璀璨的琉璃瓦、鎏金藻井与中庭涌泉，盛赞其建筑奇迹远超当时欧洲任何宫殿。",
+        uz: "Ruy Gonsales de Klavixo — 1404-yilda Kastiliya (Ispaniya) qiroli Genrix III tomonidan Amir Temur huzuriga yuborilgan elchidir. U 1404-yil avgust oyida Shahrisabzda bo'lib, Oqsaroyning butun mahobati va go'zalligini o'z ko'zi bilan ko'rgan yagona xorijiy elchidir. Klavixo o'zining mashhur 'Samarqandga Amir Temur saroyiga sayohat kundaligi' kitobida Oqsaroyning 70 metrlik peshtoqi, tillarang naqshlari, favvoralari va bog'larini hayrat bilan ta'riflab, uni Yevropada tengi yo'q me'moriy mo''jiza deb atagan."
+      }
+    },
+
+    // 20. Ak-Saray Monumental Dimensions & Vault Arch
+    {
+      id: "aksaray_dimensions",
+      phrases: [
+        "oqsaroy balandligi", "aksaray height", "dimensions of aksaray", "arch span", "how tall was aksaray",
+        "peshtoqi qancha", "necha metr", "oqsaroy ulchamlari", "palace size", "ravoq kengligi", "pilonlar balandligi", "阿克萨赖高度", "宫殿规模", "穹拱跨度"
+      ],
+      keywords: ["balandlik", "metr", "height", "tall", "size", "dimension", "dimensions", "span", "pilon", "ustun", "70", "38", "22", "ravoq", "peshtoq", "ulcham", "hajmi", "scale", "规模", "高度", "米", "跨度"],
+      response: {
+        en: "Ak-Saray was a monumental marvel of unprecedented scale: its central triumphal entrance portal originally towered over 70 meters (approx. 230 feet) high, with a colossal arch span of 22.5 meters. The central courtyard stretched over 250 meters in length, flanked by hundreds of vaulted reception suites, marble pools, and blue-tiled galleries. Today, the two surviving weathered corner pylons still stand at an imposing 38 meters (equivalent to a 12-story building).",
+        zh: "阿克萨赖宫在历史上拥有空前绝后的宏伟尺度：其中央主入口凯旋门原高逾70米（约23层楼高），主拱跨度达22.5米。主庭院纵深超过250米，两侧环绕着数百间带拱顶的国宾会客厅、大理石喷水池与青金石琉璃回廊。如今历经600年沧桑，残存的两座塔柱依然耸立达38米高（相当于12层现代建筑高度）。"
+        uz: "Oqsaroy o'z davrining eng ulkan me'moriy inshooti bo'lgan: uning bosh peshtoqi balandligi 70 metrdan ortiq (taxminan 23 qavatli bino balandligida), ravog'ining kengligi esa 22.5 metr bo'lgan. Saroyning ichki hovlisi 250 metrdan ziyod uzunlikda bo'lib, marmar hovuzlar va koshinli xonalar bilan o'ralgan. Bugungi kungacha saqlanib qolgan ikki pilonning (ustunning) o'zi 38 metr balandlikka ega bo'lib, 12 qavatli uy balandligiga tengdir."
+      }
+    },
+
+    // 21. UNESCO Conservation Ethics & The Venice Charter (1964)
+    {
+      id: "conservation_ethics",
+      phrases: [
+        "restavratsiya etikasi", "conservation dilemma", "venice charter", "why modern buildings cleared",
+        "nega mahallalar buzildi", "unesco xavf sababi", "authenticity", "haqqoniylik", "badiiy restavratsiya", "保护伦理", "威尼斯宪章", "历史真实性"
+      ],
+      keywords: ["etika", "ethics", "buzuq", "clearing", "buzish", "venice", "charter", "nara", "authenticity", "haqqoniy", "dilemma", "buffer", "xavf", "danger", "1964", "2016", "restavratsiya", "伦理", "真实性", "保护"],
+      response: {
+        en: "The conservation dilemma at Shakhrisabz centers on the delicate balance between modern urban beautification and historical authenticity under the Venice Charter (1964). In 2014–2016, historic residential quarters (mahallas) in the core buffer zone were cleared to build tourist esplanades, leading UNESCO to place site #885 on the Danger List. Our project advocates for science-based, reversible, non-invasive digital archiving that preserves historical truth rather than synthetic over-reconstruction.",
+        zh: "沙赫里萨布兹的遗产保护困境反映了现代旅游景观开发与《威尼斯宪章》（1964）强调的历史真实性之间的深刻博弈。2014至2016年间，保护缓冲区内的传统历史社区（马哈拉）遭到大面积拆除以修建游客步行广场，导致其被列入《濒危世界遗产名录》。我们项目提倡基于数字化基线、非侵入式、可逆的现代科技保护路径，尊重原真性而非人工假古董改造。",
+        uz: "Shahrisabzdagi merosni asrash dilemmasi xalqaro Venetsiya xartiyasi (1964) va YUNESKO talablari bilan bevosita bog'liq. 2014-2016 yillarda Oqsaroy atrofidagi qadimiy an'anaviy mahallalar sayyohlik maydoni qurish maqsadida buzilgani sababli, YUNESKO uni 2016-yilda 'Xavf ostidagi butunjahon merosi' ro'yxatiga kiritgan. Bizning raqamli loyihamiz asriy yodgorliklarning asl qiyofasini buzmasdan, raqamli texnologiyalar orqali haqiqiy tarixiy haqiqatni asrab qolishni ilgari suradi."
+      }
+    },
+
+    // 22. Ancient Kesh, Sogdian Civilization & Alexander the Great
+    {
+      id: "ancient_kesh",
+      phrases: [
+        "ancient kesh", "qadimiy kesh", "sogdiana", "sogdian heritage", "alexander the great", "temurgacha",
+        "before timur", "shakhrisabz kelib chiqishi", "qadimgi shahar", "so'g'd", "nautaca", "渴石古城", "粟特文明", "亚历山大大帝"
+      ],
+      keywords: ["kesh", "sogd", "so'g'd", "sogdiana", "alexander", "iskandar", "qadim", "ancient", "bc", "miloddan", "kelib", "chiqishi", "nautaca", "navtaka", "zoroastrian", "zardushtiylik", "粟特", "古城", "亚历山大"],
+      response: {
+        en: "Long before Amir Temur made it his imperial sanctuary, Shakhrisabz flourished for over 2,700 years as the ancient Sogdian city of Kesh (also identified with ancient Nautaca). In 328 BC, Alexander the Great wintered his armies in Nautaca while subduing Sogdiana and marrying the Bactrian noblewoman Roxana. Chinese Tang Dynasty chronicles documented Kesh as the 'Kingdom of Shi' (史国), renowned for brave caravan merchants, wine, and celestial dancers.",
+        zh: "早在帖木儿将其营建为皇家圣地之前，沙赫里萨布兹作为古粟特名城“渴石”（古称诺塔卡 Nautaca）已有超过2700年的建城史。公元前328年，亚历山大大帝曾在此地驻军过冬以平定粟特反抗，并迎娶了巴克特里亚贵族罗克珊娜。中国唐代玄奘法师与典籍中将其记载为西域昭武九姓之一的“史国”，以擅长丝路长途商贸、葡萄酒与胡旋舞闻名于世。",
+        uz: "Amir Temur davrigacha ham Shahrisabz 2,700 yillik ulkan tarixga ega bo'lgan va So'g'diyona davlatining 'Kesh' (qadimda Navtaka) deb atalgan yirik madaniyat markazi bo'lgan. Miloddan avvalgi 328-yilda Iskandar Zulqarnayn (Aleksandr Makedonskiy) aynan shu yerda qishlab, So'g'd qoyasini egallagan. Xitoy manbalarida (Tang sulolasi yilnomalarida) Kesh shahri Buyuk Ipak yo'lidagi 'Shi davlati' (昭武九姓) sifatida qayd etilgan bo'lib, uning savdogarlari Xitoygacha karvonlar olib borgan."
+      }
+    },
+
+    // 23. Suzani Motifs & Spiritual Symbolism
+    {
+      id: "suzani_symbolism",
+      phrases: [
+        "suzani naqshlari", "so'zana ramzlari", "symbols in suzani", "pomegranate symbol", "sun rosette",
+        "anor ramzi", "quyosh naqshi", "iroqi kashta siri", "kashtachilik ma'nosi", "do'ppi naqshi", "苏扎尼图案寓意", "刺绣象征", "石榴纹", "太阳花纹"
+      ],
+      keywords: ["naqsh", "suzani", "so'zana", "anor", "pomegranate", "quyosh", "sun", "rosette", "tumor", "symbol", "ramz", "meaning", "kashta", "iroqi", "do'ppi", "palak", "bodom", "kalampir", "图案", "寓意", "石榴", "刺绣"],
+      response: {
+        en: "In Shakhrisabz Suzani tapestries and Iroki skullcaps, every embroidered motif carries ancient talismanic and spiritual symbolism. The blazing circular sun rosettes represent solar energy and life continuity; bursting pomegranates (anor) symbolize fertility, abundance, and unity of family; and red hot-pepper (murch/kalampir) motifs serve as protective talismans warding off the evil eye. The rich crimson, gold, and turquoise threads reflect the desert oasis palette.",
+        zh: "沙赫里萨布兹的苏扎尼（Suzani）丝挂毯与伊洛基刺绣小帽中，每一个针法图案都蕴含着深邃的祈福与辟邪象征。炽热盛开的圆形太阳花纹象征阳光、永恒与生命轮回；裂口繁籽的石榴（Anor）寓意多子多福、富足繁荣与家族团结；而卷曲的红辣椒与杏仁（Kalampir/Bodom）纹样则是阻挡厄运的护身图腾。绛红、明黄与绿松石绿的丝线构成了绿洲绿原的视觉诗篇。",
+        uz: "Shahrisabz So'zanalari va Iroqi do'ppilaridagi har bir naqsh chuqur falsafiy va qadimiy tumor ramzlariga ega. Doira shaklidagi quyosh gullari (rozetkalar) hayot abadiyligi va quyosh energiyasini anglatadi; donalari to'kilgan qizil anor mevasi to'kinchilik, baraka va oilaviy totuvlik ramzidir; qalampir va bodom gullari esa yomon ko'zdan asrovchi tumor (himoya) hisoblangan. Qizil, feruza va sariq ipak iplar tabiatning yorqin ranglarini aks ettiradi."
+      }
+    },
+
+    // 24. Youth Leadership & Grassroots Cultural Stewardship
+    {
+      id: "youth_leadership",
+      phrases: [
+        "yoshlar yetakchiligi", "youth leadership", "student role", "talabalar nima qildi", "qarshi davlat universiteti talabalari",
+        "why youth", "yoshlar ekspeditsiyasi", "o'quvchilar loyihasi", "青年领导力", "学生参与", "青年倡议"
+      ],
+      keywords: ["yoshlar", "youth", "student", "talaba", "leadership", "yetakchi", "qdu", "karshi", "cohort", "jamoa", "tashabbus", "initiative", "volunteers", "volontyor", "avlod", "generation", "青年", "大学生", "领导力", "志愿"],
+      response: {
+        en: "This platform is 100% conceived, documented, and developed by youth. Rather than waiting for top-down institutional initiatives, high school researcher Alisher Tuychiyev united 20 undergraduate historians and students from Karshi State University. Armed with modern cameras, field surveying protocols, and machine learning tools, our youth cohort demonstrated how the next generation can actively steward UNESCO heritage through digital humanities.",
+        zh: "本项目从实地调研、学术整理到代码架构100%由青年自主发起并完成。高中生研究员Alisher Tuychiyev联合了卡尔希国立大学历史与文博专业的20名青年大学生。年轻团队携带专业摄影设备、文献调研方案与机器学习工具开展全域考察，生动诠释了联合国教科文组织“青年视角”（Youth Lens）如何以数字人文激活世界遗产的保护与传承。",
+        uz: "Ushbu platforma 100% yoshlar tashabbusi bilan yaratilgan va amalga oshirilgan. Qandaydir rasmiy topshiriqni kutmasdan, 11-sinf o'quvchisi Alisher Tuychiyev Qarshi davlat universitetining 20 nafar yosh talabalarini birlashtirdi. Yosh tadqiqotchilar professional fotoapparatlar, o'lchov protokollari va sun'iy intellekt texnologiyalari bilan Shahrisabzning har bir burchagini o'rganib chiqib, yoshlar YUNESKO merosini asrashda eng yetakchi kuch bo'la olishini isbotladi."
+      }
+    },
+
+    // 25. Open Access CC BY-SA 4.0 Licensing & Wikimedia Commons
+    {
+      id: "open_access_license",
+      phrases: [
+        "cc by-sa", "open access", "erkin litsenziya", "rasmlar mualliflik huquqi", "can i use photos",
+        "suratlarni ishlatsam bo'ladimi", "creative commons", "wikimedia commons", "mualliflik huquqi", "download photos", "开放获取", "知识共享", "版权许可", "免费下载使用"
+      ],
+      keywords: ["cc", "license", "litsenziya", "open", "erkin", "copyright", "use", "ishlatish", "bepul", "free", "commons", "download", "yuklab", "by-sa", "ochiq", "ruxsat", "共享", "许可", "免费", "维基共享"],
+      response: {
+        en: "All 500+ high-resolution photographs, expedition videos, and architectural datasets gathered by our expedition are published under the open Creative Commons Attribution-ShareAlike 4.0 International license (CC BY-SA 4.0). Anyone—including students, international researchers, journalists, and educators—can freely download, use, adapt, and republish our materials with proper attribution, permanently enriching global open knowledge on Wikimedia Commons.",
+        zh: "我们考察团采集的500多张超高清文献影像、纪录视频与建筑测绘数据，全部遵循国际知识共享许可协议CC BY-SA 4.0（署名-相同方式共享）开放发布。全球任何学者、大学生、教育工作者和媒体记者均可免费无障碍下载、研究、使用和再发布我们的数字资产，永久性地为维基共享资源（Wikimedia Commons）与世界百科全书补充关键数据。",
+        uz: "Ekspeditsiyamiz tomonidan to'plangan 500 dan ortiq professional fotosuratlar, video lavhalar va tadqiqot ma'lumotlari xalqaro Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0) erkin litsenziyasi ostida ochiq e'lon qilingan. Dunyoning istalgan nuqtasidagi talabalar, tadqiqotchilar, o'qituvchilar va OAV xodimlari bizning suratlarimizni bepul yuklab olishi, o'z ishlarida ishlatishi va Vikipediyada erkin ulashishi mumkin."
+      }
+    },
+
+    // 26. 3D Digital Twins, LiDAR & Photogrammetry
+    {
+      id: "digital_twins_3d",
+      phrases: [
+        "digital twin", "3d model", "raqamli egizak", "photogrammetry", "lidar", "dron tasvirlari",
+        "virtual reality", "metaverse", "3d scan", "uch o'lchamli", "drone survey", "数字孪生", "三维建模", "激光雷达", "虚拟现实"
+      ],
+      keywords: ["3d", "twin", "egizak", "scan", "skaner", "model", "drone", "dron", "lidar", "photogrammetry", "fotogrammetriya", "vr", "virtual", "metaverse", "mesh", "pointcloud", "数字孪生", "三维", "激光", "点云"],
+      response: {
+        en: "Phase II of our digital heritage initiative expands from 2D photography to millimeter-accurate 3D Digital Twins using aerial drone photogrammetry and terrestrial LiDAR scanning. By creating exact volumetric point-cloud models of Ak-Saray's collapsing pylon arches, we generate structural deformation heatmaps that allow international conservation engineers to monitor micro-fractures in real-time, even in immersive VR/Metaverse environments.",
+        zh: "我们数字化遗产计划的第二阶段正从二维高精度摄影迈向毫米级“三维数字孪生”（3D Digital Twins）。结合无人机全景航测倾斜摄影与地面激光雷达（LiDAR），我们正在为阿克萨赖残存塔柱构建高密度点云与三维网格模型。这能够生成结构形变监测热力图，让全球修缮工程师在虚拟现实（VR）或元宇宙环境中实时监测砖砌体微观裂隙。",
+        uz: "Loyiha tadqiqotlarimizning navbatdagi bosqichi — 2D suratlardan millimetr aniqligidagi 'Raqamli Egizaklar' (3D Digital Twins) va dron fotogrammetriyasiga o'tishdir. Oqsaroy pilonlari va Dorut Tilovat gumbazlarini lazerli LiDAR va dronlar orqali skanerlash orqali biz yoriqlarning kengayishi va yemirilishini 3D formatda aniqlay olamiz. Bu YUNESKO muhandislariga xavfni masofadan turib, virtual ko'zoynaklarda ham tahlil qilish imkonini beradi."
+      }
+    },
+
+    // 27. The Mystery of Timur's Empty Limestone Crypt
+    {
+      id: "timur_crypt_mystery",
+      phrases: [
+        "temur daxmasi siri", "bo'sh qabr", "empty crypt", "why buried in samarkand", "nega samarqandda dafn etilgan",
+        "guri amir", "gur-e-amir", "limestone crypt", "sardoba siri", "jahongir maqbarasi", "帖木儿地宫之谜", "空墓", "为什么葬在撒马尔罕"
+      ],
+      keywords: ["daxma", "crypt", "qabr", "bo'sh", "empty", "samarqand", "samarkand", "gur-e-amir", "guri", "amir", "otrar", "qish", "sir", "mystery", "limestone", "marmar", "sarkofag", "sarcophagus", "地宫", "陵墓", "空", "奥特拉尔"],
+      response: {
+        en: "Inside the Dorus Saodat complex lies an enigmatic underground crypt discovered in 1943. Constructed from monolithic limestone and covered with Quranic calligraphic reliefs, it features a massive marble sarcophagus prepared specifically for Amir Temur himself. However, when Temur died in Otrar in the harsh winter of February 1405, heavy snow blocked the mountain passes to Shakhrisabz, forcing his sudden burial in Samarkand's Gur-e-Amir, leaving this imperial crypt forever empty.",
+        zh: "在多鲁斯·萨达特建筑群地下深处，隐藏着一处于1943年偶然发现的神秘地宫。暗室以坚固的石灰岩巨石筑成，通体刻满精美古兰经铭文，正中摆放着一具帖木儿生前为自己预备的巨型单体大理石石棺。然而1405年2月严冬，帖木儿东征途中猝逝于讹答剌，漫天暴雪彻底封冻了翻越吉萨尔山脉通往沙赫里萨布兹的山口，灵柩被迫就近改葬于撒马尔罕的古尔·阿米尔陵，使得这处帝王地宫永远空置至今。",
+        uz: "Dorus Saodat majmuasi ostida 1943-yilda tasodifan topilgan sirli yerosti daxmasi (Temur xilxonasi) mavjud. Butunlay yaxlit marmar va ohaktoshdan o'yilgan bu daxmadagi ulkan tosh tobut Amir Temurning o'zi uchun maxsus tayyorlangan edi. Biroq 1405-yil fevral oyining qattiq qishida Amir Temur O'trorda vafot etgach, qalin qor dovonlarni yopib qo'ygan va jasadni Shahrisabzga olib kelish imkonsiz bo'lib, Sohibqiron zudlik bilan Samarqanddagi Go'ri Amirga dafn etilgan. Natijada Shahrisabzdagi bu daxma manguga bo'sh qolgan."
+      }
+    },
+
+    // 28. Contact, Partnerships & Collaboration
+    {
+      id: "contact_collaboration",
+      phrases: [
+        "aloqa", "bog'lanish", "how to contact", "contact author", "hamkorlik", "collaborate",
+        "join project", "loyiha bilan bog'lanish", "support project", "email", "telegram", "github", "联系我们", "如何合作", "参与项目"
+      ],
+      keywords: ["aloqa", "contact", "bog'lanish", "email", "pochta", "telegram", "hamkorlik", "join", "qo'shilish", "collaborate", "partnership", "support", "yordam", "github", "muallif", "联系", "合作", "加入"],
+      response: {
+        en: "We enthusiastically welcome international partnerships, academic collaborations, and youth volunteers! You can connect directly with project leader Alisher Tuychiyev and the research team via email at alishertuuchiyev@gmail.com, explore our open source codebase on GitHub (github.com/alisher-ds/shakhrisabz-heritage), or connect on LinkedIn and Telegram. All dataset inquiries from UNESCO experts and educators are prioritized.",
+        zh: "我们热忱欢迎全球学术机构、文博专家与青年志愿者开展合作！您可以直接通过电子邮件（alishertuuchiyev@gmail.com）联系项目发起人Alisher Tuychiyev与课题团队，在GitHub（github.com/alisher-ds/shakhrisabz-heritage）查阅开源代码，或在领英与Telegram互动。我们优先响应联合国教科文组织专家与教育机构的数据协作请求。",
+        uz: "Biz xalqaro hamkorlik, akademik tadqiqotchilar va ko'ngilli yoshlar bilan birgalikda ishlashdan mamnun bo'lamiz! Loyiha rahbari Alisher Tuychiyev va jamoa bilan to'g'ridan-to'g'ri alishertuuchiyev@gmail.com elektron pochtasi orqali, loyihaning GitHub ochiq kodli sahifasi (github.com/alisher-ds/shakhrisabz-heritage) yoki Telegram orqali bog'lanishingiz mumkin. YUNESKO ekspertlari va ta'lim muassasalari so'rovlariga zudlik bilan javob beriladi."
+      }
+    },
+
+    // 29. Second Capital Status of the Timurid Empire
+    {
+      id: "second_capital_status",
+      phrases: [
+        "ikkinchi poytaxt", "second capital", "status of shakhrisabz", "nege poytaxt", "capital city",
+        "shahrisabz maqomi", "imperial summer residence", "yozgi poytaxt", "saltanat markazi", "第二都城", "陪都地位", "夏都"
+      ],
+      keywords: ["poytaxt", "capital", "ikkinchi", "second", "maqom", "status", "yozgi", "summer", "saroy", "residence", "hukumat", "saltanat", "empire", "diplomacy", "marosim", "都城", "陪都", "夏都", "地位"],
+      response: {
+        en: "Throughout the Timurid Empire, Shakhrisabz held the official status of the empire's 'Second Capital' and ancestral spiritual cradle. While Samarkand was the bustling administrative and economic metropolis, Shakhrisabz served as the ceremonial summer residence where Temur celebrated victorious military returns, received foreign ambassadors from Castile and Ming China, and erected dynastic shrines honoring his lineage.",
+        zh: "在帖木儿帝国全盛时期，沙赫里萨布兹享有帝国“第二都城”（陪都）与精神宗祠的至高官方地位。尽管撒马尔罕是繁忙的行政与经贸核心大都会，但沙赫里萨布兹作为避暑夏都与宗室祖地，是帖木儿举行凯旋大典、接见西班牙与大明王朝使节、以及营建王室陵寝的最高礼仪圣所。",
+        uz: "Temuriylar saltanati davrida Shahrisabz davlatning rasman 'Ikkinchi poytaxti' va Sohibqiron xonadonining muqaddas sulolaviy markazi maqomiga ega bo'lgan. Samarqand saltanatning bosh siyosiy va savdo poytaxti bo'lsa, Shahrisabz tantanavor yozgi poytaxt vazifasini bajargan. Bu yerda Temur zafarli yurishlardan so'ng dabdabali to'ylar o'tkazgan, Xitoy (Min sulolasi) va Yevropa elchilarini qabul qilgan hamda oilaviy daxmalar qurdirgan."
+      }
+    },
+
+    // 30. Oasis Climate, Weather & Mountain Breezes
+    {
+      id: "weather_seasons",
+      phrases: [
+        "ob havo", "weather in shakhrisabz", "harorat", "qishda", "yozda", "temperature",
+        "climate", "iqlim", "havo qanday", "travel tips", "eng yaxshi vaqt", "best time", "天气", "气候", "气温", "最佳时间"
+      ],
+      keywords: ["havo", "weather", "ob-havo", "iqlim", "climate", "harorat", "temperature", "daraja", "issiq", "sovuq", "yomg'ir", "qor", "fasl", "autumn", "kuz", "bahor", "spring", "天气", "气候", "温度", "季节"],
+      response: {
+        en: "Shakhrisabz enjoys a classic dry continental climate with over 300 days of annual sunshine, shielded by the surrounding Hissar mountains. Summers (July–August) are hot and dry (35°C–40°C), making early mornings and evenings ideal for exploring. Winters are crisp with occasional snow on monument ruins (0°C–8°C). The golden window to visit is Spring (April–May) when almond groves bloom, and Autumn (September–October) during harvest season with crystal-clear skies.",
+        zh: "沙赫里萨布兹享有典型的大陆性绿洲气候，年日照天数超过300天，受吉萨尔山脉天然屏障庇护。盛夏（7-8月）干燥炎热（35°C-40°C），清晨与傍晚是漫步古建筑的绝佳时刻；冬季清朗，偶有白雪覆瓦（0°C-8°C）。最宜人的黄金造访期是杏花初绽的春季（4-5月）与瓜果飘香、天高云淡的秋季（9-10月）。",
+        uz: "Shahrisabz Hisor tog'lari etagida joylashganligi sababli, uning havosi tog' shabadasi bilan doim toza va serquyosh (yiliga 300 kundan ortiq quyoshli). Yoz oylari (iyul-avgust) ancha issiq va quruq (35°C–40°C) bo'lib, obidalarni ertalab va kechki paytlarda tomosha qilish qulay. Qish oylarida harorat 0°C dan 8°C gacha bo'ladi. Eng ajoyib vaqt — daraxtlar gullaydigan bahor (aprel-may) hamda shirin mevalar pishgan, musaffo osmonli oltin kuz (sentyabr-oktyabr) faslidir."
+      }
     }
   ];
 
@@ -328,9 +554,9 @@ export function initAiDocent() {
 
     // Contextual fallback response if no match
     const defaults = {
-      en: "Thank you for asking! While I specialize in Shakhrisabz's Timurid heritage, you can ask me about: 1) Ak-Saray's 50-year transformation, 2) Amir Temur's birthplace in Kesh, 3) Dorut Tilovat & Kok Gumbaz, 4) Chorsu bazaar & Iroki embroidery, 5) Local Tandir Kebab cuisine, 6) How to travel to Shakhrisabz, or 7) Our Wikimedia expedition.",
-      zh: "感谢您的提问！我专注于沙赫里萨布兹与帖木儿时代文化遗产。您可以随时向我咨询：1）阿克萨赖宫50年变迁对比；2）帖木儿出生地与古城渴石；3）多鲁特提洛瓦特与青色穹顶清真寺；4）查尔苏巴扎与伊洛基刺绣；5）地坑焖烤羊肉美食；6）沙赫里萨布兹旅游交通攻略；7）维基媒体考察成果。",
-      uz: "Savolingiz uchun tashakkur! Men Shahrisabz va Temuriylar merosi bo'yicha maslahatchiman. Menga quyidagi mavzularda savol berishingiz mumkin: 1) Oqsaroyning 50 yillik o'zgarishi, 2) Amir Temurning tavalludi va Kesh tarixi, 3) Dorut Tilovat va Ko'k Gumbaz, 4) Chorsu bozori va Iroqi kashtachilik, 5) Tandir go'shti milliy taomi, 6) Shahrisabzga qanday borish (sayohat yo'li), yoki 7) Vikimedia ekspeditsiyamiz."
+      en: "Thank you for asking! I specialize in the complete cultural heritage of Shakhrisabz. You can ask me about: 1) Ak-Saray's 70m portal & 50-yr metamorphosis, 2) The mystery of Amir Temur's empty crypt in Dorus Saodat, 3) Clavijo's 1404 embassy, 4) 2026 IYF China Youth Forum & UNESCO #885, 5) 3D LiDAR digital twins & conservation ethics, 6) Ancient Sogdian Kesh & Alexander the Great, 7) Suzani motif symbolism & local Tandir Kebab, or 8) How to collaborate with our youth research expedition.",
+      zh: "感谢您的提问！我精通沙赫里萨布兹与帖木儿帝国的全方位文化遗产。您可以向我咨询：1）阿克萨赖宫70米天门与50年沧桑对比；2）多鲁斯·萨达特与帖木儿空置地宫之谜；3）1404年西班牙克拉维约使团实录；4）2026国际青年论坛（中国）与联合国教科文组织885号遗产；5）三维激光雷达数字孪生与原真性保护；6）粟特渴石古城与亚历山大大帝；7）苏扎尼刺绣寓意与卡什卡达里亚地坑烤肉；或 8）青年科研团队与开放数据合作。",
+      uz: "Savolingiz uchun tashakkur! Men Shahrisabz va Temuriylar davri merosi bo'yicha to'liq ma'lumotga egaman. Menga quyidagi mavzularda savol berishingiz mumkin: 1) Oqsaroyning 70 metrli peshtoqi va 50 yillik qiyofasi, 2) Dorus Saodatdagi Temur xilxonasi va bo'sh tobut siri, 3) 1404-yilgi Klavixo elchiligi xotiralari, 4) 2026 Xitoy Xalqaro Yoshlar Forumi (IYF) va YUNESKO #885 merosi, 5) 3D LiDAR raqamli egizaklar va restavratsiya etikasi, 6) Qadimiy Kesh (So'g'diyona) va Aleksandr Makedonskiy, 7) So'zana naqshlari siri va Tandir go'shti, yoki 8) Yoshlar tadqiqot jamoamiz bilan hamkorlik."
     };
     return defaults[lang] || defaults.en;
   }
