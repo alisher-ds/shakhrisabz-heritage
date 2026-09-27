@@ -49,8 +49,13 @@ export function initI18n() {
   if (langZhBtn) langZhBtn.addEventListener('click', () => setLang('zh'));
   if (langUzBtn) langUzBtn.addEventListener('click', () => setLang('uz'));
 
-  // Initialize from storage or default
-  const savedLang = localStorage.getItem('shakhrisabz_lang') || 'en';
+  // Initialize from storage or default (with safe try/catch)
+  let savedLang = 'en';
+  try {
+    savedLang = localStorage.getItem('shakhrisabz_lang') || 'en';
+  } catch (e) {
+    savedLang = 'en';
+  }
   setLang(savedLang);
 
   return { setLang, getCurrentLang: () => currentLang };
