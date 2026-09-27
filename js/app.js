@@ -10,29 +10,29 @@ import { initAiDocent } from './ai-docent.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize Core Engines
-  initTheme();
-  initI18n();
+  try { initTheme(); } catch (e) { console.error('Theme init error:', e); }
+  try { initI18n(); } catch (e) { console.error('I18n init error:', e); }
 
   // 2. Initialize Scroll Progress Bar
-  initScrollProgressBar();
+  try { initScrollProgressBar(); } catch (e) { console.error('Progress bar init error:', e); }
 
   // 3. Initialize Hero Slideshow & Transformation Comparison
-  initHeroSlider();
-  initTransformationSlider();
+  try { initHeroSlider(); } catch (e) { console.error('Hero slider init error:', e); }
+  try { initTransformationSlider(); } catch (e) { console.error('Transformation slider init error:', e); }
 
-  // 4. Initialize Silk Road & AI Modules
-  initSilkRoadMap();
-  initAiDocent();
+  // 4. Initialize Silk Road Map & AI Docent
+  try { initSilkRoadMap(); } catch (e) { console.error('Silk road map init error:', e); }
+  try { initAiDocent(); } catch (e) { console.error('AI Docent init error:', e); }
 
-  // 5. Initialize Video Kiosk Chapters & Gallery
-  initVideoChapters();
-  initGallery();
+  // 5. Initialize Video Kiosk Chapters & Archival Gallery
+  try { initVideoChapters(); } catch (e) { console.error('Video chapters init error:', e); }
+  try { initGallery(); } catch (e) { console.error('Gallery init error:', e); }
 
   // 6. Initialize Mobile Navigation Drawer
-  initMobileMenu();
+  try { initMobileMenu(); } catch (e) { console.error('Mobile menu init error:', e); }
 
   // 7. Initialize Living Motion & Scroll Reveal Engine
-  initScrollAnimations();
+  try { initScrollAnimations(); } catch (e) { console.error('Scroll animations init error:', e); }
 });
 
 /* Mobile Navigation Drawer Controller */

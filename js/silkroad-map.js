@@ -85,9 +85,19 @@ export function initSilkRoadMap() {
     }
   };
 
-  // Check if Leaflet is loaded
+  // Check if Leaflet is loaded (with progressive retry safeguard)
   if (typeof L === 'undefined') {
-    console.warn('Leaflet library is loading or unavailable.');
+    let retries = 0;
+    const interval = setInterval(() => {
+      retries++;
+      if (typeof L !== 'undefined') {
+        clearInterval(interval);
+        initSilkRoadMap();
+      } else if (retries >= 15) {
+        clearInterval(interval);
+        console.warn('Leaflet library unavailable after retries.');
+      }
+    }, 200);
     return;
   }
 

@@ -338,7 +338,7 @@ export function initAiDocent() {
       keywords: ["balandlik", "metr", "height", "tall", "size", "dimension", "dimensions", "span", "pilon", "ustun", "70", "38", "22", "ravoq", "peshtoq", "ulcham", "hajmi", "scale", "规模", "高度", "米", "跨度"],
       response: {
         en: "Ak-Saray was a monumental marvel of unprecedented scale: its central triumphal entrance portal originally towered over 70 meters (approx. 230 feet) high, with a colossal arch span of 22.5 meters. The central courtyard stretched over 250 meters in length, flanked by hundreds of vaulted reception suites, marble pools, and blue-tiled galleries. Today, the two surviving weathered corner pylons still stand at an imposing 38 meters (equivalent to a 12-story building).",
-        zh: "阿克萨赖宫在历史上拥有空前绝后的宏伟尺度：其中央主入口凯旋门原高逾70米（约23层楼高），主拱跨度达22.5米。主庭院纵深超过250米，两侧环绕着数百间带拱顶的国宾会客厅、大理石喷水池与青金石琉璃回廊。如今历经600年沧桑，残存的两座塔柱依然耸立达38米高（相当于12层现代建筑高度）。"
+        zh: "阿克萨赖宫在历史上拥有空前绝后的宏伟尺度：其中央主入口凯旋门原高逾70米（约23层楼高），主拱跨度达22.5米。主庭院纵深超过250米，两侧环绕着数百间带拱顶的国宾会客厅、大理石喷水池与青金石琉璃回廊。如今历经600年沧桑，残存的两座塔柱依然耸立达38米高（相当于12层现代建筑高度）。",
         uz: "Oqsaroy o'z davrining eng ulkan me'moriy inshooti bo'lgan: uning bosh peshtoqi balandligi 70 metrdan ortiq (taxminan 23 qavatli bino balandligida), ravog'ining kengligi esa 22.5 metr bo'lgan. Saroyning ichki hovlisi 250 metrdan ziyod uzunlikda bo'lib, marmar hovuzlar va koshinli xonalar bilan o'ralgan. Bugungi kungacha saqlanib qolgan ikki pilonning (ustunning) o'zi 38 metr balandlikka ega bo'lib, 12 qavatli uy balandligiga tengdir."
       }
     },
